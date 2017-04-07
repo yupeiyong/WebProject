@@ -1,0 +1,5 @@
+﻿.file-zoom-dialog.modal.fade.in {
+  z-index: 10000; }
+  .file-zoom-dialog.modal.fade.in + .modal-backdrop.fade.in {
+    z-index: 9999; }
+

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link href="Lib/BootStrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="Lib/JQuery/2.2.4/jquery.min.js"></script>
+    <script src="Lib/BootStrap/3.3.7/js/bootstrap.min.js"></script>
+    
+
+    <link href="Lib/BootStrapDateTimePicker/1.0.0/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="Lib/BootStrapDateTimePicker/1.0.0/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="Lib/BootStrapDateTimePicker/1.0.0/js/locales/bootstrap-datetimepicker.zh-CN.min.js"></script>
+
+
+</head>
+<body>
+    <div class="input-group input-append date form_datetime">
+        <input type="text" class="form-control input-sm" />
+        <span class="input-group-addon add-on">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+        </span>
+    </div>
+
+
+    <script type="text/javascript">
+        //设置默认值
+        $.fn.datetimepicker.defaults = {
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayBtn: true,
+            minView: 2,
+            startView: 3,
+            pickerPosition: "bottom-left"
+        };
+
+        //这是中文内容
+        $.fn.datetimepicker.dates['zh-CN'] = $.extend($.fn.datetimepicker.dates['zh-CN'], {
+            months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一", "十二"],
+            monthsShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一", "十二"]
+        });
+
+        //日期选择框
+        $('.form_datetime').datetimepicker();
+    </script>
+</body>
+</html>

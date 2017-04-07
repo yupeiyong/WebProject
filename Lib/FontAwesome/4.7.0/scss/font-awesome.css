@@ -1,0 +1,2330 @@
+﻿@charset "UTF-8";
+/*!
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%; }
+
+.fa-2x {
+  font-size: 2em; }
+
+.fa-3x {
+  font-size: 3em; }
+
+.fa-4x {
+  font-size: 4em; }
+
+.fa-5x {
+  font-size: 5em; }
+
+.fa-fw {
+  width: 1.28571em;
+  text-align: center; }
+
+.fa-ul {
+  padding-left: 0;
+  margin-left: 2.14286em;
+  list-style-type: none; }
+  .fa-ul > li {
+    position: relative; }
+
+.fa-li {
+  position: absolute;
+  left: -2.14286em;
+  width: 2.14286em;
+  top: 0.14286em;
+  text-align: center; }
+  .fa-li.fa-lg {
+    left: -1.85714em; }
+
+.fa-border {
+  padding: 0.2em 0.25em 0.15em;
+  border: solid 0.08em #eee;
+  border-radius: .1em; }
+
+.fa-pull-left {
+  float: left; }
+
+.fa-pull-right {
+  float: right; }
+
+.fa.fa-pull-left {
+  margin-right: .3em; }
+
+.fa.fa-pull-right {
+  margin-left: .3em; }
+
+/* Deprecated as of 4.4.0 */
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.fa.pull-left {
+  margin-right: .3em; }
+
+.fa.pull-right {
+  margin-left: .3em; }
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear; }
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8); }
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1); }
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1); }
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none; }
+
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle; }
+
+.fa-stack-1x, .fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center; }
+
+.fa-stack-1x {
+  line-height: inherit; }
+
+.fa-stack-2x {
+  font-size: 2em; }
+
+.fa-inverse {
+  color: #fff; }
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+.fa-glass:before {
+  content: "飥€"; }
+
+.fa-music:before {
+  content: "飥?; }
+
+.fa-search:before {
+  content: "飥?; }
+
+.fa-envelope-o:before {
+  content: "飥?; }
+
+.fa-heart:before {
+  content: "飥?; }
+
+.fa-star:before {
+  content: "飥?; }
+
+.fa-star-o:before {
+  content: "飥?; }
+
+.fa-user:before {
+  content: "飥?; }
+
+.fa-film:before {
+  content: "飥?; }
+
+.fa-th-large:before {
+  content: "飥?; }
+
+.fa-th:before {
+  content: "飥?; }
+
+.fa-th-list:before {
+  content: "飥?; }
+
+.fa-check:before {
+  content: "飥?; }
+
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before {
+  content: "飥?; }
+
+.fa-search-plus:before {
+  content: "飥?; }
+
+.fa-search-minus:before {
+  content: "飥?; }
+
+.fa-power-off:before {
+  content: "飥?; }
+
+.fa-signal:before {
+  content: "飥?; }
+
+.fa-gear:before,
+.fa-cog:before {
+  content: "飥?; }
+
+.fa-trash-o:before {
+  content: "飥?; }
+
+.fa-home:before {
+  content: "飥?; }
+
+.fa-file-o:before {
+  content: "飥?; }
+
+.fa-clock-o:before {
+  content: "飥?; }
+
+.fa-road:before {
+  content: "飥?; }
+
+.fa-download:before {
+  content: "飥?; }
+
+.fa-arrow-circle-o-down:before {
+  content: "飥?; }
+
+.fa-arrow-circle-o-up:before {
+  content: "飥?; }
+
+.fa-inbox:before {
+  content: "飥?; }
+
+.fa-play-circle-o:before {
+  content: "飥?; }
+
+.fa-rotate-right:before,
+.fa-repeat:before {
+  content: "飥?; }
+
+.fa-refresh:before {
+  content: "飥?; }
+
+.fa-list-alt:before {
+  content: "飥?; }
+
+.fa-lock:before {
+  content: "飥?; }
+
+.fa-flag:before {
+  content: "飥?; }
+
+.fa-headphones:before {
+  content: "飥?; }
+
+.fa-volume-off:before {
+  content: "飥?; }
+
+.fa-volume-down:before {
+  content: "飥?; }
+
+.fa-volume-up:before {
+  content: "飥?; }
+
+.fa-qrcode:before {
+  content: "飥?; }
+
+.fa-barcode:before {
+  content: "飥?; }
+
+.fa-tag:before {
+  content: "飥?; }
+
+.fa-tags:before {
+  content: "飥?; }
+
+.fa-book:before {
+  content: "飥?; }
+
+.fa-bookmark:before {
+  content: "飥?; }
+
+.fa-print:before {
+  content: "飥?; }
+
+.fa-camera:before {
+  content: "飥?; }
+
+.fa-font:before {
+  content: "飥?; }
+
+.fa-bold:before {
+  content: "飥?; }
+
+.fa-italic:before {
+  content: "飥?; }
+
+.fa-text-height:before {
+  content: "飥?; }
+
+.fa-text-width:before {
+  content: "飥?; }
+
+.fa-align-left:before {
+  content: "飥?; }
+
+.fa-align-center:before {
+  content: "飥?; }
+
+.fa-align-right:before {
+  content: "飥?; }
+
+.fa-align-justify:before {
+  content: "飥?; }
+
+.fa-list:before {
+  content: "飥?; }
+
+.fa-dedent:before,
+.fa-outdent:before {
+  content: "飥?; }
+
+.fa-indent:before {
+  content: "飥?; }
+
+.fa-video-camera:before {
+  content: "飥?; }
+
+.fa-photo:before,
+.fa-image:before,
+.fa-picture-o:before {
+  content: "飥?; }
+
+.fa-pencil:before {
+  content: "飦€"; }
+
+.fa-map-marker:before {
+  content: "飦?; }
+
+.fa-adjust:before {
+  content: "飦?; }
+
+.fa-tint:before {
+  content: "飦?; }
+
+.fa-edit:before,
+.fa-pencil-square-o:before {
+  content: "飦?; }
+
+.fa-share-square-o:before {
+  content: "飦?; }
+
+.fa-check-square-o:before {
+  content: "飦?; }
+
+.fa-arrows:before {
+  content: "飦?; }
+
+.fa-step-backward:before {
+  content: "飦?; }
+
+.fa-fast-backward:before {
+  content: "飦?; }
+
+.fa-backward:before {
+  content: "飦?; }
+
+.fa-play:before {
+  content: "飦?; }
+
+.fa-pause:before {
+  content: "飦?; }
+
+.fa-stop:before {
+  content: "飦?; }
+
+.fa-forward:before {
+  content: "飦?; }
+
+.fa-fast-forward:before {
+  content: "飦?; }
+
+.fa-step-forward:before {
+  content: "飦?; }
+
+.fa-eject:before {
+  content: "飦?; }
+
+.fa-chevron-left:before {
+  content: "飦?; }
+
+.fa-chevron-right:before {
+  content: "飦?; }
+
+.fa-plus-circle:before {
+  content: "飦?; }
+
+.fa-minus-circle:before {
+  content: "飦?; }
+
+.fa-times-circle:before {
+  content: "飦?; }
+
+.fa-check-circle:before {
+  content: "飦?; }
+
+.fa-question-circle:before {
+  content: "飦?; }
+
+.fa-info-circle:before {
+  content: "飦?; }
+
+.fa-crosshairs:before {
+  content: "飦?; }
+
+.fa-times-circle-o:before {
+  content: "飦?; }
+
+.fa-check-circle-o:before {
+  content: "飦?; }
+
+.fa-ban:before {
+  content: "飦?; }
+
+.fa-arrow-left:before {
+  content: "飦?; }
+
+.fa-arrow-right:before {
+  content: "飦?; }
+
+.fa-arrow-up:before {
+  content: "飦?; }
+
+.fa-arrow-down:before {
+  content: "飦?; }
+
+.fa-mail-forward:before,
+.fa-share:before {
+  content: "飦?; }
+
+.fa-expand:before {
+  content: "飦?; }
+
+.fa-compress:before {
+  content: "飦?; }
+
+.fa-plus:before {
+  content: "飦?; }
+
+.fa-minus:before {
+  content: "飦?; }
+
+.fa-asterisk:before {
+  content: "飦?; }
+
+.fa-exclamation-circle:before {
+  content: "飦?; }
+
+.fa-gift:before {
+  content: "飦?; }
+
+.fa-leaf:before {
+  content: "飦?; }
+
+.fa-fire:before {
+  content: "飦?; }
+
+.fa-eye:before {
+  content: "飦?; }
+
+.fa-eye-slash:before {
+  content: "飦?; }
+
+.fa-warning:before,
+.fa-exclamation-triangle:before {
+  content: "飦?; }
+
+.fa-plane:before {
+  content: "飦?; }
+
+.fa-calendar:before {
+  content: "飦?; }
+
+.fa-random:before {
+  content: "飦?; }
+
+.fa-comment:before {
+  content: "飦?; }
+
+.fa-magnet:before {
+  content: "飦?; }
+
+.fa-chevron-up:before {
+  content: "飦?; }
+
+.fa-chevron-down:before {
+  content: "飦?; }
+
+.fa-retweet:before {
+  content: "飦?; }
+
+.fa-shopping-cart:before {
+  content: "飦?; }
+
+.fa-folder:before {
+  content: "飦?; }
+
+.fa-folder-open:before {
+  content: "飦?; }
+
+.fa-arrows-v:before {
+  content: "飦?; }
+
+.fa-arrows-h:before {
+  content: "飦?; }
+
+.fa-bar-chart-o:before,
+.fa-bar-chart:before {
+  content: "飩€"; }
+
+.fa-twitter-square:before {
+  content: "飩?; }
+
+.fa-facebook-square:before {
+  content: "飩?; }
+
+.fa-camera-retro:before {
+  content: "飩?; }
+
+.fa-key:before {
+  content: "飩?; }
+
+.fa-gears:before,
+.fa-cogs:before {
+  content: "飩?; }
+
+.fa-comments:before {
+  content: "飩?; }
+
+.fa-thumbs-o-up:before {
+  content: "飩?; }
+
+.fa-thumbs-o-down:before {
+  content: "飩?; }
+
+.fa-star-half:before {
+  content: "飩?; }
+
+.fa-heart-o:before {
+  content: "飩?; }
+
+.fa-sign-out:before {
+  content: "飩?; }
+
+.fa-linkedin-square:before {
+  content: "飩?; }
+
+.fa-thumb-tack:before {
+  content: "飩?; }
+
+.fa-external-link:before {
+  content: "飩?; }
+
+.fa-sign-in:before {
+  content: "飩?; }
+
+.fa-trophy:before {
+  content: "飩?; }
+
+.fa-github-square:before {
+  content: "飩?; }
+
+.fa-upload:before {
+  content: "飩?; }
+
+.fa-lemon-o:before {
+  content: "飩?; }
+
+.fa-phone:before {
+  content: "飩?; }
+
+.fa-square-o:before {
+  content: "飩?; }
+
+.fa-bookmark-o:before {
+  content: "飩?; }
+
+.fa-phone-square:before {
+  content: "飩?; }
+
+.fa-twitter:before {
+  content: "飩?; }
+
+.fa-facebook-f:before,
+.fa-facebook:before {
+  content: "飩?; }
+
+.fa-github:before {
+  content: "飩?; }
+
+.fa-unlock:before {
+  content: "飩?; }
+
+.fa-credit-card:before {
+  content: "飩?; }
+
+.fa-feed:before,
+.fa-rss:before {
+  content: "飩?; }
+
+.fa-hdd-o:before {
+  content: "飩?; }
+
+.fa-bullhorn:before {
+  content: "飩?; }
+
+.fa-bell:before {
+  content: "飪?; }
+
+.fa-certificate:before {
+  content: "飩?; }
+
+.fa-hand-o-right:before {
+  content: "飩?; }
+
+.fa-hand-o-left:before {
+  content: "飩?; }
+
+.fa-hand-o-up:before {
+  content: "飩?; }
+
+.fa-hand-o-down:before {
+  content: "飩?; }
+
+.fa-arrow-circle-left:before {
+  content: "飩?; }
+
+.fa-arrow-circle-right:before {
+  content: "飩?; }
+
+.fa-arrow-circle-up:before {
+  content: "飩?; }
+
+.fa-arrow-circle-down:before {
+  content: "飩?; }
+
+.fa-globe:before {
+  content: "飩?; }
+
+.fa-wrench:before {
+  content: "飩?; }
+
+.fa-tasks:before {
+  content: "飩?; }
+
+.fa-filter:before {
+  content: "飩?; }
+
+.fa-briefcase:before {
+  content: "飩?; }
+
+.fa-arrows-alt:before {
+  content: "飩?; }
+
+.fa-group:before,
+.fa-users:before {
+  content: "飪€"; }
+
+.fa-chain:before,
+.fa-link:before {
+  content: "飪?; }
+
+.fa-cloud:before {
+  content: "飪?; }
+
+.fa-flask:before {
+  content: "飪?; }
+
+.fa-cut:before,
+.fa-scissors:before {
+  content: "飪?; }
+
+.fa-copy:before,
+.fa-files-o:before {
+  content: "飪?; }
+
+.fa-paperclip:before {
+  content: "飪?; }
+
+.fa-save:before,
+.fa-floppy-o:before {
+  content: "飪?; }
+
+.fa-square:before {
+  content: "飪?; }
+
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+  content: "飪?; }
+
+.fa-list-ul:before {
+  content: "飪?; }
+
+.fa-list-ol:before {
+  content: "飪?; }
+
+.fa-strikethrough:before {
+  content: "飪?; }
+
+.fa-underline:before {
+  content: "飪?; }
+
+.fa-table:before {
+  content: "飪?; }
+
+.fa-magic:before {
+  content: "飪?; }
+
+.fa-truck:before {
+  content: "飪?; }
+
+.fa-pinterest:before {
+  content: "飪?; }
+
+.fa-pinterest-square:before {
+  content: "飪?; }
+
+.fa-google-plus-square:before {
+  content: "飪?; }
+
+.fa-google-plus:before {
+  content: "飪?; }
+
+.fa-money:before {
+  content: "飪?; }
+
+.fa-caret-down:before {
+  content: "飪?; }
+
+.fa-caret-up:before {
+  content: "飪?; }
+
+.fa-caret-left:before {
+  content: "飪?; }
+
+.fa-caret-right:before {
+  content: "飪?; }
+
+.fa-columns:before {
+  content: "飪?; }
+
+.fa-unsorted:before,
+.fa-sort:before {
+  content: "飪?; }
+
+.fa-sort-down:before,
+.fa-sort-desc:before {
+  content: "飪?; }
+
+.fa-sort-up:before,
+.fa-sort-asc:before {
+  content: "飪?; }
+
+.fa-envelope:before {
+  content: "飪?; }
+
+.fa-linkedin:before {
+  content: "飪?; }
+
+.fa-rotate-left:before,
+.fa-undo:before {
+  content: "飪?; }
+
+.fa-legal:before,
+.fa-gavel:before {
+  content: "飪?; }
+
+.fa-dashboard:before,
+.fa-tachometer:before {
+  content: "飪?; }
+
+.fa-comment-o:before {
+  content: "飪?; }
+
+.fa-comments-o:before {
+  content: "飪?; }
+
+.fa-flash:before,
+.fa-bolt:before {
+  content: "飪?; }
+
+.fa-sitemap:before {
+  content: "飪?; }
+
+.fa-umbrella:before {
+  content: "飪?; }
+
+.fa-paste:before,
+.fa-clipboard:before {
+  content: "飪?; }
+
+.fa-lightbulb-o:before {
+  content: "飪?; }
+
+.fa-exchange:before {
+  content: "飪?; }
+
+.fa-cloud-download:before {
+  content: "飪?; }
+
+.fa-cloud-upload:before {
+  content: "飪?; }
+
+.fa-user-md:before {
+  content: "飪?; }
+
+.fa-stethoscope:before {
+  content: "飪?; }
+
+.fa-suitcase:before {
+  content: "飪?; }
+
+.fa-bell-o:before {
+  content: "飩?; }
+
+.fa-coffee:before {
+  content: "飪?; }
+
+.fa-cutlery:before {
+  content: "飪?; }
+
+.fa-file-text-o:before {
+  content: "飪?; }
+
+.fa-building-o:before {
+  content: "飪?; }
+
+.fa-hospital-o:before {
+  content: "飪?; }
+
+.fa-ambulance:before {
+  content: "飪?; }
+
+.fa-medkit:before {
+  content: "飪?; }
+
+.fa-fighter-jet:before {
+  content: "飪?; }
+
+.fa-beer:before {
+  content: "飪?; }
+
+.fa-h-square:before {
+  content: "飪?; }
+
+.fa-plus-square:before {
+  content: "飪?; }
+
+.fa-angle-double-left:before {
+  content: "飫€"; }
+
+.fa-angle-double-right:before {
+  content: "飫?; }
+
+.fa-angle-double-up:before {
+  content: "飫?; }
+
+.fa-angle-double-down:before {
+  content: "飫?; }
+
+.fa-angle-left:before {
+  content: "飫?; }
+
+.fa-angle-right:before {
+  content: "飫?; }
+
+.fa-angle-up:before {
+  content: "飫?; }
+
+.fa-angle-down:before {
+  content: "飫?; }
+
+.fa-desktop:before {
+  content: "飫?; }
+
+.fa-laptop:before {
+  content: "飫?; }
+
+.fa-tablet:before {
+  content: "飫?; }
+
+.fa-mobile-phone:before,
+.fa-mobile:before {
+  content: "飫?; }
+
+.fa-circle-o:before {
+  content: "飫?; }
+
+.fa-quote-left:before {
+  content: "飫?; }
+
+.fa-quote-right:before {
+  content: "飫?; }
+
+.fa-spinner:before {
+  content: "飫?; }
+
+.fa-circle:before {
+  content: "飫?; }
+
+.fa-mail-reply:before,
+.fa-reply:before {
+  content: "飫?; }
+
+.fa-github-alt:before {
+  content: "飫?; }
+
+.fa-folder-o:before {
+  content: "飫?; }
+
+.fa-folder-open-o:before {
+  content: "飫?; }
+
+.fa-smile-o:before {
+  content: "飫?; }
+
+.fa-frown-o:before {
+  content: "飫?; }
+
+.fa-meh-o:before {
+  content: "飫?; }
+
+.fa-gamepad:before {
+  content: "飫?; }
+
+.fa-keyboard-o:before {
+  content: "飫?; }
+
+.fa-flag-o:before {
+  content: "飫?; }
+
+.fa-flag-checkered:before {
+  content: "飫?; }
+
+.fa-terminal:before {
+  content: "飫?; }
+
+.fa-code:before {
+  content: "飫?; }
+
+.fa-mail-reply-all:before,
+.fa-reply-all:before {
+  content: "飫?; }
+
+.fa-star-half-empty:before,
+.fa-star-half-full:before,
+.fa-star-half-o:before {
+  content: "飫?; }
+
+.fa-location-arrow:before {
+  content: "飫?; }
+
+.fa-crop:before {
+  content: "飫?; }
+
+.fa-code-fork:before {
+  content: "飫?; }
+
+.fa-unlink:before,
+.fa-chain-broken:before {
+  content: "飫?; }
+
+.fa-question:before {
+  content: "飫?; }
+
+.fa-info:before {
+  content: "飫?; }
+
+.fa-exclamation:before {
+  content: "飫?; }
+
+.fa-superscript:before {
+  content: "飫?; }
+
+.fa-subscript:before {
+  content: "飫?; }
+
+.fa-eraser:before {
+  content: "飫?; }
+
+.fa-puzzle-piece:before {
+  content: "飫?; }
+
+.fa-microphone:before {
+  content: "飫?; }
+
+.fa-microphone-slash:before {
+  content: "飫?; }
+
+.fa-shield:before {
+  content: "飫?; }
+
+.fa-calendar-o:before {
+  content: "飫?; }
+
+.fa-fire-extinguisher:before {
+  content: "飫?; }
+
+.fa-rocket:before {
+  content: "飫?; }
+
+.fa-maxcdn:before {
+  content: "飫?; }
+
+.fa-chevron-circle-left:before {
+  content: "飫?; }
+
+.fa-chevron-circle-right:before {
+  content: "飫?; }
+
+.fa-chevron-circle-up:before {
+  content: "飫?; }
+
+.fa-chevron-circle-down:before {
+  content: "飫?; }
+
+.fa-html5:before {
+  content: "飫?; }
+
+.fa-css3:before {
+  content: "飫?; }
+
+.fa-anchor:before {
+  content: "飫?; }
+
+.fa-unlock-alt:before {
+  content: "飫?; }
+
+.fa-bullseye:before {
+  content: "飬€"; }
+
+.fa-ellipsis-h:before {
+  content: "飬?; }
+
+.fa-ellipsis-v:before {
+  content: "飬?; }
+
+.fa-rss-square:before {
+  content: "飬?; }
+
+.fa-play-circle:before {
+  content: "飬?; }
+
+.fa-ticket:before {
+  content: "飬?; }
+
+.fa-minus-square:before {
+  content: "飬?; }
+
+.fa-minus-square-o:before {
+  content: "飬?; }
+
+.fa-level-up:before {
+  content: "飬?; }
+
+.fa-level-down:before {
+  content: "飬?; }
+
+.fa-check-square:before {
+  content: "飬?; }
+
+.fa-pencil-square:before {
+  content: "飬?; }
+
+.fa-external-link-square:before {
+  content: "飬?; }
+
+.fa-share-square:before {
+  content: "飬?; }
+
+.fa-compass:before {
+  content: "飬?; }
+
+.fa-toggle-down:before,
+.fa-caret-square-o-down:before {
+  content: "飬?; }
+
+.fa-toggle-up:before,
+.fa-caret-square-o-up:before {
+  content: "飬?; }
+
+.fa-toggle-right:before,
+.fa-caret-square-o-right:before {
+  content: "飬?; }
+
+.fa-euro:before,
+.fa-eur:before {
+  content: "飬?; }
+
+.fa-gbp:before {
+  content: "飬?; }
+
+.fa-dollar:before,
+.fa-usd:before {
+  content: "飬?; }
+
+.fa-rupee:before,
+.fa-inr:before {
+  content: "飬?; }
+
+.fa-cny:before,
+.fa-rmb:before,
+.fa-yen:before,
+.fa-jpy:before {
+  content: "飬?; }
+
+.fa-ruble:before,
+.fa-rouble:before,
+.fa-rub:before {
+  content: "飬?; }
+
+.fa-won:before,
+.fa-krw:before {
+  content: "飬?; }
+
+.fa-bitcoin:before,
+.fa-btc:before {
+  content: "飬?; }
+
+.fa-file:before {
+  content: "飬?; }
+
+.fa-file-text:before {
+  content: "飬?; }
+
+.fa-sort-alpha-asc:before {
+  content: "飬?; }
+
+.fa-sort-alpha-desc:before {
+  content: "飬?; }
+
+.fa-sort-amount-asc:before {
+  content: "飬?; }
+
+.fa-sort-amount-desc:before {
+  content: "飬?; }
+
+.fa-sort-numeric-asc:before {
+  content: "飬?; }
+
+.fa-sort-numeric-desc:before {
+  content: "飬?; }
+
+.fa-thumbs-up:before {
+  content: "飬?; }
+
+.fa-thumbs-down:before {
+  content: "飬?; }
+
+.fa-youtube-square:before {
+  content: "飬?; }
+
+.fa-youtube:before {
+  content: "飬?; }
+
+.fa-xing:before {
+  content: "飬?; }
+
+.fa-xing-square:before {
+  content: "飬?; }
+
+.fa-youtube-play:before {
+  content: "飬?; }
+
+.fa-dropbox:before {
+  content: "飬?; }
+
+.fa-stack-overflow:before {
+  content: "飬?; }
+
+.fa-instagram:before {
+  content: "飬?; }
+
+.fa-flickr:before {
+  content: "飬?; }
+
+.fa-adn:before {
+  content: "飬?; }
+
+.fa-bitbucket:before {
+  content: "飬?; }
+
+.fa-bitbucket-square:before {
+  content: "飬?; }
+
+.fa-tumblr:before {
+  content: "飬?; }
+
+.fa-tumblr-square:before {
+  content: "飬?; }
+
+.fa-long-arrow-down:before {
+  content: "飬?; }
+
+.fa-long-arrow-up:before {
+  content: "飬?; }
+
+.fa-long-arrow-left:before {
+  content: "飬?; }
+
+.fa-long-arrow-right:before {
+  content: "飬?; }
+
+.fa-apple:before {
+  content: "飬?; }
+
+.fa-windows:before {
+  content: "飬?; }
+
+.fa-android:before {
+  content: "飬?; }
+
+.fa-linux:before {
+  content: "飬?; }
+
+.fa-dribbble:before {
+  content: "飬?; }
+
+.fa-skype:before {
+  content: "飬?; }
+
+.fa-foursquare:before {
+  content: "飭€"; }
+
+.fa-trello:before {
+  content: "飭?; }
+
+.fa-female:before {
+  content: "飭?; }
+
+.fa-male:before {
+  content: "飭?; }
+
+.fa-gittip:before,
+.fa-gratipay:before {
+  content: "飭?; }
+
+.fa-sun-o:before {
+  content: "飭?; }
+
+.fa-moon-o:before {
+  content: "飭?; }
+
+.fa-archive:before {
+  content: "飭?; }
+
+.fa-bug:before {
+  content: "飭?; }
+
+.fa-vk:before {
+  content: "飭?; }
+
+.fa-weibo:before {
+  content: "飭?; }
+
+.fa-renren:before {
+  content: "飭?; }
+
+.fa-pagelines:before {
+  content: "飭?; }
+
+.fa-stack-exchange:before {
+  content: "飭?; }
+
+.fa-arrow-circle-o-right:before {
+  content: "飭?; }
+
+.fa-arrow-circle-o-left:before {
+  content: "飭?; }
+
+.fa-toggle-left:before,
+.fa-caret-square-o-left:before {
+  content: "飭?; }
+
+.fa-dot-circle-o:before {
+  content: "飭?; }
+
+.fa-wheelchair:before {
+  content: "飭?; }
+
+.fa-vimeo-square:before {
+  content: "飭?; }
+
+.fa-turkish-lira:before,
+.fa-try:before {
+  content: "飭?; }
+
+.fa-plus-square-o:before {
+  content: "飭?; }
+
+.fa-space-shuttle:before {
+  content: "飭?; }
+
+.fa-slack:before {
+  content: "飭?; }
+
+.fa-envelope-square:before {
+  content: "飭?; }
+
+.fa-wordpress:before {
+  content: "飭?; }
+
+.fa-openid:before {
+  content: "飭?; }
+
+.fa-institution:before,
+.fa-bank:before,
+.fa-university:before {
+  content: "飭?; }
+
+.fa-mortar-board:before,
+.fa-graduation-cap:before {
+  content: "飭?; }
+
+.fa-yahoo:before {
+  content: "飭?; }
+
+.fa-google:before {
+  content: "飭?; }
+
+.fa-reddit:before {
+  content: "飭?; }
+
+.fa-reddit-square:before {
+  content: "飭?; }
+
+.fa-stumbleupon-circle:before {
+  content: "飭?; }
+
+.fa-stumbleupon:before {
+  content: "飭?; }
+
+.fa-delicious:before {
+  content: "飭?; }
+
+.fa-digg:before {
+  content: "飭?; }
+
+.fa-pied-piper-pp:before {
+  content: "飭?; }
+
+.fa-pied-piper-alt:before {
+  content: "飭?; }
+
+.fa-drupal:before {
+  content: "飭?; }
+
+.fa-joomla:before {
+  content: "飭?; }
+
+.fa-language:before {
+  content: "飭?; }
+
+.fa-fax:before {
+  content: "飭?; }
+
+.fa-building:before {
+  content: "飭?; }
+
+.fa-child:before {
+  content: "飭?; }
+
+.fa-paw:before {
+  content: "飭?; }
+
+.fa-spoon:before {
+  content: "飭?; }
+
+.fa-cube:before {
+  content: "飭?; }
+
+.fa-cubes:before {
+  content: "飭?; }
+
+.fa-behance:before {
+  content: "飭?; }
+
+.fa-behance-square:before {
+  content: "飭?; }
+
+.fa-steam:before {
+  content: "飭?; }
+
+.fa-steam-square:before {
+  content: "飭?; }
+
+.fa-recycle:before {
+  content: "飭?; }
+
+.fa-automobile:before,
+.fa-car:before {
+  content: "飭?; }
+
+.fa-cab:before,
+.fa-taxi:before {
+  content: "飭?; }
+
+.fa-tree:before {
+  content: "飭?; }
+
+.fa-spotify:before {
+  content: "飭?; }
+
+.fa-deviantart:before {
+  content: "飭?; }
+
+.fa-soundcloud:before {
+  content: "飭?; }
+
+.fa-database:before {
+  content: "飮€"; }
+
+.fa-file-pdf-o:before {
+  content: "飮?; }
+
+.fa-file-word-o:before {
+  content: "飮?; }
+
+.fa-file-excel-o:before {
+  content: "飮?; }
+
+.fa-file-powerpoint-o:before {
+  content: "飮?; }
+
+.fa-file-photo-o:before,
+.fa-file-picture-o:before,
+.fa-file-image-o:before {
+  content: "飮?; }
+
+.fa-file-zip-o:before,
+.fa-file-archive-o:before {
+  content: "飮?; }
+
+.fa-file-sound-o:before,
+.fa-file-audio-o:before {
+  content: "飮?; }
+
+.fa-file-movie-o:before,
+.fa-file-video-o:before {
+  content: "飮?; }
+
+.fa-file-code-o:before {
+  content: "飮?; }
+
+.fa-vine:before {
+  content: "飮?; }
+
+.fa-codepen:before {
+  content: "飮?; }
+
+.fa-jsfiddle:before {
+  content: "飮?; }
+
+.fa-life-bouy:before,
+.fa-life-buoy:before,
+.fa-life-saver:before,
+.fa-support:before,
+.fa-life-ring:before {
+  content: "飮?; }
+
+.fa-circle-o-notch:before {
+  content: "飮?; }
+
+.fa-ra:before,
+.fa-resistance:before,
+.fa-rebel:before {
+  content: "飮?; }
+
+.fa-ge:before,
+.fa-empire:before {
+  content: "飮?; }
+
+.fa-git-square:before {
+  content: "飮?; }
+
+.fa-git:before {
+  content: "飮?; }
+
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
+.fa-hacker-news:before {
+  content: "飮?; }
+
+.fa-tencent-weibo:before {
+  content: "飮?; }
+
+.fa-qq:before {
+  content: "飮?; }
+
+.fa-wechat:before,
+.fa-weixin:before {
+  content: "飮?; }
+
+.fa-send:before,
+.fa-paper-plane:before {
+  content: "飮?; }
+
+.fa-send-o:before,
+.fa-paper-plane-o:before {
+  content: "飮?; }
+
+.fa-history:before {
+  content: "飮?; }
+
+.fa-circle-thin:before {
+  content: "飮?; }
+
+.fa-header:before {
+  content: "飮?; }
+
+.fa-paragraph:before {
+  content: "飮?; }
+
+.fa-sliders:before {
+  content: "飮?; }
+
+.fa-share-alt:before {
+  content: "飮?; }
+
+.fa-share-alt-square:before {
+  content: "飮?; }
+
+.fa-bomb:before {
+  content: "飮?; }
+
+.fa-soccer-ball-o:before,
+.fa-futbol-o:before {
+  content: "飮?; }
+
+.fa-tty:before {
+  content: "飮?; }
+
+.fa-binoculars:before {
+  content: "飮?; }
+
+.fa-plug:before {
+  content: "飮?; }
+
+.fa-slideshare:before {
+  content: "飮?; }
+
+.fa-twitch:before {
+  content: "飮?; }
+
+.fa-yelp:before {
+  content: "飮?; }
+
+.fa-newspaper-o:before {
+  content: "飮?; }
+
+.fa-wifi:before {
+  content: "飮?; }
+
+.fa-calculator:before {
+  content: "飮?; }
+
+.fa-paypal:before {
+  content: "飮?; }
+
+.fa-google-wallet:before {
+  content: "飮?; }
+
+.fa-cc-visa:before {
+  content: "飮?; }
+
+.fa-cc-mastercard:before {
+  content: "飮?; }
+
+.fa-cc-discover:before {
+  content: "飮?; }
+
+.fa-cc-amex:before {
+  content: "飮?; }
+
+.fa-cc-paypal:before {
+  content: "飮?; }
+
+.fa-cc-stripe:before {
+  content: "飮?; }
+
+.fa-bell-slash:before {
+  content: "飮?; }
+
+.fa-bell-slash-o:before {
+  content: "飮?; }
+
+.fa-trash:before {
+  content: "飮?; }
+
+.fa-copyright:before {
+  content: "飮?; }
+
+.fa-at:before {
+  content: "飮?; }
+
+.fa-eyedropper:before {
+  content: "飮?; }
+
+.fa-paint-brush:before {
+  content: "飮?; }
+
+.fa-birthday-cake:before {
+  content: "飮?; }
+
+.fa-area-chart:before {
+  content: "飮?; }
+
+.fa-pie-chart:before {
+  content: "飯€"; }
+
+.fa-line-chart:before {
+  content: "飯?; }
+
+.fa-lastfm:before {
+  content: "飯?; }
+
+.fa-lastfm-square:before {
+  content: "飯?; }
+
+.fa-toggle-off:before {
+  content: "飯?; }
+
+.fa-toggle-on:before {
+  content: "飯?; }
+
+.fa-bicycle:before {
+  content: "飯?; }
+
+.fa-bus:before {
+  content: "飯?; }
+
+.fa-ioxhost:before {
+  content: "飯?; }
+
+.fa-angellist:before {
+  content: "飯?; }
+
+.fa-cc:before {
+  content: "飯?; }
+
+.fa-shekel:before,
+.fa-sheqel:before,
+.fa-ils:before {
+  content: "飯?; }
+
+.fa-meanpath:before {
+  content: "飯?; }
+
+.fa-buysellads:before {
+  content: "飯?; }
+
+.fa-connectdevelop:before {
+  content: "飯?; }
+
+.fa-dashcube:before {
+  content: "飯?; }
+
+.fa-forumbee:before {
+  content: "飯?; }
+
+.fa-leanpub:before {
+  content: "飯?; }
+
+.fa-sellsy:before {
+  content: "飯?; }
+
+.fa-shirtsinbulk:before {
+  content: "飯?; }
+
+.fa-simplybuilt:before {
+  content: "飯?; }
+
+.fa-skyatlas:before {
+  content: "飯?; }
+
+.fa-cart-plus:before {
+  content: "飯?; }
+
+.fa-cart-arrow-down:before {
+  content: "飯?; }
+
+.fa-diamond:before {
+  content: "飯?; }
+
+.fa-ship:before {
+  content: "飯?; }
+
+.fa-user-secret:before {
+  content: "飯?; }
+
+.fa-motorcycle:before {
+  content: "飯?; }
+
+.fa-street-view:before {
+  content: "飯?; }
+
+.fa-heartbeat:before {
+  content: "飯?; }
+
+.fa-venus:before {
+  content: "飯?; }
+
+.fa-mars:before {
+  content: "飯?; }
+
+.fa-mercury:before {
+  content: "飯?; }
+
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "飯?; }
+
+.fa-transgender-alt:before {
+  content: "飯?; }
+
+.fa-venus-double:before {
+  content: "飯?; }
+
+.fa-mars-double:before {
+  content: "飯?; }
+
+.fa-venus-mars:before {
+  content: "飯?; }
+
+.fa-mars-stroke:before {
+  content: "飯?; }
+
+.fa-mars-stroke-v:before {
+  content: "飯?; }
+
+.fa-mars-stroke-h:before {
+  content: "飯?; }
+
+.fa-neuter:before {
+  content: "飯?; }
+
+.fa-genderless:before {
+  content: "飯?; }
+
+.fa-facebook-official:before {
+  content: "飯?; }
+
+.fa-pinterest-p:before {
+  content: "飯?; }
+
+.fa-whatsapp:before {
+  content: "飯?; }
+
+.fa-server:before {
+  content: "飯?; }
+
+.fa-user-plus:before {
+  content: "飯?; }
+
+.fa-user-times:before {
+  content: "飯?; }
+
+.fa-hotel:before,
+.fa-bed:before {
+  content: "飯?; }
+
+.fa-viacoin:before {
+  content: "飯?; }
+
+.fa-train:before {
+  content: "飯?; }
+
+.fa-subway:before {
+  content: "飯?; }
+
+.fa-medium:before {
+  content: "飯?; }
+
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "飯?; }
+
+.fa-optin-monster:before {
+  content: "飯?; }
+
+.fa-opencart:before {
+  content: "飯?; }
+
+.fa-expeditedssl:before {
+  content: "飯?; }
+
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "飰€"; }
+
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "飰?; }
+
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "飰?; }
+
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "飰?; }
+
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "飰?; }
+
+.fa-mouse-pointer:before {
+  content: "飰?; }
+
+.fa-i-cursor:before {
+  content: "飰?; }
+
+.fa-object-group:before {
+  content: "飰?; }
+
+.fa-object-ungroup:before {
+  content: "飰?; }
+
+.fa-sticky-note:before {
+  content: "飰?; }
+
+.fa-sticky-note-o:before {
+  content: "飰?; }
+
+.fa-cc-jcb:before {
+  content: "飰?; }
+
+.fa-cc-diners-club:before {
+  content: "飰?; }
+
+.fa-clone:before {
+  content: "飰?; }
+
+.fa-balance-scale:before {
+  content: "飰?; }
+
+.fa-hourglass-o:before {
+  content: "飰?; }
+
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "飰?; }
+
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "飰?; }
+
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "飰?; }
+
+.fa-hourglass:before {
+  content: "飰?; }
+
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "飰?; }
+
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "飰?; }
+
+.fa-hand-scissors-o:before {
+  content: "飰?; }
+
+.fa-hand-lizard-o:before {
+  content: "飰?; }
+
+.fa-hand-spock-o:before {
+  content: "飰?; }
+
+.fa-hand-pointer-o:before {
+  content: "飰?; }
+
+.fa-hand-peace-o:before {
+  content: "飰?; }
+
+.fa-trademark:before {
+  content: "飰?; }
+
+.fa-registered:before {
+  content: "飰?; }
+
+.fa-creative-commons:before {
+  content: "飰?; }
+
+.fa-gg:before {
+  content: "飰?; }
+
+.fa-gg-circle:before {
+  content: "飰?; }
+
+.fa-tripadvisor:before {
+  content: "飰?; }
+
+.fa-odnoklassniki:before {
+  content: "飰?; }
+
+.fa-odnoklassniki-square:before {
+  content: "飰?; }
+
+.fa-get-pocket:before {
+  content: "飰?; }
+
+.fa-wikipedia-w:before {
+  content: "飰?; }
+
+.fa-safari:before {
+  content: "飰?; }
+
+.fa-chrome:before {
+  content: "飰?; }
+
+.fa-firefox:before {
+  content: "飰?; }
+
+.fa-opera:before {
+  content: "飰?; }
+
+.fa-internet-explorer:before {
+  content: "飰?; }
+
+.fa-tv:before,
+.fa-television:before {
+  content: "飰?; }
+
+.fa-contao:before {
+  content: "飰?; }
+
+.fa-500px:before {
+  content: "飰?; }
+
+.fa-amazon:before {
+  content: "飰?; }
+
+.fa-calendar-plus-o:before {
+  content: "飰?; }
+
+.fa-calendar-minus-o:before {
+  content: "飰?; }
+
+.fa-calendar-times-o:before {
+  content: "飰?; }
+
+.fa-calendar-check-o:before {
+  content: "飰?; }
+
+.fa-industry:before {
+  content: "飰?; }
+
+.fa-map-pin:before {
+  content: "飰?; }
+
+.fa-map-signs:before {
+  content: "飰?; }
+
+.fa-map-o:before {
+  content: "飰?; }
+
+.fa-map:before {
+  content: "飰?; }
+
+.fa-commenting:before {
+  content: "飰?; }
+
+.fa-commenting-o:before {
+  content: "飰?; }
+
+.fa-houzz:before {
+  content: "飰?; }
+
+.fa-vimeo:before {
+  content: "飰?; }
+
+.fa-black-tie:before {
+  content: "飰?; }
+
+.fa-fonticons:before {
+  content: "飱€"; }
+
+.fa-reddit-alien:before {
+  content: "飱?; }
+
+.fa-edge:before {
+  content: "飱?; }
+
+.fa-credit-card-alt:before {
+  content: "飱?; }
+
+.fa-codiepie:before {
+  content: "飱?; }
+
+.fa-modx:before {
+  content: "飱?; }
+
+.fa-fort-awesome:before {
+  content: "飱?; }
+
+.fa-usb:before {
+  content: "飱?; }
+
+.fa-product-hunt:before {
+  content: "飱?; }
+
+.fa-mixcloud:before {
+  content: "飱?; }
+
+.fa-scribd:before {
+  content: "飱?; }
+
+.fa-pause-circle:before {
+  content: "飱?; }
+
+.fa-pause-circle-o:before {
+  content: "飱?; }
+
+.fa-stop-circle:before {
+  content: "飱?; }
+
+.fa-stop-circle-o:before {
+  content: "飱?; }
+
+.fa-shopping-bag:before {
+  content: "飱?; }
+
+.fa-shopping-basket:before {
+  content: "飱?; }
+
+.fa-hashtag:before {
+  content: "飱?; }
+
+.fa-bluetooth:before {
+  content: "飱?; }
+
+.fa-bluetooth-b:before {
+  content: "飱?; }
+
+.fa-percent:before {
+  content: "飱?; }
+
+.fa-gitlab:before {
+  content: "飱?; }
+
+.fa-wpbeginner:before {
+  content: "飱?; }
+
+.fa-wpforms:before {
+  content: "飱?; }
+
+.fa-envira:before {
+  content: "飱?; }
+
+.fa-universal-access:before {
+  content: "飱?; }
+
+.fa-wheelchair-alt:before {
+  content: "飱?; }
+
+.fa-question-circle-o:before {
+  content: "飱?; }
+
+.fa-blind:before {
+  content: "飱?; }
+
+.fa-audio-description:before {
+  content: "飱?; }
+
+.fa-volume-control-phone:before {
+  content: "飱?; }
+
+.fa-braille:before {
+  content: "飱?; }
+
+.fa-assistive-listening-systems:before {
+  content: "飱?; }
+
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "飱?; }
+
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "飱?; }
+
+.fa-glide:before {
+  content: "飱?; }
+
+.fa-glide-g:before {
+  content: "飱?; }
+
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "飱?; }
+
+.fa-low-vision:before {
+  content: "飱?; }
+
+.fa-viadeo:before {
+  content: "飱?; }
+
+.fa-viadeo-square:before {
+  content: "飱?; }
+
+.fa-snapchat:before {
+  content: "飱?; }
+
+.fa-snapchat-ghost:before {
+  content: "飱?; }
+
+.fa-snapchat-square:before {
+  content: "飱?; }
+
+.fa-pied-piper:before {
+  content: "飱?; }
+
+.fa-first-order:before {
+  content: "飱?; }
+
+.fa-yoast:before {
+  content: "飱?; }
+
+.fa-themeisle:before {
+  content: "飱?; }
+
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "飱?; }
+
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "飱?; }
+
+.fa-handshake-o:before {
+  content: "飱?; }
+
+.fa-envelope-open:before {
+  content: "飱?; }
+
+.fa-envelope-open-o:before {
+  content: "飱?; }
+
+.fa-linode:before {
+  content: "飱?; }
+
+.fa-address-book:before {
+  content: "飱?; }
+
+.fa-address-book-o:before {
+  content: "飱?; }
+
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "飱?; }
+
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "飱?; }
+
+.fa-user-circle:before {
+  content: "飱?; }
+
+.fa-user-circle-o:before {
+  content: "飱?; }
+
+.fa-user-o:before {
+  content: "飲€"; }
+
+.fa-id-badge:before {
+  content: "飲?; }
+
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "飲?; }
+
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "飲?; }
+
+.fa-quora:before {
+  content: "飲?; }
+
+.fa-free-code-camp:before {
+  content: "飲?; }
+
+.fa-telegram:before {
+  content: "飲?; }
+
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "飲?; }
+
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "飲?; }
+
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "飲?; }
+
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "飲?; }
+
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "飲?; }
+
+.fa-shower:before {
+  content: "飲?; }
+
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "飲?; }
+
+.fa-podcast:before {
+  content: "飲?; }
+
+.fa-window-maximize:before {
+  content: "飲?; }
+
+.fa-window-minimize:before {
+  content: "飲?; }
+
+.fa-window-restore:before {
+  content: "飲?; }
+
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "飲?; }
+
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "飲?; }
+
+.fa-bandcamp:before {
+  content: "飲?; }
+
+.fa-grav:before {
+  content: "飲?; }
+
+.fa-etsy:before {
+  content: "飲?; }
+
+.fa-imdb:before {
+  content: "飲?; }
+
+.fa-ravelry:before {
+  content: "飲?; }
+
+.fa-eercast:before {
+  content: "飲?; }
+
+.fa-microchip:before {
+  content: "飲?; }
+
+.fa-snowflake-o:before {
+  content: "飲?; }
+
+.fa-superpowers:before {
+  content: "飲?; }
+
+.fa-wpexplorer:before {
+  content: "飲?; }
+
+.fa-meetup:before {
+  content: "飲?; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto; }
