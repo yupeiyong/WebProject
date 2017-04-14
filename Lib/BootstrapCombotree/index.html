@@ -1,97 +1,97 @@
-<html>
-  <head>
+﻿<html>
+<head>
     <title>$Title$</title>
     <meta charset="UTF-8">
     <script src="js/jquery-3.1.0.js" type="application/javascript"></script>
     <script type="application/javascript" src="js/bootstrap.js"></script>
     <script type="application/javascript" src="js/bootstrap-treeview.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/bootstrap-treeview.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-treeview.css" rel="stylesheet" />
     <script type="application/javascript">
-      var defaultData = [
-        {
-          text: 'Parent 1',
-          id : 'p1',
-          nodes: [
-            {
-              text: 'Child 1',
-              id : 'C1',
-              nodes: [
-                {
-                  text: 'Grandchild 1',
-                  id : 'g1',
-                },
-                {
-                  text: 'Grandchild 2',
-                  id : 'g2',
-                }
-              ]
-            },
-            {
-              text: 'Child 2',
-              id : 'C2',
-            }
-          ]
-        },
-        {
-          text: 'Parent 2',
-          id : 'p2',
-          nodes: [
-            {
-              text: 'Child 3',
-              id : 'C3',
-              nodes: [
-                {
-                  text: 'Grandchild 3',
-                  id : 'g3',
-                },
-                {
-                  text: 'Grandchild 4',
-                  id : 'g4',
-                }
-              ]
-            },
-            {
-              text: 'Child 4',
-              id : 'C4',
-            }
-          ]
-        },
-        {
-          text: 'Parent 3',
-          id : 'p3',
-        },
-        {
-          text: 'Parent 4',
-          id : 'p4',
-        },
-        {
-          text: 'Parent 5',
-          id : 'p5',
-        }
-      ];
-      $(function () {
-        // var $checkableTree = $('#combotree').treeview({
-        //     data: defaultData,
-        //     showIcon: false,
-        //     showCheckbox: true,
-        // })
-        $("#combotree").combotree({
-          defaultLable : '请选择列表',//默认按钮上的文本
-          data: defaultData,//data应符合实例的data格式
-          showIcon: true,//显示图标
-          showCheckbox: true,//显示复选框
-          width : 400,//下拉列表宽度
-          name : 'list',//combotree值得name，可以用在表单提交
-          maxItemsDisplay : 3,//按钮上最多显示多少项，如果超出这个数目，将会以‘XX项已被选中代替’
-          onCheck : function (node) {//树形菜单被选中是 触发事件
+        var defaultData = [
+          {
+            text: 'Parent 1',
+            id : 'p1',
+            nodes: [
+              {
+                text: 'Child 1',
+                id : 'C1',
+                nodes: [
+                  {
+                    text: 'Grandchild 1',
+                    id : 'g1',
+                  },
+                  {
+                    text: 'Grandchild 2',
+                    id : 'g2',
+                  }
+                ]
+              },
+              {
+                text: 'Child 2',
+                id : 'C2',
+              }
+            ]
           },
+          {
+            text: 'Parent 2',
+            id : 'p2',
+            nodes: [
+              {
+                text: 'Child 3',
+                id : 'C3',
+                nodes: [
+                  {
+                    text: 'Grandchild 3',
+                    id : 'g3',
+                  },
+                  {
+                    text: 'Grandchild 4',
+                    id : 'g4',
+                  }
+                ]
+              },
+              {
+                text: 'Child 4',
+                id : 'C4',
+              }
+            ]
+          },
+          {
+            text: 'Parent 3',
+            id : 'p3',
+          },
+          {
+            text: 'Parent 4',
+            id : 'p4',
+          },
+          {
+            text: 'Parent 5',
+            id : 'p5',
+          }
+        ];
+        $(function () {
+          // var $checkableTree = $('#combotree').treeview({
+          //     data: defaultData,
+          //     showIcon: false,
+          //     showCheckbox: true,
+          // })
+          $("#combotree").combotree({
+            defaultLable : '请选择列表',//默认按钮上的文本
+            data: defaultData,//data应符合实例的data格式
+            showIcon: true,//显示图标
+            showCheckbox: true,//显示复选框
+            width : 400,//下拉列表宽度
+            name : 'list',//combotree值得name，可以用在表单提交
+            maxItemsDisplay : 3,//按钮上最多显示多少项，如果超出这个数目，将会以‘XX项已被选中代替’
+            onCheck : function (node) {//树形菜单被选中是 触发事件
+            },
+          })
         })
-      })
     </script>
     <script type="application/javascript" src="js/bootstrap-combotree.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <div id="combotree"></div>
-  </body>
+</body>
 </html>
