@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<script>
+    function fruits() {
+        this.hello = function () {
+            alert(this.message);
+        };
+        this.message = '12345789';
+    }
+    fruits.func1=function() {
+        alert('tttttttttttttt');
+    }
+    fruits.prototype = {
+        color: "red",
+        say: function () {
+            alert("My color is " + this.color);
+        }
+    }
+
+    var apple = new fruits();
+    apple.say();    //My color is red
+    apple.hello();
+    apple.func1();
+    banana = {
+        color: "yellow"
+    }
+    //apple.say.call(banana);     //My color is yellow
+    //apple.say.apply(banana);    //My color is yellow
+
+    var o = {};
+    fruits.call(o);
+    console.info(o);
+    console.info(apple);
+    //总结：
+    /*
+    call apply 传递参数为this对象，即修改this的值
+    
+    */
+</script>
+</body>
+</html>
