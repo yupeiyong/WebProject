@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        function BinaryTree() {
+            var node = function (key) {
+                this.data = key;
+                this.left = null;
+                this.right = null;
+            }
+            var root = null;
+            function insertNode(n_node, key) {
+                if (key < n_node.data) {
+                    if (n_node.left == null) {
+                        n_node.left = new node(key);
+                    } else {
+                        insertNode(n_node.left, key);
+                    }
+                } else {
+                    if (n_node.right == null) {
+                        n_node.right = new node(key);
+                    } else {
+                        insertNode(n_node.right, key);
+                    }
+                }
+            }
+            this.insert = function (key) {
+                if (root == null) {
+                    root = new node(key);
+                } else {
+                    insertNode(root, key);
+                }
+            }
+            var inOrderTraverseNodes = function (node, callback) {
+                if (node != null) {
+                    inOrderTraverseNodes(node.left, callback);
+                    callback(node);
+                    inOrderTraverseNodes(node.right, callback);
+                }
+            }
+            this.inOrderTraverse = function (callback) {
+                inOrderTraverseNodes(root, callback);
+            }
+            var preOrderTraverseNodes = function (node, callback) {
+                if (node != null) {
+                    callback(node);
+                    preOrderTraverseNodes(node.left, callback);
+                    preOrderTraverseNodes(node.right, callback);
+                }
+            }
+            this.preOrderTraverse = function (callback) {
+                preOrderTraverseNodes(root, callback);
+            }
+            var postOrderTraverseNodes = function (node, callback) {
+                if (node != null) {
+                    postOrderTraverseNodes(node.left, callback);
+                    postOrderTraverseNodes(node.right, callback);
+                    callback(node);
+                }
+            }
+            this.postOrderTraverse = function (callback) {
+                postOrderTraverseNodes(root, callback);
+            }
+            var getMinNode = function (n_node, callback) {
+                if (n_node.left != null) {
+                    getMinNode(n_node.left, callback);
+                } else {
+                    //找到最小结点
+                    callback(n_node);
+                }
+            }
+            this.getMin = function (callback) {
+                getMinNode(root, callback);
+            }
+
+            var getMaxNode = function (n_node, callback) {
+                if (n_node.right != null) {
+                    getMaxNode(n_node.right, callback);
+                } else {
+                    //找到最大结点
+                    callback(n_node);
+                }
+            }
+            this.getMax = function (callback) {
+                getMaxNode(root, callback);
+            }
+            var findNode = function (n_node, key) {
+                if (n_node != null) {
+                    if (n_node.data == key) {
+                        return true;
+                    } else {
+                        if (key<n_node.data) {
+                            return findNode(n_node.left, key);
+                        } else {
+                            return findNode(n_node.right, key);
+                        }
+                    }
+                }
+            }
+            this.find = function (key) {
+                return findNode(root, key);
+            }
+        }
+        var array = [8, 0, 2, 4, 5, 7];
+        var tree = new BinaryTree();
+        array.forEach(function (item) {
+            tree.insert(item);
+        })
+        console.info(tree);
+        document.writeln('-----------------------------中序遍历-------------------------------<br />');
+        tree.inOrderTraverse(function (n) {
+            document.write(n.data + ',');
+        });
+        document.writeln('<br />-----------------------------前序遍历-------------------------------<br />');
+        tree.preOrderTraverse(function (n) {
+            document.write(n.data + ',');
+        });
+        document.writeln('<br />-----------------------------后序遍历-------------------------------<br />');
+        tree.postOrderTraverse(function (n) {
+            document.write(n.data + ',');
+        });
+        document.writeln('<br />-----------------------------查找最小值-------------------------------<br />');
+        tree.getMin(function (n) {
+            document.write('最小值:' + n.data);
+        });
+        document.writeln('<br />-----------------------------查找最大值-------------------------------<br />');
+        tree.getMax(function (n) {
+            document.write('最大值:' + n.data);
+        });
+
+        document.writeln('<br />-----------------------------查找指定值-------------------------------<br />');
+        var result=tree.find(5);
+        if (result) {
+            document.write('找到指定值:5');
+        } else {
+            document.write('未找到指定值:5');
+        }
+        document.writeln('<br />');
+        result = tree.find(12);
+        if (result) {
+            document.write('找到指定值:12');
+        } else {
+            document.write('未找到指定值:12');
+        }
+    </script>
+</body>
+</html>
