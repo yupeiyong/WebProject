@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Lib/JQuery/2.2.4/jquery.min.js"></script>
+    <script src="Lib/BootStrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Lib/icheck-1.x/icheck.min.js"></script>
+    <link href="Lib/icheck-1.x/skins/all.css" rel="stylesheet" />
+</head>
+<body>
+    <input id="one" type="checkbox">
+    <input type="checkbox" checked>
+    <input id="three" type="radio" name="iCheck">
+    <input type="radio" name="iCheck" checked>
+    <input type="button" id="btn" value="Ok" />
+    <script>
+        $(document).ready(function () { 
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_minimal',
+                radioClass: 'iradio_minimal',
+                increaseArea: '20%' // optional
+            });
+            //手动选中
+            $('#one').iCheck('check');
+        });
+        $('#btn').click(function () {
+            //手动取消选中
+            $('#one').iCheck('uncheck');
+        });
+    </script>
+</body>
+</html>

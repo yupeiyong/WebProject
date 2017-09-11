@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>闭包</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<script>
+    function Fun() {
+        var a = new Array();
+        for (var i = 0; i < 10; i++) {
+            a.push(function () {
+                console.log(i);
+            });
+        }
+        return a;
+    }
+    var result = Fun();
+    for (var i = 0; i < 10; i++) {
+        result[i]();
+    }
+
+    function Fun2() {
+        var a = new Array();
+
+        function b(x) {
+            a.push(function () {
+                console.log(x);
+            });
+        }
+
+        for (var i = 0; i < 10; i++) {
+            b(i);
+        }
+        return a;
+    }
+
+    result = Fun2();
+    for (var i = 0; i < 10; i++) {
+        result[i]();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        Array.prototype.toString = function () {
+            for (var i = 0, len = this.length; i < len; i++) {
+                document.write(this[i] + ',');
+            }
+            document.write('<br />');
+        }
+        var array = [-25, 3, 0, 12, 55, 99, 1, 3];
+        function sort(arr) {
+            var len = arr.length;
+            for (var i = 0; i < len - 1; i++) {
+                for (var j = len - 1; j > i; j--) {
+                    if (arr[j] < arr[j - 1]) {
+                        var tmp = arr[j];
+                        arr[j] = arr[j - 1];
+                        arr[j - 1] = tmp;
+                    }
+                }
+            }
+        }
+        var arr1 = array.slice(0);
+        sort(arr1, 0, arr1.length - 1);
+        document.write('快速排序1：');
+        arr1.toString();
+
+    </script>
+
+</body>
+</html>
