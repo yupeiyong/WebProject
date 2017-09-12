@@ -36,81 +36,266 @@
                     insertNode(root, key);
                 }
             }
-            var inOrderTraverseNodes = function (node, callback) {
-                if (node != null) {
-                    inOrderTraverseNodes(node.left, callback);
-                    callback(node);
-                    inOrderTraverseNodes(node.right, callback);
+            var inOrderTraverseNodes = function (nNode, callback) {
+                if (nNode != null) {
+                    inOrderTraverseNodes(nNode.left, callback);
+                    callback(nNode);
+                    inOrderTraverseNodes(nNode.right, callback);
                 }
             }
             this.inOrderTraverse = function (callback) {
                 inOrderTraverseNodes(root, callback);
             }
-            var preOrderTraverseNodes = function (node, callback) {
-                if (node != null) {
-                    callback(node);
-                    preOrderTraverseNodes(node.left, callback);
-                    preOrderTraverseNodes(node.right, callback);
+            var preOrderTraverseNodes = function (nNode, callback) {
+                if (nNode != null) {
+                    callback(nNode);
+                    preOrderTraverseNodes(nNode.left, callback);
+                    preOrderTraverseNodes(nNode.right, callback);
                 }
             }
             this.preOrderTraverse = function (callback) {
                 preOrderTraverseNodes(root, callback);
             }
-            var postOrderTraverseNodes = function (node, callback) {
-                if (node != null) {
-                    postOrderTraverseNodes(node.left, callback);
-                    postOrderTraverseNodes(node.right, callback);
-                    callback(node);
+            var postOrderTraverseNodes = function (nNode, callback) {
+                if (nNode != null) {
+                    postOrderTraverseNodes(nNode.left, callback);
+                    postOrderTraverseNodes(nNode.right, callback);
+                    callback(nNode);
                 }
             }
             this.postOrderTraverse = function (callback) {
                 postOrderTraverseNodes(root, callback);
             }
-            var getMinNode = function (n_node, callback) {
-                if (n_node.left != null) {
-                    getMinNode(n_node.left, callback);
+            var getMinNode = function (nNode, callback) {
+                if (nNode.left != null) {
+                    getMinNode(nNode.left, callback);
                 } else {
                     //找到最小结点
-                    callback(n_node);
+                    callback(nNode);
                 }
             }
             this.getMin = function (callback) {
                 getMinNode(root, callback);
             }
 
-            var getMaxNode = function (n_node, callback) {
-                if (n_node.right != null) {
-                    getMaxNode(n_node.right, callback);
+            var getMaxNode = function (nNode, callback) {
+                if (nNode.right != null) {
+                    getMaxNode(nNode.right, callback);
                 } else {
                     //找到最大结点
-                    callback(n_node);
+                    callback(nNode);
                 }
             }
             this.getMax = function (callback) {
                 getMaxNode(root, callback);
             }
-            var findNode = function (n_node, key) {
-                if (n_node != null) {
-                    if (n_node.data == key) {
+            var findNode = function (nNode, key) {
+                if (nNode != null) {
+                    if (nNode.data === key) {
                         return true;
                     } else {
-                        if (key<n_node.data) {
-                            return findNode(n_node.left, key);
+                        if (key < nNode.data) {
+                            return findNode(nNode.left, key);
                         } else {
-                            return findNode(n_node.right, key);
+                            return findNode(nNode.right, key);
                         }
                     }
                 }
+                return false;
             }
             this.find = function (key) {
                 return findNode(root, key);
             }
+            //var removeNode=function(nNode, key) {
+            //    if (nNode === null) {
+            //        return null;
+            //    }
+            //    if (key < nNode.data) {
+            //        nNode.left = removeNode(nNode.left, key);
+            //        return nNode;
+            //    }else if (key > nNode.data) {
+            //        nNode.right = removeNode(nNode.right, key);
+            //        return nNode;
+            //    } else {
+            //        return nNode;
+            //    }
+            //}
+            //this.remove = function (key) {
+            //    // 判断根节点是否存在
+            //    if (!root) {
+            //        return;
+            //    }
+            //    // 目标节点的父节点
+            //    var parent = null;
+            //    // 目标节点
+            //    var currentNode =root;
+            //    // 目标节点位于父节点的位置
+            //    var place = null;
+            //    while (true) {
+            //        if (!currentNode) {
+            //            console.log("该节点不存在");
+            //            return;
+            //        }
+            //        if (key < currentNode.data) {
+            //            parent = currentNode;
+            //            currentNode = currentNode.left;
+            //            place = "left";
+            //        } else if (key > currentNode.data) {
+            //            parent = currentNode;
+            //            currentNode = currentNode.right;
+            //            place = "right";
+            //        } else {
+            //            // 找到对应节点跳出循环
+            //            break;
+            //        }
+            //    }
+
+            //    if (!currentNode.left) {
+            //        // 删除的节点没有左孩子的情况
+            //        parent[place] = currentNode.right || null;
+            //    } else if (!currentNode.right) {
+            //        // 删除的节点没有右孩子的情况
+            //        parent[place] = currentNode.left || null;
+            //    } else {
+            //        // 用于代替的节点
+            //        var replaceNode = currentNode.left;
+            //        // 代替节点的父节点
+            //        var replaceNodeParent = null;
+            //        // 循环找出左子树中最大的节点（即用于代替的节点）
+            //        while (replaceNode.right) {
+            //            replaceNodeParent = replaceNode;
+            //            replaceNode = replaceNode.right;
+            //        }
+            //        // 代替原位置
+            //        parent[place] = replaceNode;
+            //        // 当代替节点就是删除的节点的左子节点时无需赋左子树
+            //        if (replaceNodeParent) {
+            //            replaceNodeParent.right = replaceNode.left || null;
+            //            parent[place].left = currentNode.left;
+            //        }
+            //        // 获取删除的节点的右子树
+            //        parent[place].right = currentNode.right;
+            //    }
+            //    return;
+
+
+            //    //var t = removeNode(root, key);
+            //    //root = t;
+            //}
+
+            //var removeNode = function (nNode, key) {
+            //    var parent = null;
+            //    var current = nNode;
+            //    var isLeft = true;
+            //    while (true) {
+            //        if (current == null) {
+            //            break;
+            //        }
+            //        if (key < current.data) {
+            //            parent = current;
+            //            current = current.left;
+            //            isLeft = true;
+            //        } else if (key > current.data) {
+            //            parent = current;
+            //            current = current.right;
+            //            isLeft = false;
+            //        } else {
+            //            break;
+            //        }
+            //    }
+            //    if (current == null) {
+            //        alert('未找到节点！');
+            //        return false;
+            //    }
+            //    if (current.left == null && current.right == null) {
+            //        current = null;
+            //    } else if (current.left == null) {
+            //        if (isLeft) {
+            //            parent.left = current.right;
+            //        } else {
+            //            parent.right = current.right;
+            //        }
+            //        current =null;
+            //    } else if (current.right == null) {
+            //        if (isLeft) {
+            //            parent.left = current.left;
+            //        } else {
+            //            parent.right = current.left;
+            //        }
+            //        current = null;
+            //    } else {
+            //        var left = current.left;
+            //        var leftRoot = left;
+            //        //从左节点开始找最大
+            //        while (left) {
+            //            leftRoot = left;
+            //           left = left.right;
+            //       }
+            //        if (isLeft) {
+            //            parent.left = leftRoot;
+            //            leftRoot = null;
+            //            parent.left.left = current.left;
+            //            parent.left.right = current.right;
+            //            current = null;
+            //        } else {
+            //            parent.right = leftRoot;
+            //            leftRoot = null;
+            //            parent.right.left = current.left;
+            //            parent.right.right = current.right;
+            //            current = null;
+            //        }
+            //        leftRoot = null;
+            //    }
+            //}
+
+            var removeNode = function (nNode, key) {
+                if (!nNode) {
+                    alert(key + ' is not found!');
+                    return false;
+                }
+                if (key < nNode.data) {
+                    nNode.left = removeNode(nNode.left, key);
+                    return nNode;
+                } else if (key > nNode.data) {
+                    nNode.right = removeNode(nNode.right, key);
+                    return nNode;
+                } else {
+                    if (nNode.left == null && nNode.right == null) {
+                        nNode = null;
+                    } else if (nNode.left == null) {
+                        nNode = nNode.right;
+                    } else if (nNode.right == null) {
+                        nNode = nNode.left;
+                    } else {
+                        var s = nNode.left;
+                        if (!s.right) {
+                            s.right = nNode.right;
+                        } else {
+                            var parent = s;
+                            while (s.right) {
+                                parent = s;
+                                s = s.right;
+                            }
+                            parent.right = s.left;
+                            s.left = nNode.left;
+                            s.right = nNode.right;
+                        }
+                        nNode = s;
+                    }
+                    return nNode;
+                }
+
+            }
+
+            this.remove = function (key) {
+                root=removeNode(root, key);
+            }
         }
-        var array = [8, 0, 2, 4, 5, 7];
+        var array = [4, 8, 3, 2, 5, 7, 9];
         var tree = new BinaryTree();
         array.forEach(function (item) {
             tree.insert(item);
-        })
+        });
         console.info(tree);
         document.writeln('-----------------------------中序遍历-------------------------------<br />');
         tree.inOrderTraverse(function (n) {
@@ -134,7 +319,7 @@
         });
 
         document.writeln('<br />-----------------------------查找指定值-------------------------------<br />');
-        var result=tree.find(5);
+        var result = tree.find(5);
         if (result) {
             document.write('找到指定值:5');
         } else {
@@ -147,6 +332,12 @@
         } else {
             document.write('未找到指定值:12');
         }
+        tree.remove(8);
+        document.writeln('<br />-----------------------------中序遍历-------------------------------<br />');
+        tree.inOrderTraverse(function (n) {
+            document.write(n.data + ',');
+        });
+
     </script>
 </body>
 </html>
