@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script>
+    //1、私有属性
+    (function() {
+        var a = "私有属性";
+    })();
+    //console.log(a);//error a没有定义
+
+    //2,实例属性 ：即属于实例对象才能访问
+    var A = function() {
+        this.x = "实例属性";
+    }
+    var t1 = new A();
+    var t2 = new A();
+    console.log(t1.x);
+    console.log(t2.x);
+
+    t1.x = '1234566';
+    console.log(t1.x);
+    console.log(t2.x);
+    //3,原型属性:
+
+    var a = function() { this.x = "实例属性" };
+    a.prototype.x = "prototype";
+    var t = new a();
+    console.log(t.x); //实例属性
+    delete(t.x);
+    console.log(t.x); //原型属性
+    //说明先会访问实例属性，没有实例属性就会访问原型属性
+
+    //修改一个实例的原型属性，所有实例的都会修改
+    var Fun1 = function() { this.xx = "实例属性" };
+    var f1 = new Fun1();
+    var f2 = new Fun1();
+    Fun1.prototype.yy = 'prototype yy';
+
+    console.log(f1.yy);
+    console.log(f2.yy);
+    //修改原型值
+    Fun1.prototype.yy = 'change prototype yy';
+
+    console.log(f1.yy);
+    console.log(f2.yy);
+
+    //4,类属性(静态属性):
+    var a = function() {};
+    a.x = "类属性";
+    var t = new a();
+    console.log(t.x); //undefined
+    //说明只有类才能访问类属性，实例不能访问
+
+    //5,类属性综合案例:
+
+    var a = function() {
+        var x = 'a'; //内部属性、私有属性
+        this.z = 'c'; //实例属性
+    }
+    a.y = 'b'; //类属性
+    a.prototype.m = 'd'; //原型属性
+
+    var t1 = new a();
+    var t2 = new a();
+    console.log(t1.x); //undefined
+    console.log(t2.x); //undefined
+    console.log(t1.y); //undefined
+    console.log(t2.y); //undefined
+    console.log(t1.z); //c
+    console.log(t2.z); //c
+    console.log(t1.m); //d
+    console.log(t2.m); //d
+    console.log(a.x); //undefined
+    console.log(a.y); //b
+    console.log(a.z); //undefined
+    console.log(a.m); //undefined
+    </script>
+    <script>
+        //方法
+
+        //1、静态方法的定义
+        document.write('----------------------------------------------------------------------------------------------------------');
+        document.write('----------------------------------------------------------------------------------------------------------');
+        document.write('<br /><br />');
+
+        var BaseClass = function () { }; // var BaseClass=new Function();
+        BaseClass.f1 = function () {//定义静态方法
+            console.log(' This is a static method ');
+        }
+        BaseClass.f1();//This is a static method
+        var instance1 = new BaseClass();
+        //instance1.f1();//instance1.f1 is not a function
+
+        //由以上代码分析可知，静态方法不能被实例对象调用，再看以下代码
+
+        var BaseClass = new Function;
+        var Class2 = BaseClass;
+        BaseClass.f1 = function () {
+            console.log("BaseClass ' s static method");
+        }
+        Class2.f2 = function () {
+            console.log("Class2 ' s static method");
+        }
+        BaseClass.f1();//BaseClass ' s static method
+        BaseClass.f2();//Class2 ' s static method
+        Class2.f1();//BaseClass ' s static method
+        Class2.f2();//Class2 ' s static method
+
+        //从运行结果来看，BaseClass和Class都有f1和f2静态方法，实际上这两个函数是一样的，可以执行以下代码来验证
+
+
+        console.log(BaseClass == Class2);//true
+
+        //如果删除其中一个函数中的静态方法，则对应的另一个函数的静态方法也被删除，比如执行
+
+
+        delete Class2.f2;
+
+        //同时也会删除BaseClass中的f2
+
+        //2、实例方法的定义
+        //2.1使用原型调用实例方法
+        var BaseClass = function () { };
+        BaseClass.prototype.method1 = function () {
+            console.log(' This is a instance method ');
+        }
+        var instance1 = new BaseClass();
+        instance1.method1();//This is a instance method
+
+
+        //method1即为通过prototype原型引用定义的实例方法，这里也可以在实例上直接定义方法（变量），看以下代码
+        var BaseClass = function () { };
+        var instance1 = new BaseClass();
+        instance1.method1 = function () {
+            console.log(' This is a instance method too ');
+        }
+        instance1.method1();//This is a instance method too
+
+
+        //2.2、通过this指针来定义实例方法（变量）
+        var BaseClass = function () {
+            this.method1 = function () {
+                console.log(' Defined by the "this" instance method');
+            }
+        };
+        var instance1 = new BaseClass();
+        instance1.method1();//Defined by the "this" instance method
+
+        //2.3 同时在实例上、原型引用上和“this”上定义了相同名字的实例方法后，实例会优先调用那一个呢？请看以下代码
+
+
+        var BaseClass = function () {
+            this.method1 = function () {
+                console.log(' Defined by the "this" in the instance method');
+            }
+        };
+        var instance1 = new BaseClass();
+        instance1.method1 = function () {
+            console.log(' Defined directly in the instance method');
+        }
+        BaseClass.prototype.method1 = function () {
+            console.log(' Defined by the prototype instance method ');
+        }
+        instance1.method1();//Defined directly in the instance method
+
+        //通过运行结果跟踪测试可以看出
+        //直接定义在实例上的变量的优先级要高于定义在“this”上的，而定义在“this”上的又高于 prototype定义的变量。即直接定义在实例上的变量会覆盖定义在“this”上和prototype定义的变量，定义在“this”上的会覆盖prototype定义的变量。
+
+
+        //3、私有方法，外部不可以访问
+        var BaseClass = function () {
+            var method1 = function () {
+                console.log("Internal method");
+            };
+            var method2 = function () {
+                console.log("call Internal method");
+                method1();
+            };
+            this.method3 = function () {
+                method2();
+            }
+        };
+        var instance1 = new BaseClass();
+        //instance1.method1();// 会报错，因为method1是BaseClass中定义的内部变量，作用域只有在内部可见（闭包）
+        instance1.method3();//会先后调用method2和method1
+    </script>
+</body>
+</html>

@@ -10,7 +10,7 @@
     var person = {
         name: 'person',
         eat:function() {
-            alert(this.name + ' eating!');
+            console.log(this.name + ' eating!');
         }
     };
 
@@ -20,7 +20,7 @@
         __proto__:person
     };
     var func = function () {
-        alert('5555555555');
+        console.log('5555555555');
     };
 
     var student2 = {
@@ -29,11 +29,23 @@
     };
 
     student.eat();
-    alert(student2.__proto__);
+    console.log(student2.__proto__);
     console.info(person);
     console.info(student);
     console.info(func);
     console.info(student2);
+
+    function Fn() { }
+    Fn.prototype.name = '王福朋';
+    Fn.prototype.getYear = function () {
+        return 1988;
+    };
+
+    var fn = new Fn();
+    //new一个对象时，fn.__proto__=Fn.prototype;
+    debugger;
+    console.log(fn.name);
+    console.log(fn.getYear());
 </script>
 </body>
 </html>
