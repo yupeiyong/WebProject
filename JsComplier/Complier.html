@@ -2,12 +2,94 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>极简编译器</title>
     <meta charset="utf-8" />
 </head>
 <body>
     <script>
+        //语法树节点类型
+        var astTreeNodeType = {
+            operate: 0,
+            number: 1
+        };
 
+        var AstTreeNode = function (data) {
+            this.data = data;
+            this.nodeType = null;
+            this.children = null;
+        }
+        var operator = {
+            mul: '*',
+            div: '/',
+            sum: '+',
+            sub: '-'
+        };
+
+        //词法
+        var lex = function (str) {
+            return str.split(' ').map(s=>s.trim()).filter(s=>s.length);
+        }
+        //语法，生成语法树
+        var parse = function (tokens) {
+            var n = 0;
+
+            var peek = function () {
+                return n < tokens.length;
+            }
+            var getToken = function () {
+                return tokens[n++];
+            }
+
+            var numberParse = function (token) {
+                var num = parseInt(token);
+                var node = new AstTreeNode(num);
+                node.nodeType = astTreeNodeType.number;
+                node.children = [];
+                return node;
+            }
+
+            var operateParse = function (token) {
+                var node = new AstTreeNode(token);
+                node.nodeType = astTreeNodeType.operate;
+                node.children = [];
+                while (peek()) {
+                    node.children.push(parseFunction());
+                }
+                return node;
+            }
+
+            var parseFunction = function () {
+                if (peek()) {
+                    var token = getToken();
+                    return /\d/.test(token) ? numberParse(token) : operateParse(token);
+                }
+                return null;
+            }
+            return parseFunction();
+        }
+        //翻译，将语法树翻译为相应的字符串
+        var transpile = function (ast) {
+            var str = '';
+            var numberTrans = function (node) {
+                return node.data;
+            }
+            var operateTrans = function (node) {
+                return node.children.map(transAction).join(' ' + operator[node.data] + ' ');
+            }
+            var transAction = function (node) {
+                if (node.nodeType === astTreeNodeType.number) {
+                    return numberTrans(node);
+                } else {
+                    return operateTrans(node);
+                }
+            }
+            str = transAction(ast);
+            return str;
+        }
+        var program = 'mul 3 sub 2 sum 1 3 4';
+
+        var p = transpile(parse(lex(program)));
+        console.log(p);
     </script>
 </body>
 </html>
