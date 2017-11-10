@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        var input = {
+            h3: {
+                parent: 'h2',
+                name: '副总经理(市场)'
+            },
+            h1: {
+                parent: 'h0',
+                name: '公司机构'
+            },
+            h7: {
+                parent: 'h6',
+                name: '副总经理(总务)'
+            },
+            h4: {
+                parent: 'h3',
+                name: '销售经理'
+            },
+            h2: {
+                parent: 'h1',
+                name: '总经理'
+            },
+            h8: {
+                parent: 'h0',
+                name: '财务总监'
+            },
+            h6: {
+                parent: 'h4',
+                name: '仓管总监'
+            },
+            h5: {
+                parent: 'h4',
+                name: '销售代表'
+            },
+            h0: {
+                parent: '',
+                name: 'root'
+            }
+        };
+        //将扁平的结构转为树结构
+        var plainToTree = function (obj) {
+            var tree = {};
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    //获取字段的parent属性
+                    var parent = obj[key].parent;
+                    //是否为父结点
+                    if (parent === '') {
+                        //将此字段赋值到树
+                        tree = obj[key];
+                    } else {
+                        //将当前节点添加到父节点下
+                        obj[parent][key] = obj[key];
+                    }
+                }
+            }
+            return tree;
+        }
+        var tree = plainToTree(input);
+        var str = JSON.stringify(tree);
+        document.write(str);
+        //最张结果
+        var xx = {
+            "parent": "", "name": "root",
+            "h1":
+                {
+                    "parent": "h0", "name": "公司机构",
+                    "h2":
+                      {
+                          "parent": "h1", "name": "总经理",
+                          "h3":
+                            {
+                                "parent": "h2", "name": "副总经理(市场)",
+                                "h4":
+                                  {
+                                      "parent": "h3", "name": "销售经理",
+                                      "h6":
+                                        {
+                                            "parent": "h4", "name": "仓管总监",
+                                            "h7":
+                                              { "parent": "h6", "name": "副总经理(总务)" }
+                                        },
+                                      "h5":
+                                          { "parent": "h4", "name": "销售代表" }
+                                  }
+                            }
+                      }
+                },
+            "h8":
+                { "parent": "h0", "name": "财务总监" }
+        };
+        /*
+        将级联数据转为树结构
+        使用trie树结构
+        */
+        var transObjectToTrieTree = function (tableData, keys) {
+            var hashTable = {},
+                tree = [];
+            for (var i = 0; i < tableData.length; i++) {
+                var curHashTable = hashTable,
+                 arr = tree;
+                for (var k = 0; k < keys.length; k++) {
+                    var key = keys[k],
+                        field = tableData[i][key];
+                    if (!curHashTable[field]) {
+                        var node = {
+                            value: field
+                        };
+                        var tmpArray = [];
+                        if (k < keys.length - 1) {
+                            node.children = tmpArray;
+                        }
+                        curHashTable[field] = { index: arr.push(node) - 1 };
+                        if (node.children) {
+                            curHashTable = curHashTable[field];
+                            arr = tmpArray;
+                        }
+                    } else {
+                        curHashTable = curHashTable[field];
+                        arr = arr[curHashTable.index].children;
+                    }
+                }
+            }
+            return tree;
+        }
+        //三级联动城市数据
+        var data = [{
+            "province": "浙江",
+            "city": "杭州",
+            "name": "西湖"
+        }, {
+            "province": "四川",
+            "city": "成都",
+            "name": "锦里"
+        }, {
+            "province": "四川",
+            "city": "成都",
+            "name": "方所"
+        }, {
+            "province": "四川",
+            "city": "阿坝",
+            "name": "九寨沟"
+        }];
+
+        var keys = ['province', 'city', 'name'];
+
+        console.log(transObjectToTrieTree(data, keys));
+    </script>
+</body>
+</html>

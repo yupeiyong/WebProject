@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #container {
+            width: 600px;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        #newsList {
+            margin-left: -8px;
+            margin-top: -8px;
+        }
+
+            #newsList li {
+                float: left;
+                height: 50px;
+                padding: 0 20px;
+                margin-left: 8px;
+                margin-top: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+                #newsList li a {
+                    display: block;
+                    line-height: 16px;
+                    color: #FFF;
+                }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="newsList">
+            <!--<li style="background: rgb(74, 169, 213); "><a href="">此生唯一能给的</a></li>
+            <li style="background: rgb(79, 113, 210); "><a href="">3岁女童被陌生女子抱走</a></li>
+            <li style="background: rgb(87, 145, 154); "><a href="">奶香浓郁的蛋挞，在家就搞定</a></li>
+            <li style="background: rgb(159, 103, 235); "><a href="">没那么多悲情与自怜</a></li>
+            <li style="background: rgb(232, 156, 175); "><a href="">不同年龄的宝宝，流感疫苗应该怎么打</a></li>
+            <li style="background: rgb(79, 113, 210); "><a href="">看超迷你战士赢周边</a></li>
+            <li style="background: rgb(87, 145, 154); "><a href="">小萌娃练习跆拳道</a></li>
+            <li style="background: rgb(159, 103, 235); "><a href="">永不出错的海菲茨</a></li>
+            <li style="background: rgb(74, 169, 213); "><a href="">一片降幡出石头</a></li>
+            <li style="background: rgb(87, 145, 154); "><a href="">亲子游必备物品大推荐！</a></li>
+            <li style="background: rgb(79, 113, 210); "><a href="">更智慧更乐观的一杯好茶</a></li>
+            <li style="background: rgb(74, 169, 213);"><a href="">小女孩COS亚马逊女战士</a></li>
+            <li style="background: rgb(87, 145, 154);"><a href="">东北小胖丫爆笑解读</a></li>
+            <li style="background: rgb(79, 113, 210);"><a href="">米热古丽的声音</a></li>-->
+        </ul>
+    </div>
+    <script>
+        ~(function () {
+            var data = [
+                { "txt": "此生唯一能给的", "link": "" },
+                { "txt": "没那么多悲情与自怜", "link": "" },
+                { "txt": "米热古丽的声音", "link": "" },
+                { "txt": "永不出错的海菲茨", "link": "" },
+                { "txt": "更智慧更乐观的一杯好茶", "link": "" },
+                { "txt": "一片降幡出石头", "link": "" },
+                { "txt": "看超迷你战士赢周边", "link": "" },
+                { "txt": "小女孩COS亚马逊女战士", "link": "" },
+                { "txt": "小萌娃练习跆拳道", "link": "" },
+                { "txt": "3岁女童被陌生女子抱走", "link": "" },
+                { "txt": "东北小胖丫爆笑解读", "link": "" },
+                { "txt": "奶香浓郁的蛋挞，在家就搞定", "link": "" },
+                { "txt": "亲子游必备物品大推荐！", "link": "" },
+                { "txt": "不同年龄的宝宝，流感疫苗应该怎么打", "link": "" }
+            ]
+            var colorArr = ["9f67eb", "e89caf", "57919a", "4f71d2", "4aa9d5"]
+            var Brick = {
+                randomColor: function (colorArr) {
+                    return colorArr[Math.floor(Math.random() * colorArr.length)]
+                },
+                randomData: function (data) {
+                    var i, j, temp
+                    for (i = 0; i < data.length; i++) {
+                        j = Math.floor(Math.random() * data.length)
+                        temp = data[i]
+                        data[i] = data[j]
+                        data[j] = temp
+                    }
+                    return data
+                },
+                createHTML: function (data, colorArr, el) {
+                    var str = "", _this = this
+                    this.randomData(data).forEach(function (item) {
+                        str += "<li style=\"background:#" + _this.randomColor(colorArr) + "\"><a href=\"" + item.link + "\">" + item.txt + "</a></li>"
+                    })
+                    el.innerHTML = str
+                },
+                createBrick: function (obj) {
+                    //创建标签
+                    this.createHTML(obj.data, obj.color, obj.el)
+                    //获取所有li标签
+                    var oLi = obj.el.getElementsByTagName("li"),
+                    listDistance = obj.el.offsetLeft + obj.mar,
+                    len = oLi.length
+                    for (var index = 0; index < len; index++) {
+                        var item = oLi[index]
+                        var _clientWidth = item.clientWidth
+                        //下一兄弟元素
+                        var next = item.nextElementSibling
+                        //li元素实际宽度
+                        item.style.width = Math.floor(_clientWidth) - 2 * obj.padd + "px"
+                        var distance = item.offsetLeft - listDistance + _clientWidth
+                        if (obj.width - distance > obj.min) {
+                            if (index < len - 1 && next.offsetLeft == listDistance) {
+                                index = 0
+                                next.style.width = obj.width - distance - 2 * obj.padd - obj.mar + "px"
+                                index++
+                            } else if (index == len - 1) {
+                                item.style.width = obj.width - distance + _clientWidth - 2 * obj.padd + "px"
+                            }
+                        } else {
+                            item.style.width = obj.width - distance + _clientWidth - 2 * obj.padd + "px"
+                        }
+                    }
+
+                }
+            }
+
+            Brick.createBrick({
+                data: data,
+                color: colorArr,
+                el: document.getElementById("newsList"),
+                mar: 8,
+                padd: 20,
+                width: 600,
+                min: 100
+            })
+        })()
+    </script>
+</body>
+</html>
