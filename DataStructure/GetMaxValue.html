@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        //迭代法查找数组最大元素
+        var arr = [1, 66, 99, 0, -11, 6, 5];
+        var getMax = function (arr) {
+            var max = -999;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] > max) max = arr[i];
+            }
+            return max;
+        }
+
+        //使用分治法解，只是测试分治思想，从性能上来说，不适用这种方法
+        var getMaxPartition = function (arr, start, end) {
+            if (end - start === 0) return arr[start];
+            if (end - start === 1) {
+                return arr[start] > arr[end] ? arr[start] : arr[end];
+            }
+            var middle = Math.ceil((end + start) / 2);
+            var x = (start === middle) ? arr[start] : getMaxPartition(arr, start, middle);
+            var y = (middle + 1 === end) ? arr[end] : getMaxPartition(arr, middle + 1, end);
+            return x > y ? x : y;
+        }
+
+        var max1 = getMax(arr);
+        document.write(max1);
+        document.write('<br />');
+        var max2 = getMaxPartition(arr, 0, arr.length - 1);
+        document.write(max2);
+    </script>
+</body>
+</html>
