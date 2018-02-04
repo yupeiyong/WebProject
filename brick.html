@@ -86,55 +86,54 @@
                 { "txt": "东北小胖丫爆笑解读", "link": "" },
                 { "txt": "奶香浓郁的蛋挞，在家就搞定", "link": "" },
                 { "txt": "亲子游必备物品大推荐！", "link": "" },
-                { "txt": "不同年龄的宝宝，流感疫苗应该怎么打", "link": "" }
-            ]
-            var colorArr = ["9f67eb", "e89caf", "57919a", "4f71d2", "4aa9d5"]
+                { "txt": "不同年龄的宝宝，流感疫苗应该怎么打11111111111111111111111111111111", "link": "" }
+            ];
+            var colorArr = ["9f67eb", "e89caf", "57919a", "4f71d2", "4aa9d5"];
             var Brick = {
                 randomColor: function (colorArr) {
-                    return colorArr[Math.floor(Math.random() * colorArr.length)]
+                    return colorArr[Math.floor(Math.random() * colorArr.length)];
                 },
                 randomData: function (data) {
-                    var i, j, temp
+                    var i, j, temp;
                     for (i = 0; i < data.length; i++) {
-                        j = Math.floor(Math.random() * data.length)
-                        temp = data[i]
-                        data[i] = data[j]
-                        data[j] = temp
+                        j = Math.floor(Math.random() * data.length);
+                        temp = data[i];
+                        data[i] = data[j];
+                        data[j] = temp;
                     }
-                    return data
+                    return data;
                 },
                 createHTML: function (data, colorArr, el) {
-                    var str = "", _this = this
+                    var str = "", _this = this;
                     this.randomData(data).forEach(function (item) {
-                        str += "<li style=\"background:#" + _this.randomColor(colorArr) + "\"><a href=\"" + item.link + "\">" + item.txt + "</a></li>"
-                    })
-                    el.innerHTML = str
+                        str += "<li style=\"background:#" + _this.randomColor(colorArr) + "\"><a href=\"" + item.link + "\">" + item.txt + "</a></li>";
+                    });
+                    el.innerHTML = str;
                 },
                 createBrick: function (obj) {
                     //创建标签
-                    this.createHTML(obj.data, obj.color, obj.el)
+                    this.createHTML(obj.data, obj.color, obj.el);
                     //获取所有li标签
                     var oLi = obj.el.getElementsByTagName("li"),
                     listDistance = obj.el.offsetLeft + obj.mar,
-                    len = oLi.length
+                    len = oLi.length;
                     for (var index = 0; index < len; index++) {
-                        var item = oLi[index]
-                        var _clientWidth = item.clientWidth
+                        var item = oLi[index];
+                        var clientWidth = item.clientWidth;
                         //下一兄弟元素
-                        var next = item.nextElementSibling
+                        var next = item.nextElementSibling;
                         //li元素实际宽度
-                        item.style.width = Math.floor(_clientWidth) - 2 * obj.padd + "px"
-                        var distance = item.offsetLeft - listDistance + _clientWidth
+                        item.style.width = Math.floor(clientWidth) - 2 * obj.padd + "px";
+                        var distance = item.offsetLeft - listDistance + clientWidth;
                         if (obj.width - distance > obj.min) {
-                            if (index < len - 1 && next.offsetLeft == listDistance) {
-                                index = 0
-                                next.style.width = obj.width - distance - 2 * obj.padd - obj.mar + "px"
-                                index++
-                            } else if (index == len - 1) {
-                                item.style.width = obj.width - distance + _clientWidth - 2 * obj.padd + "px"
+                            if (index < len - 1 && next.offsetLeft === listDistance) {
+                                next.style.width = obj.width - distance - 2 * obj.padd - obj.mar + "px";
+                                index++;
+                            } else if (index === len - 1) {
+                                item.style.width = obj.width - distance - 2 * obj.padd + clientWidth + "px";
                             }
                         } else {
-                            item.style.width = obj.width - distance + _clientWidth - 2 * obj.padd + "px"
+                            item.style.width = obj.width - distance - 2 * obj.padd + clientWidth + "px";
                         }
                     }
 
@@ -149,7 +148,7 @@
                 padd: 20,
                 width: 600,
                 min: 100
-            })
+            });
         })()
     </script>
 </body>
