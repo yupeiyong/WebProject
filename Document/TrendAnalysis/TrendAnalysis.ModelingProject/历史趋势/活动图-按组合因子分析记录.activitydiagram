@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="cf2da5b9-bf8b-4326-beb5-737fb3cf971d" name="活动图-按组合因子分析记录" linkedPackageId="5966f176-f76f-47d3-a06f-8367168be1af" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="9c928016-e20e-4b87-9111-4a423d7edc74">
+      <elementDefinition Id="e42fcd5c-80d4-4000-9a6f-52908515da25" />
+      <body>解析最长连续记录</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="13b5652b-379d-4bc0-9002-22cb80c4c955" name="活动图-按组合因子分析记录" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="1b62ca7d-a257-4fb3-bfd9-91dc6e723568" />
+        <nodes>
+          <initialNode Id="2a991076-82ef-4b7e-b0b5-c4826198f462" name="Initial1" isLeaf="false">
+            <elementDefinition Id="62d4dea7-5fbd-4a42-a948-7513a6448a71" />
+            <flowNodeTargets>
+              <controlFlow Id="39d0b1f0-c5ed-4301-adc6-706919009d00" isLeaf="false">
+                <callOperationActionMoniker Id="61cb8075-8514-49ed-9f1f-b731eb4a4386" LastKnownName="获取号码组合" />
+                <elementDefinition Id="cd77e7b3-a7f1-4c2b-97d6-64c1b5ffeaa0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <callOperationAction Id="61cb8075-8514-49ed-9f1f-b731eb4a4386" name="获取号码组合" isLeaf="false">
+            <elementDefinition Id="799bea16-3a47-4d6b-964f-5edcce530bcb" />
+            <flowNodeTargets>
+              <controlFlow Id="a0944c87-8c12-4bd9-bd73-24aa8300b66c" isLeaf="false">
+                <opaqueActionMoniker Id="589eb2b2-2c0d-44fd-96ee-73e5dbf28f86" LastKnownName="i=0" />
+                <elementDefinition Id="b4fcfbbc-4fd9-4908-8324-6588151840a7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </callOperationAction>
+          <opaqueAction Id="589eb2b2-2c0d-44fd-96ee-73e5dbf28f86" name="i=0" isLeaf="false">
+            <elementDefinition Id="4f341f74-772d-4fcf-93bf-d4f1bd4be728" />
+            <flowNodeTargets>
+              <controlFlow Id="ef62de7c-0d7a-4416-9342-40d9eb624cf9" isLeaf="false">
+                <opaqueActionMoniker Id="25147970-6b07-4351-b261-9158d8982aeb" LastKnownName="进行循环判断" />
+                <elementDefinition Id="fe8d2059-e9a5-41c5-bd09-386a7dc323e2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="23501775-fea2-4001-8ca6-5be3f85c5c5d" name="i++" isLeaf="false">
+            <elementDefinition Id="25a7731b-3d18-450a-a5eb-2b7437d763d2" />
+            <flowNodeTargets>
+              <controlFlow Id="95dc9586-22ff-4073-bc33-6de24dc3d61c" isLeaf="false">
+                <opaqueActionMoniker Id="25147970-6b07-4351-b261-9158d8982aeb" LastKnownName="进行循环判断" />
+                <elementDefinition Id="121cf89f-1dbe-4a48-9184-d9ec20d72c63" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="d4d2bace-2dae-4d95-862d-2a66d17b3a8c" name="Decision1" isLeaf="false">
+            <elementDefinition Id="188f7de0-d848-4e3d-99d2-6adccd61eb01" />
+            <flowNodeTargets>
+              <controlFlow Id="ca2459af-7799-44a7-886b-bb6a0e4e111f" guard="i&lt;length" isLeaf="false">
+                <opaqueActionMoniker Id="16bac4ce-2866-407c-bf3b-0a8aa208c00d" LastKnownName="用当前组合分析记录" />
+                <elementDefinition Id="5f018f47-9367-48f1-9754-d646625ac6fb" />
+              </controlFlow>
+              <controlFlow Id="78501012-1dfb-47b0-b51e-4efac40a44a3" guard="i&gt;=length" isLeaf="false">
+                <opaqueActionMoniker Id="92f839d2-1200-4739-8c49-339ae279e831" LastKnownName="返回分析结果" />
+                <elementDefinition Id="65c217db-fcd7-4f25-be1c-c8c7b559280a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="16bac4ce-2866-407c-bf3b-0a8aa208c00d" name="用当前组合分析记录" isLeaf="false">
+            <elementDefinition Id="a80e03bc-9eb5-4555-b748-02ea1b39c9e6" />
+            <flowNodeTargets>
+              <controlFlow Id="e7f7fb2d-ebaa-49c7-8bcb-2f045575f01d" isLeaf="false">
+                <opaqueActionMoniker Id="23501775-fea2-4001-8ca6-5be3f85c5c5d" LastKnownName="i++" />
+                <elementDefinition Id="ddf01cd6-ddee-4869-bd7c-55f47f4c0f31" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="92f839d2-1200-4739-8c49-339ae279e831" name="返回分析结果" isLeaf="false">
+            <elementDefinition Id="95028234-336a-4809-8214-425d3eee6691" />
+            <flowNodeTargets>
+              <controlFlow Id="e9eea3bd-6d6d-4dc9-af5d-573671ba07d3" isLeaf="false">
+                <activityFinalNodeMoniker Id="cf62e67c-ae5c-4dd9-9aac-711d54c3202a" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="4af6367d-daca-4ca9-8c42-58f2e0e6f307" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="25147970-6b07-4351-b261-9158d8982aeb" name="进行循环判断" isLeaf="false">
+            <elementDefinition Id="5f369af8-a443-43c5-b3e4-636eef2e2143" />
+            <flowNodeTargets>
+              <controlFlow Id="88bfbb27-7a83-4d7e-9bb5-254af433537d" isLeaf="false">
+                <decisionNodeMoniker Id="d4d2bace-2dae-4d95-862d-2a66d17b3a8c" LastKnownName="Decision1" />
+                <elementDefinition Id="af11d0a5-5ac0-43f3-bc61-7f0f40f3caf4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="cf62e67c-ae5c-4dd9-9aac-711d54c3202a" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="a554e607-12a8-4ff4-9ea3-6ffc1e94f846" />
+          </activityFinalNode>
+          <initialNode Id="14b77f00-1db5-47d4-81e0-6c3dd6536311" name="Initial2" isLeaf="false">
+            <elementDefinition Id="af6c185c-ddc6-44d7-9c55-ef80ecc0d1d7" />
+            <flowNodeTargets>
+              <controlFlow Id="49cbaaa2-e983-4416-841c-7439445fae0f" isLeaf="false">
+                <forkNodeMoniker Id="60701ff8-f6b2-4bd8-9c15-5e0155f43b9e" LastKnownName="Fork1" />
+                <elementDefinition Id="52807075-6f34-4d35-9f44-4bd5ae00fe4d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="a3add603-12b8-4402-9d17-f1002cf97c13" name="历史记录" isLeaf="false">
+            <elementDefinition Id="f85d14e6-f26f-4dbe-b28b-99db0a14e57d" />
+            <flowNodeTargets>
+              <controlFlow Id="21b65b67-f1ee-497a-8bb0-38770cb0366d" isLeaf="false">
+                <joinNodeMoniker Id="d45b92ad-fbe8-4115-9a1a-45faf2dfce36" LastKnownName="Join1" />
+                <elementDefinition Id="13f305f9-e1c6-408e-912f-4981de66998f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="733b5f60-09f7-4b6a-897e-318ffd654175" name="初始化最长连续因子集合" isLeaf="false">
+            <elementDefinition Id="ed0a3f95-2a3c-4a4c-bea4-4b992d9bc420" />
+            <flowNodeTargets>
+              <controlFlow Id="37fce3b3-812a-4816-b1b5-7e70dcaaf561" isLeaf="false">
+                <joinNodeMoniker Id="d45b92ad-fbe8-4115-9a1a-45faf2dfce36" LastKnownName="Join1" />
+                <elementDefinition Id="98f82e0f-fe2d-4d6e-a3f0-f1b1319d8e7a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode Id="60701ff8-f6b2-4bd8-9c15-5e0155f43b9e" name="Fork1" isLeaf="false">
+            <elementDefinition Id="da353d87-5a4c-4af2-a9d9-e5eda31d8c09" />
+            <flowNodeTargets>
+              <controlFlow Id="38095dfb-30ba-487a-8812-0f9872aed638" isLeaf="false">
+                <opaqueActionMoniker Id="733b5f60-09f7-4b6a-897e-318ffd654175" LastKnownName="初始化最长连续因子集合" />
+                <elementDefinition Id="a8745bf5-2557-4e50-bed9-5e8fd70ffcaf" />
+              </controlFlow>
+              <controlFlow Id="c217018c-2313-42ec-9e4c-b16dbea48710" isLeaf="false">
+                <opaqueActionMoniker Id="a3add603-12b8-4402-9d17-f1002cf97c13" LastKnownName="历史记录" />
+                <elementDefinition Id="d5664072-c3e0-4b80-be46-1745751fe4f6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <joinNode Id="d45b92ad-fbe8-4115-9a1a-45faf2dfce36" name="Join1" isLeaf="false">
+            <elementDefinition Id="741dd21a-e65e-4751-b931-470d8c05d959" />
+            <flowNodeTargets>
+              <controlFlow Id="6c30725b-ec89-446d-9f76-c5a23572a934" isLeaf="false">
+                <opaqueActionMoniker Id="98ec12f0-6221-4e4f-8b9a-7c56ec2c4b9a" LastKnownName="len=记录长度" />
+                <elementDefinition Id="6cf576fb-5001-4f67-bff4-eef18f6cd6ba" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="b3ab1fb9-5531-489a-9203-b6b157bc0668" name="i=0" isLeaf="false">
+            <elementDefinition Id="8f21fc8a-b53c-4eb8-9487-1c8eb6f96373" />
+            <flowNodeTargets>
+              <controlFlow Id="d2d5752f-e0de-44d0-b2be-1f62a39d505f" isLeaf="false">
+                <opaqueActionMoniker Id="ab6d6d8e-b54d-463b-88be-a821509fe443" LastKnownName="连续次数l=01" />
+                <elementDefinition Id="9a7fdd61-1a91-4334-a4b2-4ac9cac06133" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="98ec12f0-6221-4e4f-8b9a-7c56ec2c4b9a" name="len=记录长度" isLeaf="false">
+            <elementDefinition Id="dc3de1cb-59db-4b91-bf2f-ea5d88118047" />
+            <flowNodeTargets>
+              <controlFlow Id="0450a8d7-82a2-4637-a1de-a569d53629e9" isLeaf="false">
+                <opaqueActionMoniker Id="b3ab1fb9-5531-489a-9203-b6b157bc0668" LastKnownName="i=0" />
+                <elementDefinition Id="70bbc443-18cc-481b-9043-3f3b7e11c64b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="532fe8a9-874a-4259-9c66-8cfa2620cf36" name="当前记录x=arr[i]" isLeaf="false">
+            <elementDefinition Id="8042a115-ca78-41b6-8b91-bd1fa8161fc2" />
+            <flowNodeTargets>
+              <controlFlow Id="22186e60-80fd-46c2-ac0c-ff9a3f2844a5" isLeaf="false">
+                <decisionNodeMoniker Id="375d8363-5763-4200-aa4d-f04abd1b62d5" LastKnownName="Decision2" />
+                <elementDefinition Id="c482a28f-9111-4596-8df2-5a852fc127c5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="375d8363-5763-4200-aa4d-f04abd1b62d5" name="Decision2" isLeaf="false">
+            <elementDefinition Id="6358d9eb-9e76-4954-8ae7-37e3513388cc" />
+            <flowNodeTargets>
+              <controlFlow Id="a0c072ef-3d7f-42a8-8835-0e24a625039a" guard="x在左部因子中" isLeaf="false">
+                <opaqueActionMoniker Id="a1143f34-3fd2-4f49-8a46-32e653d372bd" LastKnownName="l=l+1" />
+                <elementDefinition Id="8281112e-6147-46be-af47-9b4d60f202c5" />
+              </controlFlow>
+              <controlFlow Id="fdca5047-0460-4899-bd0e-53f21f2dc48b" guard="x不在左部因子中" isLeaf="false">
+                <decisionNodeMoniker Id="b0fa3870-33e7-4764-801e-2064746a692d" LastKnownName="Decision4" />
+                <elementDefinition Id="64253e00-0832-43a8-a1ef-76c774f3cdfa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="a1143f34-3fd2-4f49-8a46-32e653d372bd" name="l=l+1" isLeaf="false">
+            <elementDefinition Id="aa0686eb-c7d5-49f1-b629-8dd52c6ddb93" />
+            <flowNodeTargets>
+              <controlFlow Id="faec2588-505e-4afb-b7c8-f74f70657bbe" isLeaf="false">
+                <opaqueActionMoniker Id="3a7ac1c1-77d3-46a0-bea6-f5974609346e" LastKnownName="i++" />
+                <elementDefinition Id="6b1f0cb8-94f3-474c-a46b-6ac906111236" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="07f9e22c-a1e6-49d6-85a0-4a3c004f7a01" name="连续次数l=0" isLeaf="false">
+            <elementDefinition Id="2d38b2cf-4fef-4aac-84bc-330a31dfd5d8" />
+            <flowNodeTargets>
+              <controlFlow Id="2b280a0e-1495-41c9-ac91-ccc684bbefc0" isLeaf="false">
+                <opaqueActionMoniker Id="3a7ac1c1-77d3-46a0-bea6-f5974609346e" LastKnownName="i++" />
+                <elementDefinition Id="2e1b5ca0-6197-4cdb-adde-0de9a230c356" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3a7ac1c1-77d3-46a0-bea6-f5974609346e" name="i++" isLeaf="false">
+            <elementDefinition Id="52eab38a-32a6-4458-8f29-9fed84fe6b1e" />
+            <flowNodeTargets>
+              <controlFlow Id="e2cc4dac-cd78-41cb-bcd4-ebc130e610a5" isLeaf="false">
+                <opaqueActionMoniker Id="e5559e2b-8e43-49ea-9ced-d27648948752" />
+                <elementDefinition Id="93ca3de2-2ff7-43c7-b1ce-8cc4ffbbe68a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="65d01059-9a3d-4e3f-a9c2-e292066c7760" name="返回连续因子集合" isLeaf="false">
+            <elementDefinition Id="4f6a5d56-422d-4051-aa6a-5c4dc3b2ed57" />
+            <flowNodeTargets>
+              <controlFlow Id="b37e45a3-1fcb-47f6-b965-1b8ed0390926" isLeaf="false">
+                <activityFinalNodeMoniker Id="d6fd5c8f-82a5-4f2b-a49c-bf210da795e2" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="8881b32d-4c16-4fb8-86b0-b45be7e12518" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="d6fd5c8f-82a5-4f2b-a49c-bf210da795e2" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="af14171e-2879-4db1-abc0-86ec92069eca" />
+          </activityFinalNode>
+          <decisionNode Id="b0fa3870-33e7-4764-801e-2064746a692d" name="Decision4" isLeaf="false">
+            <elementDefinition Id="13170db8-e6c9-4f49-ad2a-45e79ed6445d" />
+            <flowNodeTargets>
+              <controlFlow Id="8dc8b9b0-fe0a-4f20-9f4f-8875527752f6" guard="连续次数不在集合中" isLeaf="false">
+                <opaqueActionMoniker Id="9bba6e8c-e21e-443b-a5dc-d2b5e0e2dd1a" LastKnownName="现有长度的记录数+1" />
+                <elementDefinition Id="b7fcf912-ddab-441c-9738-b10d8675075c" />
+              </controlFlow>
+              <controlFlow Id="6c204385-7ce4-4b11-8337-6c30e6ac4c6e" guard="连续次数在集合中" isLeaf="false">
+                <opaqueActionMoniker Id="e16e5a50-59e2-4915-875d-72a26234b7d5" LastKnownName="添加新记录" />
+                <elementDefinition Id="b767bbdd-65ad-4481-a4cf-b1276234a2f6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="9bba6e8c-e21e-443b-a5dc-d2b5e0e2dd1a" name="现有长度的记录数+1" isLeaf="false">
+            <elementDefinition Id="0bb73b6a-aaee-425e-a1dd-1f975bcd1215" />
+            <flowNodeTargets>
+              <controlFlow Id="d0e2a10a-4e2b-4d6c-800c-fd23713bd3da" isLeaf="false">
+                <joinNodeMoniker Id="19f50417-ef2e-4ba0-925b-af71e7aa7533" LastKnownName="Join2" />
+                <elementDefinition Id="337162cb-3b82-40ec-8ef4-870543244789" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e16e5a50-59e2-4915-875d-72a26234b7d5" name="添加新记录" isLeaf="false">
+            <elementDefinition Id="4f67cfa2-0c36-46c3-a93a-850687587947" />
+            <flowNodeTargets>
+              <controlFlow Id="e295abbf-bb5b-4de9-854e-971f6cf6dfbe" isLeaf="false">
+                <joinNodeMoniker Id="19f50417-ef2e-4ba0-925b-af71e7aa7533" LastKnownName="Join2" />
+                <elementDefinition Id="69dda73a-5ee4-4a92-bbaa-bcac3136d9a3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ab6d6d8e-b54d-463b-88be-a821509fe443" name="连续次数l=01" isLeaf="false">
+            <elementDefinition Id="5d118ec3-8efd-4439-94db-cb625d66ed5e" />
+            <flowNodeTargets>
+              <controlFlow Id="2344839e-3fae-43b9-8048-4d092398087f" isLeaf="false">
+                <opaqueActionMoniker Id="e5559e2b-8e43-49ea-9ced-d27648948752" />
+                <elementDefinition Id="a532ec79-e5a3-463c-a27e-128b365714fa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="5c65f215-9e0b-410c-b44b-b98106a5f754" name="Decision5" isLeaf="false">
+            <elementDefinition Id="3eaaeeb7-aff9-4cb0-8ceb-b715d62052a0" />
+            <flowNodeTargets>
+              <controlFlow Id="6a1bb35b-1fe8-41c7-b2f6-e16cba41c10b" isLeaf="false">
+                <opaqueActionMoniker Id="65d01059-9a3d-4e3f-a9c2-e292066c7760" LastKnownName="返回连续因子集合" />
+                <elementDefinition Id="d667e66a-32ae-47f4-8bd9-1d3b2477e890" />
+              </controlFlow>
+              <controlFlow Id="2b1ffffa-518a-4326-a068-b0ce89a6f117" isLeaf="false">
+                <opaqueActionMoniker Id="532fe8a9-874a-4259-9c66-8cfa2620cf36" LastKnownName="当前记录x=arr[i]" />
+                <elementDefinition Id="1318fb3a-9c3c-49df-a858-48bf2b332b28" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="e5559e2b-8e43-49ea-9ced-d27648948752" isLeaf="false">
+            <elementDefinition Id="27731cab-36d1-4b57-bc37-78ffd1a99739" />
+            <flowNodeTargets>
+              <controlFlow Id="1465c21b-a38b-4a1d-bbde-250a2d9db276" isLeaf="false">
+                <decisionNodeMoniker Id="5c65f215-9e0b-410c-b44b-b98106a5f754" LastKnownName="Decision5" />
+                <elementDefinition Id="d40a3d2c-ae9a-409b-a4de-bb25b9c96f56" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="19f50417-ef2e-4ba0-925b-af71e7aa7533" name="Join2" isLeaf="false">
+            <elementDefinition Id="175afad5-04f1-4c91-b734-1e624062f3e2" />
+            <flowNodeTargets>
+              <controlFlow Id="1715516e-392f-49f9-9b57-d96bb2bb7abc" isLeaf="false">
+                <opaqueActionMoniker Id="07f9e22c-a1e6-49d6-85a0-4a3c004f7a01" LastKnownName="连续次数l=0" />
+                <elementDefinition Id="541384db-d18a-47c0-b0e6-f431fd660a30" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="5966f176-f76f-47d3-a06f-8367168be1af" name="TrendAnalysis.ModelingProject">
+    <elementDefinition Id="157f3c16-3e6f-4d21-b55b-3345795bc7f0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e627454b-ade6-43c6-9004-cba0881322cd">
+        <profileInstance Id="58d637cd-8fbc-4839-80a2-95d643df2e02" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1db12c1e-37da-4dcd-87dc-f1f7807f9674">
+        <profileInstance Id="fa56ef5c-fefd-4866-ba51-67fe1c1a5c11" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

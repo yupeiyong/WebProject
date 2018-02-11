@@ -1,0 +1,10 @@
+E:\workspace\TrendAnalysis\TrendAnalysis\Common\bin\Debug\Common.dll
+E:\workspace\TrendAnalysis\TrendAnalysis\Common\bin\Debug\Common.pdb
+E:\workspace\TrendAnalysis\TrendAnalysis\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+E:\workspace\TrendAnalysis\TrendAnalysis\Common\obj\Debug\Common.dll
+E:\workspace\TrendAnalysis\TrendAnalysis\Common\obj\Debug\Common.pdb
+F:\workspace\TrendAnalysis\TrendAnalysis\Common\bin\Debug\Common.dll
+F:\workspace\TrendAnalysis\TrendAnalysis\Common\bin\Debug\Common.pdb
+F:\workspace\TrendAnalysis\TrendAnalysis\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+F:\workspace\TrendAnalysis\TrendAnalysis\Common\obj\Debug\Common.dll
+F:\workspace\TrendAnalysis\TrendAnalysis\Common\obj\Debug\Common.pdb

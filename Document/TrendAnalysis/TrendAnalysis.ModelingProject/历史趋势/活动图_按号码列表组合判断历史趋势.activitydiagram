@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="ee5a4fab-7b40-4be5-ba32-3ce97dc5cfbc" name="活动图_按号码列表组合判断历史趋势" linkedPackageId="2c6de785-b4bf-4f02-bd48-400533005b88" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="f1b65859-e73f-4d70-a6be-6c80648f2123">
+      <elementDefinition Id="3de8ff3b-eabc-4c11-8a44-c7c002f081c6" />
+      <body>[{12345},{45678},{23456},{78901}......]，
+左右结点共111*2=222个因子</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="df5ef693-b174-4da9-b8f6-4de2a810873b" LastKnownName="取因子列表factors" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="334b5649-1afb-4567-873f-a04d0d92c899">
+      <profileInstance Id="c01c021b-55a2-4f93-9cbc-5cd9a2550992" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="0b67626b-b92e-410a-aaf3-cf75ae5c488d">
+      <profileInstance Id="145404e0-7280-4144-a970-ab3c034b1180" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="02e42d5b-ec70-425b-b65e-da479125101a" name="活动图_按号码列表组合判断历史趋势" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="cee6ede6-1fa8-424f-979c-d5efa8eee704" />
+        <nodes>
+          <initialNode Id="443aa8f6-7763-4c08-af4a-1629d64d76c0" name="Initial1" isLeaf="false">
+            <elementDefinition Id="a735923a-7fb3-4879-86d7-48570a3c0e48" />
+            <flowNodeTargets>
+              <controlFlow Id="f29b7aff-dce1-4ee3-9153-4549e74af4cb" isLeaf="false">
+                <opaqueActionMoniker Id="df5ef693-b174-4da9-b8f6-4de2a810873b" LastKnownName="取因子列表factors" />
+                <elementDefinition Id="3cc5ae1a-631e-4fab-9efd-6656fa65b384" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="df5ef693-b174-4da9-b8f6-4de2a810873b" name="取因子列表factors" isLeaf="false">
+            <elementDefinition Id="d86f5796-d2e7-4bc1-8e93-4f1dcb0f5615" />
+            <flowNodeTargets>
+              <controlFlow Id="a6893765-3255-478d-a28d-db712fed40a0" isLeaf="false">
+                <opaqueActionMoniker Id="989e62d7-d2df-49ab-9707-388a6b383573" LastKnownName="i=0,j=0" />
+                <elementDefinition Id="9f5b488b-9c4b-4e0a-8da9-40f6303e643e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="989e62d7-d2df-49ab-9707-388a6b383573" name="i=0,j=0" isLeaf="false">
+            <elementDefinition Id="0753d9b1-b094-4367-994e-ce0c74fe1511" />
+            <flowNodeTargets>
+              <controlFlow Id="49508789-4f39-47f7-b70c-5755986c9d99" isLeaf="false">
+                <opaqueActionMoniker Id="ff82bbb3-a1d4-4a09-b26e-1ce73768d8c1" LastKnownName="i,j递增" />
+                <elementDefinition Id="cb9ea422-80bb-48ac-aa51-f234e02125f3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6bba839e-e95c-4801-8964-4e743696f6a8" name="将factors[i]，factors[j]装入比较因子" isLeaf="false">
+            <elementDefinition Id="055f81c0-7217-4708-a298-45a4e48383fa" />
+            <flowNodeTargets>
+              <controlFlow Id="2b4362b9-f089-4252-9205-fe5e9aa5439e" isLeaf="false">
+                <opaqueActionMoniker Id="b0233fe2-334e-46be-b285-c3070ed71393" LastKnownName="通过比较因子，获取比较因子的历史趋势" />
+                <elementDefinition Id="d45baf7d-4401-44da-a8cf-829d8d8fdbf1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ff82bbb3-a1d4-4a09-b26e-1ce73768d8c1" name="i,j递增" isLeaf="false">
+            <elementDefinition Id="6ba32ba6-68a2-4231-ace8-50db41729467" />
+            <flowNodeTargets>
+              <controlFlow Id="f2786231-005d-49a8-b8ca-a550b06d4ef7" isLeaf="false">
+                <opaqueActionMoniker Id="6bba839e-e95c-4801-8964-4e743696f6a8" LastKnownName="将factors[i]，factors[j]装入比较因子" />
+                <elementDefinition Id="990fec6c-0c00-447f-a8d5-2144736f0828" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b0233fe2-334e-46be-b285-c3070ed71393" name="通过比较因子，获取比较因子的历史趋势" isLeaf="false">
+            <elementDefinition Id="af60065b-65f3-42ca-a82b-7060381c7def" />
+            <flowNodeTargets>
+              <controlFlow Id="945a1bfa-d43f-48b3-8c39-63fe082955e3" isLeaf="false">
+                <opaqueActionMoniker Id="611d2a3c-3485-4f11-ac64-282b48f68ead" LastKnownName="通过历史趋势，分析指定期次可能的因子" />
+                <elementDefinition Id="c453aae9-b4d3-43bb-bc3f-0815e9dca3b3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="611d2a3c-3485-4f11-ac64-282b48f68ead" name="通过历史趋势，分析指定期次可能的因子" isLeaf="false">
+            <elementDefinition Id="0207940d-9ebf-4929-ac0e-bf9a0de5ee71" />
+            <flowNodeTargets>
+              <controlFlow Id="10baa189-6774-4f6e-9f91-4f9e38927663" isLeaf="false">
+                <opaqueActionMoniker Id="fd81e289-2a7e-47f3-984f-271ea4db92d9" LastKnownName="获取最终的分析结果" />
+                <elementDefinition Id="ec55029b-cb85-430d-b906-e93fc75d669b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fd81e289-2a7e-47f3-984f-271ea4db92d9" name="获取最终的分析结果" isLeaf="false">
+            <elementDefinition Id="8e09e9dd-f015-4ea0-a3f1-f5efc9d6bdaa" />
+            <flowNodeTargets>
+              <controlFlow Id="482fcbed-2df0-49d4-b792-003daf01644b" isLeaf="false">
+                <activityFinalNodeMoniker Id="273728a7-25bd-4d29-94c7-3d1f213ce036" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="ca04ad03-65e3-477b-b544-99eed955a6f6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="273728a7-25bd-4d29-94c7-3d1f213ce036" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="38b0a6b1-af95-4e37-84dd-3ecc860cc183" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="2c6de785-b4bf-4f02-bd48-400533005b88" name="TrendAnalysis.ModelingProject">
+    <elementDefinition Id="157f3c16-3e6f-4d21-b55b-3345795bc7f0" />
+  </package>
+</activityRootModel>
