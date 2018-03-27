@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>水平垂直居中</title>
+    <meta charset="utf-8" />
+    <style>
+        .parent-transform {
+            position: relative;
+            height: 150px;
+            border: 1px solid black;
+        }
+
+        .child-transform {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .parent {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+             height: 150px;
+            border: 1px solid black;
+        }
+
+        .child {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent-transform">
+        <div class="child-transform">
+            水平垂直居中
+            1）使用absolute+transform
+            （1）原理、用法
+            原理：将水平居中时的absolute+transform和垂直居中时的absolute+transform相结合。详见：水平居中的3）和垂直居中的2）。
+            见水平居中的3）和垂直居中的2）。
+        </div>
+    </div>
+    <div class="parent">
+        <div class="child">
+        2）使用inline-block+text-align+table-cell+vertical-align
+（1）原理、用法
+原理：使用inline-block+text-align水平居中，再用table-cell+vertical-align垂直居中，将二者结合起来。详见：水平居中的1）和垂直居中的1）。
+见水平居中的1）和垂直居中的1）</div>
+    </div>
+</body>
+</html>

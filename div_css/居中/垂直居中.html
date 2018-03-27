@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            height:300px;
+            border:1px solid black;
+        }
+
+        .child {
+            display: inline-block;
+            border: 1px solid black;
+        }
+
+        .parent-transform {
+            position: relative;
+            height:300px;
+            border:1px solid black;
+        }
+
+        .child-transform {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">DEMO</div>
+    </div>
+
+    <div class="parent-transform">
+        <div class="child-transform">DEMO-transform</div>
+    </div>
+</body>
+</html>
