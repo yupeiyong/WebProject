@@ -5,10 +5,18 @@
     <title>水平垂直居中</title>
     <meta charset="utf-8" />
     <style>
+        .box {
+            height: 100px;
+            border: 1px solid #808080;
+        }
+
+        .child-box {
+            height: 50px;
+            background-color: #b6ff00;
+        }
+
         .parent-transform {
             position: relative;
-            height: 150px;
-            border: 1px solid black;
         }
 
         .child-transform {
@@ -18,35 +26,42 @@
             transform: translate(-50%,-50%);
         }
 
-        .parent {
-            text-align: center;
+        .parent-inline-block {
             display: table-cell;
             vertical-align: middle;
-             height: 150px;
-            border: 1px solid black;
+            text-align: center;
         }
 
-        .child {
+        .child-inline-block {
             display: inline-block;
+        }
+
+        .parent-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-    <div class="parent-transform">
-        <div class="child-transform">
-            水平垂直居中
-            1）使用absolute+transform
-            （1）原理、用法
-            原理：将水平居中时的absolute+transform和垂直居中时的absolute+transform相结合。详见：水平居中的3）和垂直居中的2）。
-            见水平居中的3）和垂直居中的2）。
+    <div class="parent-transform box">
+        <div class="child-transform child-box">
+            1、水平垂直居中
+            原理：将水平居中时的absolute+transform和垂直居中时的absolute+transform相结合。
         </div>
     </div>
-    <div class="parent">
-        <div class="child">
-        2）使用inline-block+text-align+table-cell+vertical-align
-（1）原理、用法
-原理：使用inline-block+text-align水平居中，再用table-cell+vertical-align垂直居中，将二者结合起来。详见：水平居中的1）和垂直居中的1）。
-见水平居中的1）和垂直居中的1）</div>
+    <div class="parent-inline-block box">
+        <div class="child-inline-block child-box">
+            2、水平垂直居中
+            原理：使用inline-block+text-align水平居中，再用table-cell+vertical-align垂直居中，将二者结合起来。
+        </div>
     </div>
+    <div class="parent-flex box">
+        <div class="child-flex child-box">
+            3、水平垂直居中
+            原理：通过设置CSS3布局利器flex中的justify-content和align-items，从而达到水平垂直居中。
+        </div>
+    </div>
+
 </body>
 </html>
