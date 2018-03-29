@@ -9,15 +9,19 @@
             border: 1px solid #000000;
         }
 
-        .left {
-            float: left;
-            width: 100px;
-            background-color:#b6ff00;
+        .parent {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
         }
 
-        .right {
-            margin-left: 120px;
-            background-color:#808080;
+        .left {
+            width: 100px;
+            padding-right: 20px;
+        }
+
+        .right, .left {
+            display: table-cell;
         }
     </style>
 </head>
@@ -27,12 +31,12 @@
             <p>left</p>
         </div>
         <div class="right">
-            <p>使用float+margin
+            <p>使用table
 （1）原理、用法
 
 
-原理：通过将左框脱离文本流，加上右框向右移动一定的距离，以达到视觉上的多列布局。
-用法：先将左框设置为float:left、margin-left，再设置右框margin-left。</p>
+原理：通过将父框设置为表格，将左右边框转化为类似于同一行的td，从而达到多列布局。
+用法：先将父框设置为display:table、width:100%、table-layout:fixed，再设置左右框display:table-cell，最后设置左框width、padding-right。</p>
             <p>right</p>
         </div>
     </div>

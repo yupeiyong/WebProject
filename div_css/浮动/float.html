@@ -18,9 +18,21 @@
             background-color: #ffd800;
             float: left;
         }
+        .clearfix:after{
+            content:"";
+            display:block;
+            width:0;
+            height:0;
+            clear:both;
+        }
+        .right-auto{
+            width:200px;
+            background-color:#ff6a00;
+        }
     </style>
 </head>
 <body>
+    1、父框高度自适应，子框浮动
     <div class="parent" id="parent">
         <div class="left">
             <p>left</p>
@@ -30,9 +42,35 @@
             <p>right</p>
         </div>
     </div>
+    <br />
+    <div class="clearfix"></div>
+    2、父框高度200，子框浮动
+    <div class="parent" id="parent1" style="height:200px;width:200px;">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="right">
+            <p>right</p>
+            <p>right</p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    3、父框高度自适应，1子框浮动,1子框宽度指定
+    <div class="parent" id="parent2">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="right-auto">
+            <p>right</p>
+            <p>right</p>
+        </div>
+    </div>
+
     <script>
         var parent = document.getElementById('parent');
-        alert('子框都为浮动，父框高度为0，因为浮云元素脱离了文档流'+parent.clientHeight);
+        alert('子框都为浮动，因为浮云元素脱离了文档流,父框高度为自适应，所以高度为0，' + parent.clientHeight);
+        var parent1 = document.getElementById('parent1');
+        alert('子框都为浮动，父框高度等于它自身高度：' + parent1.clientHeight);
     </script>
 </body>
 </html>

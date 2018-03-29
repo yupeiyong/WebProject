@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent > div {
+            border: 1px solid #000000;
+        }
+
+        .left {
+            float: left;
+            width: 100px;
+            position: relative;
+        }
+
+        .right-fix {
+            float: right;
+            width: 100%;
+            margin-left: 100px;
+        }
+
+        .right {
+            margin-left: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="rigth-fix">
+            <div class="right">
+                <p>
+                    使用float+margin（改良版）
+                    （1）原理、用法
+
+
+                    原理：在1）的基础之上，通过向右框添加一个父框，再加上设置左、右父框属性使之产生BFC以去除bug。
+                    用法：先将左框设置为float:left、margin-left、position:relative，再设置右父框float:right、width:100%、margin-left，最后设置实际的右框margin-left。
+                </p>
+                <p>right</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
