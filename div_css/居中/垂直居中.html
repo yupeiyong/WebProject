@@ -34,20 +34,30 @@
             display: flex;
             align-items: center;
         }
+
+        .parent-vertical-align {
+            display:inline-block;
+            vertical-align: middle;
+        }
+
+        .child-inline-block {
+        }
     </style>
 </head>
 <body>
     <div class="parent-table-cell box">
         <div class="child-table-cell child-box">1、垂直居中 父框设置： display:table-cell + vertical-align:middle</div>
     </div>
-
     <div class="parent-transform box">
         <div class="child-transform child-box">2、垂直居中 父框相对定位，子框绝对定位+transform</div>
     </div>
-
     <div class="parent-position-flex box">
         <div class="child-position-flex child-box">3、父框display:flex align-item:center</div>
     </div>
 
+    <div class="box parent-vertical-align">
+        <div class="child-box child-inline-block">4、测试，子框设置为行内元素，父框设置vertical-align:middle</div>
+        <span>1111</span>
+    </div>
 </body>
 </html>
