@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .left {
+            width: 100px;
+            height: 100px;
+            background-color: #00ffff;
+            float: left;
+        }
+
+        .right {
+            width: 100px;
+            height: 100px;
+            background-color: #ffd800;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" id="parent">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="right">
+            <p>right</p>
+            <p>right</p>
+        </div>
+    </div>
+    <script>
+        var parent = document.getElementById('parent');
+        alert('子框都为浮动，父框高度为0，因为浮云元素脱离了文档流'+parent.clientHeight);
+    </script>
+</body>
+</html>
