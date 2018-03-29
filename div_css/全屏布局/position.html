@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        /*.parent > div {
+            border: 1px solid #000000;
+        }*/
+
+        html, body, .parent {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            color: white;
+        }
+
+        .top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: blue;
+        }
+
+        .left {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            bottom: 50px;
+            width: 200px;
+            background: red;
+        }
+
+        .right {
+            position: absolute;
+            left: 200px;
+            top: 100px;
+            bottom: 50px;
+            right: 0;
+            background: pink;
+            overflow: auto;
+        }
+
+            .right .inner {
+                min-height: 1000px;
+            }
+
+        .bottom {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 50px;
+            background: black;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="parent">
+        <div class="top">top</div>
+        <div class="left">left</div>
+        <div class="right">
+            <div class="inner">使用position
+（1）原理、用法
+
+
+原理：将上下部分固定，中间部分使用定宽+自适应+两块高度一样高。</div>
+        </div>
+        <div class="bottom">bottom</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent > div {
+            border: 1px solid #000000;
+        }
+
+        .parent-fix {
+            margin-left: -20px;
+            /*l+g*/
+        }
+
+        .parent {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .column {
+            display: table-cell;
+            padding-left: 20px;
+            /*w+g;*/
+        }
+    </style>
+
+</head>
+<body>
+    <div>使用table
+（1）原理、用法
+
+
+原理：通过增加一个父框的修正框，增大其宽度，并将父框转换为table，将子框转换为tabel-cell进行布局。
+用法：先将父框的修正框设置为margin-left: -*px，再设置父框display: table、width:100%、table-layout: fixed，设置子框display: table-cell、padding-left。</div>
+    <div class="parent-fix">
+        <div class="parent">
+            <div class="column"><p>1</p></div>
+            <div class="column"><p>2</p></div>
+            <div class="column"><p>3</p></div>
+            <div class="column"><p>4</p></div>
+        </div>
+    </div>
+</body>
+</html>

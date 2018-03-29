@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent > div {
+            border: 1px solid #000000;
+        }
+
+        .parent {
+            display: flex;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+            .column + .column {
+                margin-left: 20px;
+            }
+    </style>
+
+</head>
+<body>
+    <div>
+        使用flex
+        （1）原理、用法
+
+
+        原理：通过设置CSS3布局利器flex中的flex属性以达到等分布局。
+        用法：将父框设置为display: flex，再设置子框flex: 1，最后设置子框与子框的间距margin-left。
+    </div>
+    <div class="parent">
+        <div class="column"><p>1</p></div>
+        <div class="column"><p>2</p></div>
+        <div class="column"><p>3</p></div>
+        <div class="column"><p>4</p></div>
+    </div>
+</body>
+</html>

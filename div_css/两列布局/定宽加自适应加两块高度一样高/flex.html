@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent > div {
+            border: 1px solid #000000;
+        }
+
+        .parent {
+            display: flex;
+        }
+
+        .left {
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .right {
+            flex: 1;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        使用flex
+        （1）原理、用法
+
+
+        原理：通过设置CSS3布局利器flex中的flex属性以达到定宽+自适应+两块高度一样高。
+        用法：将父框设置为display: flex，再设置左框width、margin-right，最后设置右框flex:1。
+    </div>
+    <div class="parent">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="right">
+            <p>right</p>
+            <p>right</p>
+        </div>
+    </div>
+</body>
+</html>

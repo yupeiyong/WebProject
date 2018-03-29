@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent > div {
+            border: 1px solid #000000;
+        }
+
+        p {
+            background: none !important;
+        }
+
+        .left, .right {
+            background: #444;
+        }
+
+        .parent {
+            overflow: hidden;
+        }
+
+        .left, .right {
+            padding-bottom: 9999px;
+            margin-bottom: -9999px;
+        }
+
+        .left {
+            float: left;
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .right {
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        使用float
+        （1）原理、用法
+
+
+        原理：通过过分加大左右子框的高度，辅助超出隐藏，以达到视觉上的等高。
+        用法：将父框设置overflow: hidden，再设置左右子框padding-bottom: 9999px、margin-bottom: -9999px，最后设置左框float: left、width、margin-right，右框overflow: hidden。
+    </div>
+    <div class="parent">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="right">
+            <p>right</p>
+            <p>right</p>
+        </div>
+    </div>
+</body>
+</html>
