@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent {
+            margin:0 auto;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000080;
+            padding:0 100px 0 120px;
+        }
+
+        .child {
+            float:left;
+            margin-left: -100%;/*左边距是负的父内容宽度*/
+            border: 1px solid #000000;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">child</div>
+    </div>
+</body>
+</html>
