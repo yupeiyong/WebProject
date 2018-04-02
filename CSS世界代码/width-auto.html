@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent {
+            background-color: #808080;
+        }
+
+        .child-inline-block {
+            display: inline-block;
+            background-color: #2f4f4f;
+        }
+
+        .child-position-absolute {
+            display: inline-block;
+            background-color: #ff4f4f;
+        }
+
+        .child-float {
+            float: left;
+            background-color: #214141;
+        }
+
+        .child-display-table {
+            display: table;
+            background-color: #00bfff;
+        }
+
+        .clearfix {
+            display: block;
+            width: 0px;
+            height: 0px;
+            clear: both;
+            content: "";
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child-inline-block">这是inline-block样式</div>
+    </div>
+    <div class="parent">
+        <div class="child-position-absolute">这是绝对定位样式</div>
+    </div>
+    <div class="parent">
+        <div class="child-display-table">这是table样式</div>
+    </div>
+    <div class="parent">
+        <div class="child-float">这是float样式</div>
+    </div>
+    <div class="clearfix"></div>
+    <div>
+        <span>
+            width:auto
+            总结：（2）收缩与包裹。<br/>
+            典型代表就是浮动、绝对定位、inline-block 元素或 table 元素，<br />
+            英文称为 shrink-to-fit，直译为“收缩到合适”，有那么点儿意思，<br />
+            但不够形象，<br />
+            我一直把这种现象称为“包裹性”。<br />
+            CSS3 中的 fit-content 指的就是这种宽度表现
+        </span>
+    </div>
+</body>
+</html>

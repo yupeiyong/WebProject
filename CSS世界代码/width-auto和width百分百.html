@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent {
+            width: 150px;
+            background-color: #808080;
+            border: 1px solid #000000;
+        }
+
+        #child-width-auto {
+            width: auto;
+            margin: 0 20px;
+            padding: 20px;
+            border: 5px solid #0000cd;
+        }
+
+        #child-width-100-percent {
+            width: 100%;
+            margin: 0 20px;
+            padding: 20px;
+            border: 5px solid #228b22;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div id="child-width-auto">
+            <span>width:auto</span>
+        </div>
+    </div>
+    <div class="parent">
+        <div id="child-width-100-percent">
+            <span>width:100%</span>
+        </div>
+    </div>
+</body>
+</html>
