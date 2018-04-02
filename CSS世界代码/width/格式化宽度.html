@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .parent {
+            width: 200px;
+            border: 1px solid #000000;
+            position: relative;
+        }
+
+        .child {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            border: 1px solid #000080;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <span>
+                此外，和上面的普通流一样，“格式化宽度”具有完全的流体性，也就是 margin、border、
+                padding 和 content 内容区域同样会自动分配水平（和垂直）空间。
+            </span>
+        </div>
+    </div>
+</body>
+</html>
