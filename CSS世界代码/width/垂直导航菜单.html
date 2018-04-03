@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        nav ul, nav > div {
+            width: 150px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        li {
+            background-color: #f5f5f5;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .width-auto li > a {
+            display: block;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border-bottom: 1px solid #b0e0e6;
+        }
+
+        .width-auto li:hover {
+            background-color: #7fffd4;
+        }
+
+        .width-auto li:last-child > a {
+            border-bottom: 0;
+        }
+
+        nav > div {
+            background-color: #d2b48c;
+        }
+
+        .nav-a {
+            display: block;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border-bottom: 1px solid #b0e0e6;
+        }
+        .width-100 {
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav>
+            <ul class="width-auto">
+                <li>
+                    <a href="http://www.baidu.com/">菜单1</a>
+                </li>
+                <li>
+                    <a href="http://www.baidu.com/">菜单2</a>
+                </li>
+                <li>
+                    <a href="http://www.baidu.com/">菜单3</a>
+                </li>
+                <li>
+                    <a href="http://www.baidu.com/">菜单4</a>
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <div>
+                <a class="nav-a" href="http://www.baidu.com/">菜单1</a>
+                <a class="nav-a" href="http://www.baidu.com/">菜单2</a>
+                <a class="nav-a" href="http://www.baidu.com/">菜单3</a>
+                <a class="nav-a" href="http://www.baidu.com/">菜单4</a>
+            </div>
+            <br />
+            <div>
+                <a class="nav-a width-100" href="http://www.baidu.com/">菜单1</a>
+                <a class="nav-a width-100" href="http://www.baidu.com/">菜单2</a>
+                <a class="nav-a width-100" href="http://www.baidu.com/">菜单3</a>
+                <a class="nav-a width-100" href="http://www.baidu.com/">菜单4</a>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
