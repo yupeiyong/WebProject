@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>宽度分离</title>
+    <meta charset="utf-8" />
+    <style>
+        .father {
+            width: 302px;
+        }
+
+        .son {
+            border: 1px solid #000080;
+        }
+        .son1 {
+            border: 1px solid #000080;
+            padding:0 15px;
+            margin:15px 0;
+        }
+        .son2 {
+            border: 1px solid #000080;
+            margin:15px 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+            <span>这是采用宽度分离的元素，在元素宽度固定的情况下，margin+padding+border+content=一个固定值，width:auto，修改margin或者padding，content的宽度会自动改变</span>
+        </div>
+        <div class="son1">
+            <span>这是采用宽度分离的元素，左右内补白宽度＝15</span>
+        </div>
+        <div class="son2">
+            <span>这是采用宽度分离的元素，左右边距＝25</span>
+        </div>
+    </div>
+</body>
+</html>
