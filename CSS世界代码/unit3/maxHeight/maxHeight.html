@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .element {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .25s;
+        }
+
+        :checked ~ .element {
+            max-height: 666px;
+        }
+    </style>
+</head>
+<body>
+    <input id="check" type="checkbox">
+    <p>个人觉得，...</p>
+    <div class="element">
+        <p>display:table-cell其他...</p>
+    </div>
+    <label for="check" class="check-in">更多↓</label>
+    <label for="check" class="check-out">收起↑</label>
+</body>
+</html>

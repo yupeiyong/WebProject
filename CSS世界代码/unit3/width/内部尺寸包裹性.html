@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .box {
+            width: 600px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .content {
+            display: inline-block;
+            text-align: left;
+            background-color: #b6ff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p  class="content">
+            我是少量字符，我居中显示
+        </p>
+        <p class="content">
+            （1）包裹性。
+            “包裹性”是我自己对“shrink-to-fit”理解后的一种称谓，我个人觉得非常形象好记，一直
+            用了很多年。“包裹性”也是 CSS 世界中很重要的流布局表现形式。
+            中文就是博大精深，顾名思义，“包裹性”，除了“包裹”，还有“自适应性”。“自适应性”
+            是区分后面两种尺寸表现很重要的一点。那么这个“自适应性”指的是什么呢？
+            所谓“自适应性”，指的是元素尺寸由内部元素决定，但永远小于“包含块”容器的
+            尺寸（除非容器尺寸小于元素的“首选最小宽度”）。换句话说就是，“包裹性”元素冥冥
+            中有个 max-width:100%罩着的感觉（注意，此说法只是便于大家理解，实际上是有明
+            显区别的）。
+            因此，对于一个元素，如果其 display 属性值是 inline-block，那么即使其里面内容
+            再多，只要是正常文本，宽度也不会超过容器。于是，图文混排的时候，我们只要关心内容，
+            除非“首选最小宽度”比容器宽度还要大，否则我们完全不需要担心某个元素内容太多而破坏
+            了布局。
+        </p>
+    </div>
+</body>
+</html>
