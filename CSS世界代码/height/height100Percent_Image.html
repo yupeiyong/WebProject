@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .box {
+            display: inline-block;
+            position: relative;
+        }
+
+        .prev,
+        .next {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            opacity: .5;
+        }
+
+        .prev {
+            left: 0;
+            background-color: #cd0000;
+        }
+
+        .next {
+            right: 0;
+            background-color: #34538b;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="javascript:" class="prev" title="上一张">上一张</a>
+        <a href="javascript:" class="next" title="下一张">下一张</a>
+        <img src="1.jpg" />
+    </div>
+</body>
+</html>

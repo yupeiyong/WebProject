@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .box {
+            height: 160px;
+            padding: 30px;
+            box-sizing: border-box;
+            background-color: #beceeb;
+        }
+
+        .child {
+            height: 100%;
+            background-color: #cd0000;
+        }
+
+        .box-relative {
+            height: 160px;
+            padding: 30px;
+            box-sizing: border-box;
+            background-color: #beceeb;
+            position: relative;
+        }
+
+        .child-absolute {
+            height: 100%;
+            width: 100%;
+            background-color: #cd0000;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="child"></div>
+    </div>
+    <div class="box-relative">
+        <div class="child-absolute"></div>
+    </div>
+</body>
+</html>
