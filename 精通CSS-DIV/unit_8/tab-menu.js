@@ -13,10 +13,9 @@ if (containers.length > 0) {
             } else {
                 classValue += " on";
             }
-            li.attributes['class'] = classValue;
+            liClass.nodeValue = classValue;
         } else {
             li.attributes['class'] = "on";
         }
-        //li.addClass(' on');
     }
 }

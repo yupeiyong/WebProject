@@ -2,36 +2,52 @@
     margin: 10px;
 }
 
-.nav {
+ul.nav {
     list-style: none;
+}
+
+.nav {
     margin: 0;
-    padding-left: 0;
-    padding-bottom: 29px;
-    border-bottom: 1px solid #11a3ff;
+    padding: 0 0 29px 0;
+    border-bottom: 1px solid #a3dbff;
 }
 
     .nav li {
         float: left;
-        margin: 0 5px 0 0;
-        border: 1px solid #11a3ff;
+        text-align: center;
         background-color: #a3dbff;
+        margin: 0px 3px 0px 0px;
+        border: 1px solid #11a3ff;
     }
 
         .nav li > a {
             display: block;
-            width: 100px;
-            text-align: center;
+            width: 80px;
             line-height: 28px;
             text-decoration: none;
         }
 
+            .nav li > a:hover {
+                background-color: #006eb3;
+                color: #FFFFFF;
+            }
+
         .nav li.on {
             background-color: #fff;
             border-bottom: 1px solid #fff;
+            color: #000;
         }
 
+            .nav li.on > a:hover {
+                background-color: #fff;
+                border-bottom: 1px solid #fff;
+                color:#006eb3;
+                text-decoration: underline;
+            }
+
 .content {
+    margin: 0;
     padding: 15px;
-    border: 1px solid #11a3ff;
+    border: 1px solid #a3dbff;
     border-top: 0;
 }
