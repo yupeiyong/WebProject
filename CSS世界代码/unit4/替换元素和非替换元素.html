@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .non-replace {
+            height: 100px;
+            width: 100px;
+            background-color: #0000ff;
+            color: #fff;
+        }
+
+        .replace {
+            height: 50px;
+            width: 180px;
+            background-color: #0000ff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>非替换元素</span>
+        <div>
+            <span class="non-replace">这是非替换元素span</span>
+        </div>
+    </div>
+    <div>
+        <span>替换元素</span>
+        <div>
+            <input type="text" value="这是替换元素input" class="replace" />
+        </div>
+    </div>
+</body>
+</html>
