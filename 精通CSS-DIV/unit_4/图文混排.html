@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        img.image-left{
+            float:left;
+            margin-right:25px;
+            margin-bottom:25px;
+        }
+        p.content{
+            font-family:"宋体";
+            font-size:25px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../../images/u=4089700577,3769529349&fm=116&gp=0.jpg" class="image-left"/>
+    <p class="content">
+        A.查询用Search结尾
+        B.操作用Edit结尾
+        C.返回的自定义类用Info结尾,Info类尽量放到Search类文件中,非内部类 
+        6.写linq务必写出层次感,方便阅读
+        7.C#变量请使用小写开头驼峰,类字段使用_开头加大写开头驼峰
+        8.字段名与对应的属性名只相差一个下划线开头
+        9.linq中的变量请使用r开头后面跟数字或者驼峰,into的表使用t开头后面跟数字或者驼峰
+        10.类名和函数以及参数必须写上注释
+        11.linq中where尽量不要既在表后面Where又在查询后where,因为这样生成的sql会多一层子查询
+        12.linq能不ToList尽量不要ToList,否则数据加载到内存中操作了,特别是数据量大的必须禁止
+        13.using多层嵌套中间无其他代码,不要用多个{}
+        14.linq的小写写法在以下地方换行from,order,group,into,join,on,select
+        15.函数调用不宜嵌套太深,能力有限,太难理解,代码尽量控制在3个以内,就算要嵌套也应该跳出一层再加一层
+        16.C#禁止多个字符串拼接,使用StringBuilder来拼接字符串更高效
+        17.使用String.Format更容易阅读和维护代码
+        18.一次性的数据库增删改操作多张表,必须要使用事务,以免造成数据不一致性,难维护
+        19.任何情况下不要使用goto语句
+        20.函数中的参数定义或者调用函数的传入参数,若超过两个请换行,用逗号开头
+    </p>
+</body>
+</html>
