@@ -1,44 +1,82 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>两列布局</title>
-    <meta charset="utf-8" />
-</head>
-<body>
-    <div id="container">
-        <div id="banner">
-        </div>
-        <div id="content">
-            <div class="blog">
-                <div class="date">date</div>
-                <div class="blogcontent">
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
-                    content content content content content content content content content content<br>
+    <style type="text/css">
+        <!--
+        body {
+            margin: 0px;
+            font-size: 13px;
+            font-family: Arial;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #banner {
+            height: 80px;
+            border: 1px solid #000000;
+            text-align: center;
+            background-color: #a2d9ff;
+            padding: 10px;
+            margin-bottom: 2px;
+        }
+
+        #content {
+            float: left;
+            background-color: #a2d9ff;
+            text-align: center;
+            padding-right: 200px; /* 内容往回挤200px */
+        }
+
+        #links {
+            float: right;
+            width: 200px;
+            border: 1px solid #000000;
+            text-align: center;
+        }
+
+        #footer {
+            clear: both; /* 不受float影响 */
+            text-align: center;
+            height: 30px;
+            border: 1px solid #000000;
+        }
+        -->
+    </style>
+    <title>CSS排版</title>
+    <body>
+        <div id="container">
+            <div id="banner">banner</div>
+            <div id="content">
+                <div class="blog">
+                    <div class="date">date</div>
+                    <div class="blogcontent">
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                        content content content content content content content content content content<br>
+                    </div>
                 </div>
+                <div class="others">others</div>
             </div>
-            <div class="others">others</div>
+            <div id="links">
+                <div class="calendarhead">links<br>links<br>links<br>links</div>
+                <div class="calendartable">links<br>links<br>links<br>links</div>
+                <div class="side">links<br>links<br>links<br>links</div>
+                <div class="syndicate">links<br>links<br>links<br>links</div>
+                <div class="friends">links<br>links<br>links<br>links</div>
+            </div>
+            <div id="footer">footer</div>
         </div>
-        <div id="links">
-            <div class="calendarhead">links<br>links<br>links<br>links</div>
-            <div class="calendartable">links<br>links<br>links<br>links</div>
-            <div class="side">links<br>links<br>links<br>links</div>
-            <div class="syndicate">links<br>links<br>links<br>links</div>
-            <div class="friends">links<br>links<br>links<br>links</div>
-        </div>
-        <div id="footer"></div>
-    </div>
-</body>
+    </body>
 </html>
