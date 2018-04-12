@@ -11,10 +11,6 @@ div.pic {
     padding: 0;
 }
 
-    div.pic a {
-        display: block;
-        padding: 5px;
-    }
 
     div.pic img {
         border: 1px solid #82c3ff;
@@ -25,12 +21,30 @@ div.pic {
     }
 
 div.ls {
-    background: url(/images/framels.jpg) no-repeat;
+    background: url(/images/framels.jpg) no-repeat center;
 }
 
+    div.ls a {
+        display: block;
+        padding: 34px 14px 36px 11px;
+    }
+
+        div.ls a:hover {
+            background: url(/images/framels_hover.jpg) no-repeat center;
+        }
+
 div.pt {
-    background: url(/images/framept.jpg) no-repeat;
+    background: url(/images/framept.jpg) no-repeat center;
 }
+
+    div.pt a {
+        display: block;
+        padding: 11px 36px 14px 34px;
+    }
+
+        div.pt a:hover {
+            background: url(/images/framept_hover.jpg) no-repeat center;
+        }
 
 div.ls img {
     width: 135px;
