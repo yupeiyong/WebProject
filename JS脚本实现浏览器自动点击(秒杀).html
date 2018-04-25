@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>
+        Micomo
+    </title>
+</head>
+<body>
+    <div>
+        <p>
+            活动倒计时<strong id="endtime"></strong>秒！
+        </p>
+        <input type="button" id="btn" value="立即购买" disabled="disabled" onClick="func()" />
+    </div>
+    <script src="Lib/JQuery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        //倒计时30秒
+        var i = 30;
+
+        function remainTime() {
+            if (i > 0) {
+                document.getElementById("endtime").innerHTML = i--;
+                setTimeout("remainTime()", 1000);
+
+            }
+            if (i == 0) {
+                $("p").text("活动开始");
+                $("p").css("background-color", "yellow");
+                //倒计时结束，按钮状态改为可用
+                document.getElementById("btn").disabled = false;
+            }
+
+        }
+
+        remainTime();
+
+        //点击按钮触发的方法
+        function func() {
+            alert("恭喜你抢到一个月饼");
+        }
+    </script>
+
+<script type="text/javascript">
+    //如何放到浏览器
+    //浏览器打开活动页面，按F12进入调试模式，找到Console控制台，将上面js脚本标签内的代码粘贴进去（不要首尾标签），点击回车即可，一定要在活动结束前放进去。 
+
+    var button = document.getElementById("btn");
+    //每秒执行一次，若按钮状态为可用，进行点击
+    setInterval(function () {
+            if (button.disabled == false) {
+                button.click();
+
+            }
+        },
+        1000);
+</script>
+</body>
+
+</html>
