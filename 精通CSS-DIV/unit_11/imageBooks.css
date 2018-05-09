@@ -3,8 +3,6 @@
     padding: 0;
 }
 
-
-
 div.pic {
     margin: 5px 15px 25px 15px;
     width: 160px;
@@ -12,17 +10,77 @@ div.pic {
     position: relative;
 }
 
+div.ls {
+    background: url('/images/framels.jpg') no-repeat left;
+}
+
+    div.ls a {
+        display: block;
+        padding: 34px 14px 36px 11px;
+    }
+
+        div.ls a:hover {
+            background: url('/images/framels_hover.jpg') no-repeat left;
+        }
 
 
+div.pt {
+    background: url('/images/framept.jpg') no-repeat left;
+}
+
+    div.pt a {
+        display: block;
+        padding: 11px 36px 14px 34px;
+    }
+
+        div.pt a:hover {
+            background: url('/images/framept_hover.jpg') no-repeat left;
+        }
 
 ul {
     list-style: none;
 }
 
 div.pic ul {
-    position: relative;
-    /*top:15px;*/
-    left: 180px;
-    border: 1px solid #00008b;
-    background-color: #00bfff;
+    position: absolute;
+    top: 15px;
+    left: 80px;
+    /* 设置相片信息的样式 */
+    margin: 3px 0 0 170px;
+    padding: 0 0 0 0.5em;
+    background: #dceeff;
+    border: 2px solid #a7d5ff;
+    font-size: 12px;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+div.pic li {
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+    div.pic li.title {
+        font-weight: bold;
+        padding-top: 0.4em;
+        padding-bottom: 0.2em;
+        border-bottom: 1px solid #a7d5ff;
+        color: #004586;
+    }
+
+    div.pic li.catno {
+        color: #0068c9;
+        margin: 0 2px 0 13em;
+        padding-left: 5px;
+        border-left: 1px solid #a7d5ff;
+    }
+
+    div.pic li.price {
+        color: #0068c9;
+        font-style: italic;
+        margin: -1.2em 2px 0 18em;
+        padding-left: 5px;
+        border-left: 1px solid #a7d5ff;
+        float: left;
+    }
