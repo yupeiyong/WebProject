@@ -1,0 +1,64 @@
+﻿<html>
+  <head></head>
+  <body>
+    <script>
+
+      var sort=function(arr){
+        for(var i=0;i<arr.length-1;i++){
+          var flag=false;
+          for(var j=arr.length-1;j>i;j--){
+            if(arr[j]<arr[j-1]){
+              flag=true;
+              var tmp=arr[j];
+              arr[j]=arr[j-1];
+              arr[j-1]=tmp;
+            }
+          }
+          if(!flag)break;
+        }
+      }
+      var sort2=function(arr){
+        for(var i=0;i<arr.length-1;i++){
+          var flag=false;
+          for(var j=0;j<arr.length-1-i;j++){
+            if(arr[j]>arr[j+1]){
+              flag=true;
+              var tmp=arr[j];
+              arr[j]=arr[j+1];
+              arr[j+1]=tmp;
+            }
+          }
+          if(!flag)break;
+        }
+      }
+      var sort3=function(arr){
+        var index=1;
+        var len=arr.length;
+        while(index<len){
+          var flag=false;
+          for(var j=len-1;j>=index;j--){
+            if(arr[j]<arr[j-1]){
+	      flag=true;
+              var tmp=arr[j];
+              arr[j]=arr[j-1];
+              arr[j-1]=tmp;
+            }           
+          }
+          if(!flag)break;
+          index++;
+        }
+      }
+      var arr1=[1,4,89,0,2,9];
+      var arr2=arr1.slice(0);
+      var arr3=arr1.slice(0);
+      sort(arr1);
+      document.write(arr1.join(';'));
+      document.write('<br />');
+      sort2(arr2);
+      document.write(arr2.join(';'));
+      document.write('<br />');
+      sort3(arr3);
+      document.write(arr3.join(';'));
+    </script>
+  </body>
+</html>
