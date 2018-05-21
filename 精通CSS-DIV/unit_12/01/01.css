@@ -1,3 +1,4 @@
+/*全局样式*/
 body {
     margin: 0;
     padding: 0;
@@ -5,169 +6,61 @@ body {
     text-align: center;
 }
 
+
 ul {
     list-style: none;
     margin: 0;
-    padding: 10px 0 0 0;
+    padding: 0;
 }
+
+.clearfix:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    margin: 0;
+}
+/*------------------------------------*/
 
 #container {
     position: relative;
     margin: 1px auto 0 auto;
+    padding: 0;
     width: 880px;
     text-align: left;
 }
 
+
 #globallink {
-    margin: 0;
     height: 210px;
-    background: url("banner.jpg"),#ebf7ff;
-    background-repeat: no-repeat;
-    font-size: 12px;
+    background: url(banner.jpg) no-repeat;
 }
-
-    #globallink > ul {
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        top: 180px;
-        left: 468px;
-    }
-
-        #globallink > ul > li {
-            float: left;
-            text-align: center;
-        }
-
-            #globallink > ul > li.twoLittle {
-                width: 57px;
-            }
-
-            #globallink > ul > li.fourLittle {
-                width: 78px;
-            }
-
-    #globallink a:link, #globallink a:visited {
-        color: #fff;
-        text-decoration: underline;
-    }
-
-    #globallink a:hover {
-        color: #004c84;
-        text-decoration: none;
-    }
-
 
 #parameter {
-    float: right;
     position: relative;
-    margin: 0;
-    padding: 0;
+    float: right;
     width: 176px;
-    background-color: #0084a9;
     color: #FEFEFE;
-    font-size: 12px;
+    background-color: #0084a9;
 }
-
-    #parameter h3 > span {
-        display: none;
-    }
-
-    #parameter h3 {
-        margin: 0;
-        padding: 0;
-        height: 30px;
-    }
-
-        #parameter h3.statistics {
-            background: url("lstatistics.jpg") no-repeat;
-        }
-
-        #parameter h3.hotblog {
-            background: url("lhotblog.jpg") no-repeat;
-        }
-
-        #parameter h3.recent {
-            background: url("lrecent.jpg") no-repeat;
-        }
-
-        #parameter h3.apply {
-            background: url("lapply.jpg") no-repeat;
-        }
 
 #mainsupport {
     float: left;
-    position: relative;
-    margin: 0 0 60px 0;
-    font-size: 12px;
+    width: 690px;
 }
 
-br {
-	display:none;
-	clear:both;
-}
-/*#recommendblog h3 {
-            background: url("recommendblog.jpg") no-repeat;
-        }
-
-        #mainsupport h3.hotblog {
-            background: url("lhotblog.jpg") no-repeat;
-        }
-
-        #mainsupport h3.recent {
-            background: url("lrecent.jpg") no-repeat;
-        }
-
-        #mainsupport h3.apply {
-            background: url("lapply.jpg") no-repeat;
-        }*/
-
-#recommendblog {
-    position: absolute;
-    left: 310px;
-    margin-bottom: 10px;
-    padding-top: 15px;
-    padding-left: 48px;
-    width: 332px;
-    height: 125px;
-    background: url("recommendblog.jpg") no-repeat #c4e6ff;
-}
-
-    #recommendblog > h3 {
-        display: none;
+    #mainsupport div {
+        border: 1px solid #226c81;
     }
-
-    #recommendblog ul {
-        margin: 0;
-        padding: 8px 0 0 0;
-    }
-
-#currenttime {
-    margin: 0 0 10px 0;
-    padding: 15px 0 0 48px;
-    width:240px;
-    height: 125px;
-    background: url("time.jpg") no-repeat #c4e6ff;
-}
-
-    #currenttime ul li {
-        display: inline;
-        float: left;
-    }
-
-#blogsearch {
-    margin: 0;
-    padding: 0;
-    height: 32px;
-    background: url("blogsearch.jpg") no-repeat #c4e6ff;
-}
 
 #footer {
-    clear: both;
-    margin: 0;
-    padding: 20px 0;
-    text-align: center;
-    color: #226c81;
-    background-color: #ebf7ff;
-    font-size: 12px;
 }

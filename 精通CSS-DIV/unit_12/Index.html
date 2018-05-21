@@ -3,23 +3,23 @@
 <head>
     <title>CSS博客</title>
     <script language="javascript">
-        var number = new Date().getSeconds() % 3 + 1;	//随机数，从1到3
-        //随机选择CSS外部文件
-        document.write('<link href="0' + number.toString() + '/0' + number.toString() + '.css" rel="stylesheet" type="text/css">');
+var number = new Date().getSeconds() % 3 + 1;	//随机数，从1到3
+//随机选择CSS外部文件
+document.write('<link href="0' + number.toString() + '/0' + number.toString() + '.css" rel="stylesheet" type="text/css">');
     </script>
 </head>
 <body>
     <div id="container">
         <div id="globallink">
             <ul>
-                <li class="twoLittle"><a href="#">首页</a></li>
-                <li class="twoLittle"><a href="#">论坛</a></li>
-                <li class="twoLittle"><a href="#">推荐</a></li>
-                <li class="fourLittle"><a href="#">最新日志</a></li>
-                <li class="fourLittle"><a href="#">最新评论</a></li>
-                <li class="fourLittle"><a href="#">尚未登录</a></li>
+                <li id="one"><a href="#">首页</a></li>
+                <li id="two"><a href="#">论坛</a></li>
+                <li id="three"><a href="#">推荐</a></li>
+                <li id="four"><a href="#">最新日志</a></li>
+                <li id="five"><a href="#">最新评论</a></li>
+                <li id="six"><a href="#">尚未登录</a></li>
             </ul>
-            <br>
+            <div class="clearfix"></div>
         </div>
 
         <div id="parameter">
@@ -30,7 +30,7 @@
                     <li>日志:&nbsp;<b>4397</b>&nbsp;个</li>
                     <li>评论:&nbsp;<b>4596</b>&nbsp;篇</li>
                 </ul>
-                <br>
+                <div class="clearfix"></div>
             </div>
             <div id="lhotblog">
                 <h3 class="hotblog"><span>热门博客</span></h3>
@@ -46,7 +46,7 @@
                     <li><a href="#">Dark City</a>&nbsp;&lt;<a class="author1" href="#">freax</a>&gt;</li>
                     <li><a href="#">E心E意&amp;36</a>&nbsp;&lt;<a class="author1" href="#">moonbow</a>&gt;</li>
                 </ul>
-                <br>
+                <div class="clearfix"></div>
                 <span>
                     <a href="#">更多</a>
                     <a href="#">OPML</a>
@@ -64,7 +64,7 @@
                     <li><a href="#"><span>星天的博客</span></a>&nbsp;&lt;<a class="author1" href="#">starsky</a>&gt;</li>
                     <li><a href="#"><span>个人文集</span></a>&nbsp;&lt;<a class="author1" href="#">sherry</a>&gt;</li>
                 </ul>
-                <br>
+                <div class="clearfix"></div>
                 <span>
                     <a href="#">更多</a>
                     <a href="#">OPML</a>
@@ -81,7 +81,7 @@
                     <li><a href="#"><span>SONG, original</span></a>&nbsp;&lt;<a class="author1" href="#">song</a>&gt;</li>
                     <li><a href="#"><span>买买提※温和的树</span></a>&nbsp;&lt;<a class="author1" href="#">mimiti</a>&gt;</li>
                 </ul>
-                <br>
+                <div class="clearfix"></div>
                 <span>
                     <a href="#">更多</a>
                     <a href="#">OPML</a>
@@ -103,15 +103,13 @@
                     <li><a href="#"><span>地铁发飙记</span></a></li>
                     <li><a href="#"><span>“王”者归来</span></a></li>
                 </ul>
-                <br>
+                <div class="clearfix"></div>
             </div>
             <div id="currenttime">
                 <p class="p1">
-                    <script language=javascript src="js/date.js"></script>
-                </p>
+                <script language=javascript src="date.js"></script></p>
                 <p class="p2">
-                    <script language=javascript src="js/lunar.js"></script>
-                </p>
+                <script language=javascript src="lunar.js"></script></p>
                 <ul>
                     <li><a href="#" title="进入自己的博客">*</a></li>
                     <li><a href="#">A</a></li>
@@ -141,37 +139,37 @@
                     <li><a href="#">Y</a></li>
                     <li><a href="#">Z</a></li>
                 </ul>
-                <br>
+                <div class="clearfix"></div>
             </div>
             <div id="blogsearch">
-                <form>
-                    <ul>
-                        <li id="sear1">博客搜索:<input name="keyword" type="text" size="13" onMouseOver="this.focus();" onFocus="this.select();"></li>
-                        <li id="sear2"><input type="hidden" name="exact" value="0"></li>
-                        <li id="sear3"><input type="radio" name="key" value="u" checked>ID</li>
-                        <li id="sear4"><input type="radio" name="key" value="c">名称</li>
-                        <li id="sear5"><input type="radio" name="key" value="d">描述</li>
-                        <li id="sear6"><input type="submit" value="GO"></li>
-                    </ul>
-                </form>
-                <br>
+                <ul>
+                    <form>
+                        <li id="sear1">博客搜索:<input name="keyword" type="text" size="13" onMouseOver="this.focus();" onFocus="this.select();" /></li>
+                        <li id="sear2"><input type="hidden" name="exact" value="0" /></li>
+                        <li id="sear3"><input type="radio" name="key" value="u" checked=checked />ID</li>
+                        <li id="sear4"><input type="radio" name="key" value="c" />名称</li>
+                        <li id="sear5"><input type="radio" name="key" value="d" />描述</li>
+                        <li id="sear6"><input type="submit" value="GO" /></li>
+                    </form>
+                </ul>
+                <div class="clearfix"></div>
             </div>
             <div id="logoin">
-                <form name="form1">
-                    <ul id="per">
+                <ul id="per">
+                    <form name="form1">
                         <li id="per1">
                             用户名:
-                            <input type="text" class="textinput1" onMouseOver="this.focus()" onFocus="this.select()" name="id" maxlength="12" tabindex="1">
-                            <input type="submit" value="登录" tabindex="3">
+                            <input type="text" class="textinput1" onMouseOver="this.focus()" onFocus="this.select()" name="id" maxlength="12" tabindex="1" />
+                            <input type="submit" value="登录" tabindex="3" />
                         </li>
                         <li id="per2">
                             密&nbsp;&nbsp;码:
-                            <input type="password" class="textinput2" name="passwd" maxlength="39" tabindex="2">
-                            <input type="button" value="注册" onClick="window.location='/bbsreg0.html';return false;" tabindex="4">
+                            <input type="password" class="textinput2" name="passwd" maxlength="39" tabindex="2" />
+                            <input type="button" value="注册" onClick="window.location='/bbsreg0.html';return false;" tabindex="4" />
                         </li>
-                    </ul>
-                </form>
-                <br class="br2">
+                    </form>
+                </ul>
+                <br class="br2" />
             </div>
             <div id="recommendart">
                 <h3><span><a class="middle" href="#">文章推荐</a></span></h3>
@@ -188,7 +186,7 @@
                     <li><a href="#"><span>在linux下使用NOR flash存...</span></a>&nbsp;<a class="author2" href="#">alvin</a></li>
                     <li><a href="#"><span>姐姐说 坚强的就是快乐的...</span></a>&nbsp;<a class="author2" href="#">cyber</a></li>
                 </ul>
-                <br>
+                <div class="clearfix"></div>
             </div>
             <div id="newnode">
                 <h3><span>最新日志</span></h3>
@@ -214,9 +212,10 @@
                     <li>[<span><a href="#">倏忽一年，花开两边</a></span>]&nbsp;<a href="#"><span>期末临近</span></a></li>
                     <li>[<span><a href="#">倏忽一年，花开两边</a></span>]&nbsp;<a href="#"><span>小小学术之winpcap(自力更...</span></a></li>
                 </ul>
-                <br>
+                <div class="clearfix"></div>
             </div>
         </div>
+        <div class="clearfix"></div>
 
         <div id="footer">
             <a href="#" class="article">博客首页</a> |
