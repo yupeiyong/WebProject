@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #ebf7ff;
     text-align: center;
+    font-size: 12px;
 }
 
 
@@ -11,6 +12,10 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+div.clearfix {
+    border: none;
 }
 
 .clearfix:after {
@@ -39,12 +44,46 @@ input {
     text-align: left;
 }
 
+/*-------------------------------------顶部导航条------------------------------------*/
 
 #globallink {
+    position: relative;
     height: 210px;
     background: url(banner.jpg) no-repeat;
 }
 
+    #globallink ul {
+        position: absolute;
+        display: inline;
+        left: 468px;
+        top: 180px;
+        width: 417px;
+    }
+
+    #globallink li {
+        display: inline-block;
+        text-align: center;
+    }
+
+        #globallink li.twoLittle {
+            width: 55px;
+        }
+
+        #globallink li.fourLittle {
+            width: 75px;
+        }
+
+        #globallink li > a:visited, #globallink li > a:link {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+
+        #globallink li > a:hover {
+            color: #004c84;
+            text-decoration: none;
+        }
+
+/*右侧*/
 #parameter {
     position: relative;
     float: right;
@@ -53,13 +92,227 @@ input {
     background-color: #0084a9;
 }
 
+    #parameter > div {
+        margin-bottom: 15px;
+    }
+
+    #parameter ul {
+        padding: 10px 0 0 0;
+    }
+
+    #parameter h3 > span {
+        display: none;
+    }
+
+    #parameter h3 {
+        margin: 0;
+        padding: 0;
+        height: 30px;
+    }
+
+    #parameter span.more {
+        float: right;
+        text-align: right;
+        padding-top: 8px;
+        padding-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    #parameter a:link, #parameter a:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+
+    #parameter a:hover {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    #parameter a.author1:link {
+        color: #39d3ff;
+        text-decoration: none;
+    }
+
+    #parameter a.author1:visited {
+        color: #37d2fc;
+        text-decoration: none;
+    }
+
+    #parameter a.author1:hover {
+        color: #14889D;
+        text-decoration: none;
+    }
+
+#lstatistics h3 {
+    background: url("lstatistics.jpg") no-repeat;
+}
+
+#lstatistics li {
+    padding-left: 16px;
+    line-height: 17px;
+    background: url("arrow1.gif")no-repeat;
+    background-position: 7px 4px;
+}
+
+
+#lhotblog li {
+    padding-left: 14px;
+    line-height: 17px;
+    background: url("arrow2.gif")no-repeat;
+    background-position: 7px 4px;
+}
+
+#lrecent li, #lapply li {
+    padding-left: 14px;
+    line-height: 17px;
+    background: url("arrow3.gif")no-repeat;
+    background-position: 7px 6px;
+}
+
+
+#lhotblog h3 {
+    background: url("lhotblog.jpg")no-repeat;
+}
+
+#lrecent h3 {
+    background: url("lrecent.jpg")no-repeat;
+}
+
+#lapply h3 {
+    background: url("lapply.jpg")no-repeat;
+}
+
+
+/*主体*/
+
 #mainsupport {
     float: left;
     width: 690px;
 }
 
+    #mainsupport div.clearfix {
+        border: none;
+    }
+
     #mainsupport div {
         border: 1px solid #226c81;
+    }
+
+    #mainsupport h3 span, #mainsupport h3 {
+        display: none;
+    }
+
+    #mainsupport li a:link {
+        color: #2a788e;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    #mainsupport li a:visited {
+        color: #227086;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    #mainsupport li a:hover {
+        color: #FFFFFF;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    #mainsupport li a.author2:link {
+        color: #050505;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    #mainsupport li a.author2:visited {
+        color: #0a0a0a;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    #mainsupport li a.author2:hover {
+        color: #4fd8ff;
+        font-size: 12px;
+        text-decoration: underline;
+    }
+
+#currenttime {
+    position: relative;
+    margin: 0 0 10px 0;
+    padding: 20px 0 0 60px;
+    width: 230px;
+    height: 120px;
+    background: url("time.jpg") no-repeat #a3d7ff;
+}
+
+    #currenttime li {
+        display: inline-block;
+    }
+
+
+#recommendblog {
+    /*position: absolute;*/
+    float: right;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    padding-left: 48px;
+    width: 332px;
+    height: 125px;
+    background: url("recommendblog.jpg")no-repeat #c4e6ff;
+}
+
+    #recommendblog span a:link {
+        color: #00536b;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #recommendblog span a:visited {
+        color: #00536b;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #recommendblog span a:hover {
+        color: #FFFFFF;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    #recommendblog span a.author2 {
+        margin-left: 50px;
+        font-weight: lighter;
+    }
+
+        #recommendblog span a.author2:link {
+            color: #020202;
+            text-decoration: none;
+        }
+
+        #recommendblog span a.author2:visited {
+            color: #020202;
+            text-decoration: none;
+            font-weight: lighter;
+        }
+
+        #recommendblog span a.author2:hover {
+            color: #00536b;
+            text-decoration: underline;
+            font-weight: lighter;
+        }
+
+    #recommendblog ul {
+        margin: 0;
+        padding-top: 8px;
+    }
+
+    #recommendblog li {
+        padding-left: 12px;
+        line-height: 18px;
+        background: url("arrow4.gif")no-repeat 2px 4px;
     }
 
 #footer {

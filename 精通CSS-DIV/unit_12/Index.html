@@ -3,23 +3,22 @@
 <head>
     <title>CSS博客</title>
     <script language="javascript">
-var number = new Date().getSeconds() % 3 + 1;	//随机数，从1到3
-//随机选择CSS外部文件
-document.write('<link href="0' + number.toString() + '/0' + number.toString() + '.css" rel="stylesheet" type="text/css">');
+        var number = new Date().getSeconds() % 3 + 1;	//随机数，从1到3
+        //随机选择CSS外部文件
+        document.write('<link href="0' + number.toString() + '/0' + number.toString() + '.css" rel="stylesheet" type="text/css">');
     </script>
 </head>
 <body>
     <div id="container">
         <div id="globallink">
             <ul>
-                <li id="one"><a href="#">首页</a></li>
-                <li id="two"><a href="#">论坛</a></li>
-                <li id="three"><a href="#">推荐</a></li>
-                <li id="four"><a href="#">最新日志</a></li>
-                <li id="five"><a href="#">最新评论</a></li>
-                <li id="six"><a href="#">尚未登录</a></li>
+                <li class="twoLittle"><a href="#">首页</a></li>
+                <li class="twoLittle"><a href="#">论坛</a></li>
+                <li class="twoLittle"><a href="#">推荐</a></li>
+                <li class="fourLittle"><a href="#">最新日志</a></li>
+                <li class="fourLittle"><a href="#">最新评论</a></li>
+                <li class="fourLittle"><a href="#">尚未登录</a></li>
             </ul>
-            <div class="clearfix"></div>
         </div>
 
         <div id="parameter">
@@ -46,11 +45,11 @@ document.write('<link href="0' + number.toString() + '/0' + number.toString() + 
                     <li><a href="#">Dark City</a>&nbsp;&lt;<a class="author1" href="#">freax</a>&gt;</li>
                     <li><a href="#">E心E意&amp;36</a>&nbsp;&lt;<a class="author1" href="#">moonbow</a>&gt;</li>
                 </ul>
-                <div class="clearfix"></div>
-                <span>
+                <span class="more">
                     <a href="#">更多</a>
                     <a href="#">OPML</a>
                 </span>
+                <div class="clearfix"></div>
             </div>
             <div id="lrecent">
                 <h3 class="recent"><span>最近更新</span></h3>
@@ -64,11 +63,11 @@ document.write('<link href="0' + number.toString() + '/0' + number.toString() + 
                     <li><a href="#"><span>星天的博客</span></a>&nbsp;&lt;<a class="author1" href="#">starsky</a>&gt;</li>
                     <li><a href="#"><span>个人文集</span></a>&nbsp;&lt;<a class="author1" href="#">sherry</a>&gt;</li>
                 </ul>
-                <div class="clearfix"></div>
-                <span>
+                <span class="more">
                     <a href="#">更多</a>
                     <a href="#">OPML</a>
                 </span>
+                <div class="clearfix"></div>
             </div>
             <div id="lapply">
                 <h3 class="apply"><span>最新申请</span></h3>
@@ -81,11 +80,11 @@ document.write('<link href="0' + number.toString() + '/0' + number.toString() + 
                     <li><a href="#"><span>SONG, original</span></a>&nbsp;&lt;<a class="author1" href="#">song</a>&gt;</li>
                     <li><a href="#"><span>买买提※温和的树</span></a>&nbsp;&lt;<a class="author1" href="#">mimiti</a>&gt;</li>
                 </ul>
-                <div class="clearfix"></div>
-                <span>
+                <span class="more">
                     <a href="#">更多</a>
                     <a href="#">OPML</a>
                 </span>
+                <div class="clearfix"></div>
             </div>
         </div>
 
@@ -107,9 +106,11 @@ document.write('<link href="0' + number.toString() + '/0' + number.toString() + 
             </div>
             <div id="currenttime">
                 <p class="p1">
-                <script language=javascript src="date.js"></script></p>
+                    <script language=javascript src="date.js"></script>
+                </p>
                 <p class="p2">
-                <script language=javascript src="lunar.js"></script></p>
+                    <script language=javascript src="lunar.js"></script>
+                </p>
                 <ul>
                     <li><a href="#" title="进入自己的博客">*</a></li>
                     <li><a href="#">A</a></li>
@@ -142,21 +143,21 @@ document.write('<link href="0' + number.toString() + '/0' + number.toString() + 
                 <div class="clearfix"></div>
             </div>
             <div id="blogsearch">
-                <ul>
-                    <form>
+                <form>
+                    <ul>
                         <li id="sear1">博客搜索:<input name="keyword" type="text" size="13" onMouseOver="this.focus();" onFocus="this.select();" /></li>
                         <li id="sear2"><input type="hidden" name="exact" value="0" /></li>
-                        <li id="sear3"><input type="radio" name="key" value="u" checked=checked />ID</li>
+                        <li id="sear3"><input type="radio" name="key" value="u" checked="checked" />ID</li>
                         <li id="sear4"><input type="radio" name="key" value="c" />名称</li>
                         <li id="sear5"><input type="radio" name="key" value="d" />描述</li>
                         <li id="sear6"><input type="submit" value="GO" /></li>
-                    </form>
-                </ul>
+                    </ul>
+                </form>
                 <div class="clearfix"></div>
             </div>
             <div id="logoin">
-                <ul id="per">
-                    <form name="form1">
+                <form name="form1">
+                    <ul id="per">
                         <li id="per1">
                             用户名:
                             <input type="text" class="textinput1" onMouseOver="this.focus()" onFocus="this.select()" name="id" maxlength="12" tabindex="1" />
@@ -167,8 +168,8 @@ document.write('<link href="0' + number.toString() + '/0' + number.toString() + 
                             <input type="password" class="textinput2" name="passwd" maxlength="39" tabindex="2" />
                             <input type="button" value="注册" onClick="window.location='/bbsreg0.html';return false;" tabindex="4" />
                         </li>
-                    </form>
-                </ul>
+                    </ul>
+                </form>
                 <br class="br2" />
             </div>
             <div id="recommendart">
