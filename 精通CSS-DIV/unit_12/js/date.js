@@ -1,9 +1,9 @@
-//isaac at Feb 23 2005 11:31
+ï»¿//isaac at Feb 23 2005 11:31
 function astrology(month,day){
-	document.write('<a href="/frames.html?mainurl=/bbsdoc.php?board=birthday" class="astro" title="µã»÷½øÈëbirthday°æ">');
+	document.write('<a href="/frames.html?mainurl=/bbsdoc.php?board=birthday" class="astro" title="ç‚¹å‡»è¿›å…¥birthdayç‰ˆ">');
 	var constellation = new Array(
-		"Ä¦ôÉ", "Ë®Æ¿", "Ë«Óã", "ÄµÑò", "½ğÅ£", "Ë«×Ó",
-		"¾ŞĞ·", "Ê¨×Ó", "´¦Å®", "Ìì³Ó", "ÌìĞ«", "ÉäÊÖ");
+		"æ‘©ç¾¯", "æ°´ç“¶", "åŒé±¼", "ç‰¡ç¾Š", "é‡‘ç‰›", "åŒå­",
+		"å·¨èŸ¹", "ç‹®å­", "å¤„å¥³", "å¤©ç§¤", "å¤©è", "å°„æ‰‹");
 	switch(month)
 	{
 		case 1:
@@ -79,7 +79,7 @@ function astrology(month,day){
 				document.write(constellation[0]);
 			break;
 		default:
-			document.write('¹îÒì');
+			document.write('è¯¡å¼‚');
 	}
 	document.write('</a>');
 }
@@ -91,20 +91,20 @@ with (currentDate){
 	month=getMonth()+1;
 
 	if(year >= 2000)
-		document.write(getYear()+'Äê'+month+'ÔÂ'+getDate()+'ÈÕ');
+		document.write(getYear()+'å¹´'+month+'æœˆ'+getDate()+'æ—¥');
 	if(year <= 99)
-		document.write('19'+getYear()+'Äê'+month+'ÔÂ'+getDate()+'ÈÕ');
+		document.write('19'+getYear()+'å¹´'+month+'æœˆ'+getDate()+'æ—¥');
 	if(year >= 100 && year < 2000){
 		year=year-100+2000;
-		document.write(year+'Äê'+month+'ÔÂ'+getDate()+'ÈÕ');}
+		document.write(year+'å¹´'+month+'æœˆ'+getDate()+'æ—¥');}
 	
-	if(day==1){document.write('&nbsp;&nbsp;ĞÇÆÚÒ»&nbsp;&nbsp;');}
-	else if(day==2){document.write('&nbsp;&nbsp;ĞÇÆÚ¶ş&nbsp;&nbsp;');}
-	else if(day==3){document.write('&nbsp;&nbsp;ĞÇÆÚÈı&nbsp;&nbsp;');}
-	else if(day==4){document.write('&nbsp;&nbsp;ĞÇÆÚËÄ&nbsp;&nbsp;');}
-	else if(day==5){document.write('&nbsp;&nbsp;ĞÇÆÚÎå&nbsp;&nbsp;');}
-	else if(day==6){document.write('&nbsp;&nbsp;ĞÇÆÚÁù&nbsp;&nbsp;');}
-	else{document.write('&nbsp;&nbsp;ĞÇÆÚÈÕ&nbsp;&nbsp;');}
+	if(day==1){document.write('&nbsp;&nbsp;æ˜ŸæœŸä¸€&nbsp;&nbsp;');}
+	else if(day==2){document.write('&nbsp;&nbsp;æ˜ŸæœŸäºŒ&nbsp;&nbsp;');}
+	else if(day==3){document.write('&nbsp;&nbsp;æ˜ŸæœŸä¸‰&nbsp;&nbsp;');}
+	else if(day==4){document.write('&nbsp;&nbsp;æ˜ŸæœŸå››&nbsp;&nbsp;');}
+	else if(day==5){document.write('&nbsp;&nbsp;æ˜ŸæœŸäº”&nbsp;&nbsp;');}
+	else if(day==6){document.write('&nbsp;&nbsp;æ˜ŸæœŸå…­&nbsp;&nbsp;');}
+	else{document.write('&nbsp;&nbsp;æ˜ŸæœŸæ—¥&nbsp;&nbsp;');}
 	
-	astrology(getMonth()+1,getDay());	//ÏÔÊ¾ĞÇ×ù
+	astrology(getMonth()+1,getDay());	//æ˜¾ç¤ºæ˜Ÿåº§
 }

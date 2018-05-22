@@ -242,16 +242,25 @@ input {
 #currenttime {
     position: relative;
     margin: 0 0 10px 0;
-    padding: 20px 0 0 60px;
+    padding: 10px 0 0 60px;
     width: 230px;
-    height: 120px;
+    height: 130px;
     background: url("time.jpg") no-repeat #a3d7ff;
 }
 
     #currenttime li {
         display: inline-block;
+        line-height: 18px;
+        width: 18px;
     }
 
+    #currenttime p.p1 {
+        color: #915500;
+    }
+
+    #currenttime p.p2 {
+        color: #7d0f00;
+    }
 
 #recommendblog {
     /*position: absolute;*/
@@ -315,5 +324,162 @@ input {
         background: url("arrow4.gif")no-repeat 2px 4px;
     }
 
-#footer {
+#blogsearch {
+    margin-bottom: 10px;
+    height: 32px;
+    background-color: #d1ebff;
+    background-image: url(blogsearch.jpg);
+    background-repeat: no-repeat;
 }
+
+    #blogsearch ul {
+        margin-left: 160px;
+        padding: 4px 0 0 0;
+    }
+
+    #blogsearch li {
+        display: inline-block;
+    }
+
+        #blogsearch li#sear1 input {
+            left: 160px;
+            position: absolute;
+            background-color: #FFFFFF;
+            border: 1px solid #226c81;
+            color: #226c81;
+            font-size: 12px;
+            height: 15px;
+            padding: 0px;
+        }
+
+    #blogsearch #sear3 input, #blogsearch #sear4 input, #blogsearch #sear5 input {
+        margin-left: 5px;
+    }
+
+    #blogsearch #sear3 input {
+        margin-left: 55px;
+    }
+
+    #blogsearch #sear6 input {
+        background-color: #FFFFFF;
+        border: 1px solid #226c81;
+        color: #226c81;
+        font-size: 12px;
+        height: 17px;
+        padding: 0px;
+        margin-left: 5px;
+        margin-top: 2px;
+        margin-bottom: 0px;
+    }
+
+#logoin {
+    margin-bottom: 10px;
+    height: 30px;
+    background-color: #d1ebff;
+}
+
+    #logoin ul {
+        padding-top: 3px;
+    }
+
+    #logoin li {
+        display: inline-block;
+        padding: 0 0 0 15px;
+        line-height: 100%;
+        background: url("arrow5.gif")no-repeat 8px 10px;
+    }
+
+    #logoin #per input {
+        border: 1px solid #226c81;
+        padding: 0px;
+        height: 15px;
+        background-color: #FFFFFF;
+        color: #226c81;
+        font-size: 12px;
+    }
+
+    #logoin .textinput1, #logoin .textinput2 {
+        padding: 0px;
+        border: 1px solid #226c81;
+        width: 110px;
+        height: 14px;
+        background-color: #FFFFFF;
+        color: #226c81;
+        font-size: 12px;
+        FONT-FAMILY: "Tahoma","SimSun","Arial", "Helvetica", "sans-serif";
+    }
+
+#recommendart {
+    margin-bottom: 10px;
+    padding-top: 35px;
+    background: url(recommendart.jpg) no-repeat #def1ff;
+}
+
+    #recommendart ul {
+        margin: 5px 0 0 0;
+        padding: 0 5px 10px 15px;
+    }
+
+        #recommendart ul li {
+            /*display: inline-block;*/
+            float: left;
+            padding-left: 5px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box; /* Firefox */
+            -webkit-box-sizing: border-box; /* Safari */
+            width: 50%;
+            line-height: 20px;
+            background: url(arrow6.gif) no-repeat 0px 8px;
+        }
+
+#newnode {
+    margin-bottom: 10px;
+    background: url(newnode.jpg) no-repeat;
+    background-color: #def1ff;
+}
+
+    #newnode ul {
+        margin: 5px 0 0 0;
+        padding: 0 5px 10px 45px;
+    }
+
+    #newnode li {
+        float: left;
+        padding-left: 5px;
+        width: 300px;
+        background: url("arrow6.gif")no-repeat 0 8px;
+    }
+
+#footer {
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 12px;
+    text-align: center;
+    color: #226c81;
+    background-color: #ebf7ff;
+}
+
+    #footer p {
+        margin: 0px;
+        padding-top: 10px;
+        background-color: #ebf7ff;
+    }
+
+    #footer a:link {
+        color: #006480;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    #footer a:visited {
+        color: #006480;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    #footer a:hover {
+        color: #000000;
+        font-size: 12px;
+        text-decoration: none;
+    }
