@@ -1,0 +1,292 @@
+/* 清明上河图 */
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("body_bg.jpg");
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#container {
+    margin: 1px auto 0 auto;
+    width: 80rem;
+    background: url("content_bg.jpg")no-repeat 0 32rem;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+/*全局导航*/
+#globallink {
+    position: relative;
+    padding-bottom: 4rem;
+    height: 32rem;
+    background: url("banner.jpg")no-repeat;
+}
+
+    #globallink ul {
+        position: absolute;
+        width: 57.4rem;
+        left: 11.2rem;
+        top: 32rem;
+        height: 4.5rem;
+        background: url(toplink.jpg);
+    }
+
+    #globallink li {
+        padding-top:1rem;
+        display: inline-block;
+        text-align: center;
+    }
+
+        #globallink li.twoLittle {
+            width: 7.5rem;
+        }
+
+        #globallink li.fourLittle {
+            width: 10.5rem;
+        }
+
+    #globallink a:link, #globallink a:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    #globallink a:hover {
+        color: #000000;
+        text-decoration: none;
+    }
+/*参数*/
+#parameter {
+    float: right;
+    margin:0;
+    padding: 0 118px 0 0;
+    width: 163px;
+    color: #e1ad80;
+    text-align: left;
+}
+
+    #parameter h3 span {
+        display: none;
+    }
+
+    #parameter h3 {
+        margin:0;
+        padding:0;
+        width: 163px;
+        height: 27px;
+    }
+
+    #parameter > div {
+        padding-bottom: 15px;
+    }
+
+    #parameter a:link {
+        color: #C0C0C0;
+    }
+
+    #parameter a:visited {
+        color: #C0C0C0;
+    }
+
+    #parameter a:hover {
+        color: #000000;
+    }
+
+    #parameter a.author1:link {
+        color: #3ca5c8;
+    }
+
+    #parameter a.author1:visited {
+        color: #2c95b8;
+    }
+
+    #parameter a.author1:hover {
+        color: #14889D;
+    }
+
+    #parameter .more {
+        float: left;
+        text-align: right;
+        padding: 0.8rem 0.5rem 0.5rem 0;
+    }
+
+    #parameter ul {
+        padding-top: 1rem;
+    }
+
+#lstatistics h3 {
+    background: url(lstatistics.jpg) no-repeat;
+}
+
+#lhotblog h3 {
+    background: url(lhotblog.jpg) no-repeat;
+}
+
+#lrecent h3 {
+    background: url(lrecent.jpg) no-repeat;
+}
+
+#lapply h3 {
+    background: url(lapply.jpg) no-repeat;
+}
+
+#lstatistics li {
+    padding-left: 16px;
+    line-height: 17px;
+    background: url("arrow1.gif")no-repeat 0.7rem 0.5rem;
+}
+
+#lhotblog li {
+    padding-left: 1.4rem;
+    line-height: 1.7rem;
+    background: url("arrow2.gif")no-repeat 0.7rem 0.5rem;
+}
+
+#lrecent li, #lapply li {
+    padding-left: 1.4rem;
+    line-height: 1.7rem;
+    background: url("arrow3.gif")no-repeat 0.7rem 0.6rem;
+}
+/*主体*/
+#mainsupport {
+    float: left;
+    padding-left: 11.8rem;
+    width: 39.7rem;
+    color: #c86615;
+}
+
+    #mainsupport h3 {
+        display: none;
+    }
+
+    #mainsupport li a:link {
+        color: #c1936b;
+    }
+
+    #mainsupport li a:visited {
+        color: #c1936b;
+    }
+
+    #mainsupport li a:hover {
+        color: #BBAAAA;
+    }
+
+    #mainsupport li a.author2:link {
+        color: #cb9a32;
+        text-decoration: none;
+    }
+
+    #mainsupport li a.author2:visited {
+        color: #cb9a32;
+        text-decoration: none;
+    }
+
+    #mainsupport li a.author2:hover {
+        color: #8a8a8a;
+        text-decoration: underline;
+    }
+
+#recommendblog {
+    position: relative;
+    padding-top: 1.2rem;
+    width: 38.7rem;
+    height: 12.1rem;
+    background: url(recommendblog.jpg) no-repeat;
+}
+
+    #recommendblog ul {
+        margin: 0.8rem 0 0 0.8rem;
+        padding-left: 4rem;
+    }
+
+        #recommendblog ul li {
+            padding-left: 1.8rem;
+            line-height: 1.8rem;
+            background: url("arrow4.gif")no-repeat 0.3rem 0.6rem;
+        }
+
+    #recommendblog span a:link {
+        color: #ea733e;
+        text-decoration: none;
+        padding-left: 45px;
+        font-weight: bold;
+    }
+
+    #recommendblog span a:visited {
+        color: #ea733e;
+        text-decoration: none;
+        padding-left: 45px;
+        font-weight: bold;
+    }
+
+    #recommendblog span a:hover {
+        color: #CCCC22;
+        text-decoration: underline;
+        padding-left: 45px;
+        font-weight: bold;
+    }
+
+    #recommendblog span a.author2 {
+        float: right;
+        font-weight: lighter;
+        margin-right: 1.5rem;
+    }
+
+        #recommendblog span a.author2:link {
+            color: #d5503f;
+            text-decoration: none;
+        }
+
+        #recommendblog span a.author2:visited {
+            color: #d5503f;
+            text-decoration: none;
+            font-weight: lighter;
+        }
+
+        #recommendblog span a.author2:hover {
+            color: #BBCC44;
+            text-decoration: underline;
+            font-weight: lighter;
+        }
+
+        #currenttime{
+
+        }
+/*底部*/
+#footer {
+    padding-top: 1rem;
+    height: 3.8rem;
+    text-align: center;
+    background: url("footer_bg.jpg")no-repeat;
+}
+
+    #footer a:link {
+        color: #D3D388;
+    }
+
+    #footer a:visited {
+        color: #D3D388;
+    }
+
+    #footer a:hover {
+        color: #222222;
+    }
