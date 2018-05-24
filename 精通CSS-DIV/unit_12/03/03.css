@@ -1,0 +1,91 @@
+html {
+    font-size: 10px;
+}
+
+body, ul, h3, form, input {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("body_bg.jpg")repeat-y center #000000;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+#container {
+    margin: 0 auto;
+    width: 80rem;
+    font-size: 1.2rem;
+}
+
+#globallink {
+    position: relative;
+    height: 43rem;
+    background: url("banner.jpg")no-repeat;
+}
+
+    #globallink ul {
+        position: absolute;
+        top: 5.6rem;
+        left: 76.1rem;
+    }
+
+    #globallink li {
+        padding-top: 1.6rem;
+        width: 3rem;
+    }
+
+        #globallink li > a:link, #globallink li > a:visited {
+            color: #fff;
+        }
+
+        #globallink li > a:hover {
+            color: #000;
+        }
+
+#parameter {
+    position:relative;
+    float: left;
+    margin-top: -8.8rem;
+    padding: 0 0.6rem 2rem 0;
+    color: #bb9d80;
+    background: url(parabottom.jpg) no-repeat bottom; /* ÏÂ²¿Ô²½Ç */
+    background-color: #3e3226;
+}
+
+    #parameter h3 span {
+        display: none;
+    }
+
+    #parameter h3 {
+        width: 19rem;
+        height: 2.8rem;
+    }
+
+#lstatistics {
+    color: #fff;
+}
+
+#mainsupport {
+
+}
+
+#footer {
+}
