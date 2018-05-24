@@ -21,6 +21,7 @@ a {
     text-decoration: none;
 }
 
+
 .clearfix:after {
     content: '';
     display: block;
@@ -33,6 +34,7 @@ a {
     margin: 0 auto;
     width: 80rem;
     font-size: 1.2rem;
+    background: url("container_bg.jpg")no-repeat bottom right;
 }
 
 #globallink {
@@ -61,10 +63,11 @@ a {
         }
 
 #parameter {
-    position:relative;
+    position: relative;
     float: left;
     margin-top: -8.8rem;
-    padding: 0 0.6rem 2rem 0;
+    width: 190px;
+    padding: 0 .6rem 2rem 0;
     color: #bb9d80;
     background: url(parabottom.jpg) no-repeat bottom; /* ÏÂ²¿Ô²½Ç */
     background-color: #3e3226;
@@ -79,13 +82,225 @@ a {
         height: 2.8rem;
     }
 
-#lstatistics {
-    color: #fff;
+    #parameter ul {
+        padding: 1.2rem 0.5rem 1.2rem 1rem;
+    }
+
+    #parameter a:link, #parameter a:visited {
+        color: #c2b2a2;
+    }
+
+    #parameter a:hover {
+        color: #ffd800;
+    }
+
+    #parameter a.author1:link, #parameter a.author1:visited {
+        color: #d8924d;
+    }
+
+    #parameter a.author1:hover {
+        color: #0094ff;
+    }
+
+    #parameter > div {
+        margin-bottom: 2.2rem;
+    }
+
+    #parameter span.more {
+        float: right;
+        padding-right: .5rem;
+    }
+
+#lstatistics li {
+    padding-left: 1rem;
+    background: url("arrow1.gif")no-repeat 0 .6rem;
+}
+
+#lstatistics h3 {
+    display: none;
+}
+
+#lhotblog h3 {
+    background: url("lhotblog.jpg")no-repeat;
+}
+
+#lhotblog li {
+    padding-left: 1rem;
+    background: url("arrow2.gif")no-repeat 0 .6rem;
+}
+
+#lrecent h3 {
+    background: url("lrecent.jpg")no-repeat;
+}
+
+#lrecent li {
+    padding-left: 1rem;
+    background: url("arrow3.gif")no-repeat 0 .6rem;
+}
+
+#lapply h3 {
+    background: url("lapply.jpg")no-repeat;
+}
+
+#lapply li {
+    padding-left: 1rem;
+    background: url("arrow3.gif")no-repeat 0 .6rem;
 }
 
 #mainsupport {
-
+    float: left;
+    margin: 1rem 2rem 0 2rem;
+    width: 51rem;
+    padding-left: 1.2rem;
+    color: #c86615;
 }
+
+    #mainsupport input {
+        background-color: #000000;
+        color: #c86615;
+        border: .1rem solid #c86615;
+        border-radius: .3rem;
+    }
+
+    #mainsupport a:link, #mainsupport a:visited {
+        color: #d8924d;
+    }
+
+    #mainsupport a:hover {
+        color: #ffd800;
+    }
+
+#recommendblog {
+    padding: 1.5rem 0 0 12.5rem;
+    background: url("recommendblog.jpg")no-repeat;
+    min-height: 14rem;
+}
+
+    #recommendblog h3 {
+        display: none;
+    }
+
+    #recommendblog ul {
+        margin-top: .8rem;
+        padding: 1rem 0 0 1rem;
+    }
+
+    #recommendblog li {
+        padding-left: 1rem;
+        background: url("arrow4.gif")no-repeat 0 .6rem;
+    }
+
+    #recommendblog span > a:first-child {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+        #recommendblog span > a:first-child + a {
+            margin-left: .9rem;
+            color: #d72f2f;
+        }
+
+#currenttime {
+    margin-top: 1.2rem;
+    padding: 1.6rem 0 0 .5rem;
+    height: 5rem;
+    background: url("currenttime.jpg")no-repeat;
+}
+
+    #currenttime p {
+        padding: 1rem;
+        display: inline;
+        color: #62c8ff;
+    }
+
+    #currenttime ul {
+        padding: 0 .8rem 0 1rem;
+    }
+
+    #currenttime li {
+        display: inline;
+        padding-left: .5rem;
+    }
+
+#blogsearch {
+    height: 3rem;
+}
+
+    #blogsearch ul {
+        padding: .4rem 0 0 1rem;
+        text-align: left;
+    }
+
+    #blogsearch li {
+        display: inline-block;
+    }
+
+#logoin {
+    height: 6.5rem;
+    background: url("manyboard.jpg")no-repeat;
+}
+
+    #logoin ul {
+        padding: 1.2rem 0 0 1.5rem;
+    }
+
+#recommendart {
+    margin-top: 1rem;
+    padding: 5rem 0 0 0;
+    background: url("recommendart.jpg")no-repeat;
+}
+
+    #recommendart ul {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    #recommendart h3 {
+        display: none;
+    }
+
+    #recommendart li {
+        padding-left: 1rem;
+        background: url("arrow6.gif")no-repeat 0 .6rem;
+    }
+
+    #recommendart a.author2:link, #recommendart a.author2:visited {
+        color: #f8e265;
+    }
+
+    #recommendart a.author2:hover {
+        color: #c86615;
+    }
+
+#newnode {
+    margin-top: 1rem;
+    padding: 0 0 2rem 7rem;
+    background: url("newnode.jpg")no-repeat;
+}
+
+    #newnode li {
+        padding-left: 1rem;
+        background: url("arrow6.gif")no-repeat 0 .6rem;
+    }
 
 #footer {
+    padding: 1.4rem 0 0 0;
+    height: 4.5rem;
+    background: url("footer_bg.jpg")no-repeat;
+    text-align: center;
+    color: #f7d412;
 }
+
+    #footer a:link, #footer a:visited {
+        color: #f7d412;
+    }
+
+    #footer a:hover {
+        color: #8b8a84;
+    }
+
+    #footer p {
+        margin: 0;
+        padding: 0;
+        color: #f3de6b;
+    }
