@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .box {
+            overflow: hidden;
+        }
+
+        .img {
+            width: 128px;
+            height: 96px;
+        }
+
+        #box1 > img {
+            float: left;
+        }
+
+        #box1 p {
+            margin-left: 140px;
+        }
+
+        #box2 > img {
+            float: right;
+        }
+
+        #box2 > p {
+            margin-right: 140px;
+        }
+
+        /*.full {
+            float: left;
+        }*/
+
+        #box3 > img {
+            float: left;
+            margin-left:-128px;
+        }
+
+        #box3 > p {
+            float:left;
+            margin-right: 140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">
+        <img src="../../images/1.jpg" class="img" />
+        <p>DOM文档流中，图片定宽在左侧，文字内容在右侧，和视觉呈现的前后顺序一致。</p>
+    </div>
+
+    <div class="box" id="box2">
+        <img src="../../images/1.jpg" class="img" />
+        <p>DOM文档流中，图片定宽在左侧，文字内容在右侧，和视觉呈现的前后顺序一致。</p>
+    </div>
+    <div class="box" id="box3">
+        <p>DOM文档流中，图片定宽在左侧，文字内容在右侧，和视觉呈现的前后顺序一致。</p>
+        <img src="../../images/1.jpg" class="img" />
+    </div>
+
+</body>
+</html>
