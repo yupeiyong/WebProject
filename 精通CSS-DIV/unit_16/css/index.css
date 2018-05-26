@@ -160,4 +160,11 @@ ul {
     }
 
 #footer {
+    text-align:center;
+    background-color:#a0bfda;
+    color:#0f3b62;
+    
+}
+#footer p{
+    line-height:4rem;
 }
