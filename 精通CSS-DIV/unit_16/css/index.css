@@ -1,0 +1,163 @@
+﻿html {
+    font-size: 10px;
+}
+
+body, h3, h4, ul, li, div, img, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.clearfix:after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+#container {
+    margin: 0 auto;
+    width: 76rem;
+    background-color: #fff;
+    font-size: 1.2rem;
+}
+
+#globallink {
+    position: relative;
+    height: 16.5rem;
+    background: url("../images/banner.jpg")no-repeat #daeeff;
+}
+
+    #globallink ul {
+        position: absolute;
+        right: .5rem;
+        bottom: .3rem;
+    }
+
+    #globallink li {
+        display: inline-block;
+        width: 5.5rem;
+        text-align: center;
+    }
+
+    #globallink a:link, #globallink a:visited {
+        color: #286295;
+    }
+
+    #globallink a:hover {
+        color: #fff;
+    }
+
+#parameter {
+    float: left;
+    width: 21rem;
+}
+
+    #parameter h4 {
+        padding-left: 2rem;
+        height: 3rem;
+        background: url("../images/leftbg.jpg")no-repeat;
+        text-align: left;
+    }
+
+    #parameter ul {
+        margin: 0 1rem 0 1rem;
+        padding: .3rem 0 .3rem 0;
+    }
+
+    #parameter a:link, #parameter a:visited {
+        color: #000;
+    }
+
+    #parameter a:hover {
+        color: #286295;
+    }
+
+    #parameter li {
+        border-bottom: 1px dashed #808080;
+        padding: .2rem 0 .2rem 1.3rem;
+        background: url("../images/icon1.gif")no-repeat .5rem .9rem;
+        line-height: 2rem;
+    }
+
+    #parameter > div {
+        margin-top: 1rem;
+    }
+
+#author {
+    margin-top: .5rem;
+    background: url("../images/mypic_bg.gif")no-repeat;
+    text-align: center;
+}
+
+    #author p.mypic {
+        margin-bottom: .5rem;
+        padding: 1.5rem 0 0 0;
+    }
+
+        #author p.mypic + p {
+            margin: 0 1rem 0 1rem;
+            padding: .3rem 0 .3rem 0;
+            border-top: 1px dashed #3e3737;
+            border-bottom: 1px dashed #3e3737;
+        }
+
+        #author p.mypic img {
+            border: 1px solid #000;
+            padding: .2rem;
+        }
+
+        #llinks li{
+            background-image:none;
+            border:none;
+            display:inline-block;
+        }
+#main {
+    margin: .5rem 0 1rem 21.5rem;
+    padding: 2rem 1rem 0 1rem;
+}
+
+    #main .article {
+        position: relative;
+        margin: 1rem 0 1rem 0;
+        padding-bottom:1rem;
+    }
+
+        #main .article > h3 {
+            border-bottom: 1px dashed #808080;
+        }
+
+            #main .article > h3 a:link, #main .article > h3 a:visited {
+                color: #662900;
+            }
+
+            #main .article > h3 a:hover {
+                color: #1b5282;
+            }
+
+    #main .author {
+        text-align: right;
+        color: #808080;
+    }
+
+    #main .content {
+        margin: 1rem 0;
+    }
+
+    #main .show {
+    }
+
+#footer {
+}
