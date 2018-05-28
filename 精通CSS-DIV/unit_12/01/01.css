@@ -451,6 +451,7 @@ input {
     }
 
 #footer {
+    clear:both;
     margin: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
