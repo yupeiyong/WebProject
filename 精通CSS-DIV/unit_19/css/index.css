@@ -1,2 +1,212 @@
-﻿body {
+﻿html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #ffd8d9;
+    font-size: 1.2rem;
+}
+
+body, h3, h4, ul, li, div, img, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+.clearfix:after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+#container {
+    margin: 0 auto;
+    width: 70rem;
+}
+
+#globallink {
+    height: 3.3rem;
+}
+
+    #globallink ul {
+    }
+
+    #globallink li {
+        float: left;
+        text-align: center;
+        width: 10rem;
+    }
+
+        #globallink li > a {
+            display: block;
+            padding: .9rem .6rem 1.1rem .6rem;
+            background: url("../images/button1.jpg")no-repeat;
+        }
+
+            #globallink li > a:link, #globallink li > a:visited {
+                color: #630002;
+            }
+
+            #globallink li > a:hover {
+                color: #fff;
+                text-decoration: underline;
+                background: url("../images/button1_bg.jpg")no-repeat;
+            }
+
+#left {
+    float: left;
+    margin: .1rem 0 0 0;
+    width: 18rem;
+    background: url("../images/leftbottom.jpg")no-repeat bottom #fff;
+}
+
+#login {
+    margin: 0 1.8rem;
+    padding-top: 5rem;
+    background: url("../images/login.jpg")no-repeat;
+}
+
+    #login input.text {
+        border: none;
+        border-bottom: .1rem solid #000;
+        width: 11rem;
+    }
+
+    #login p:last-child {
+        margin-top: .8rem;
+    }
+
+    #login .btn {
+        border: .1rem solid #000000;
+        background-color: #ffeff0;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.7rem;
+    }
+
+    #login p a:link, #login p a:visited {
+        color: #333333;
+        text-decoration: none;
+    }
+
+    #login p a:hover {
+        color: #113333;
+        text-decoration: underline;
+    }
+
+#category {
+    background: url("../images/category.jpg")no-repeat;
+    padding-top: 5rem;
+}
+
+    #category h4 {
+        margin: 0 1.8rem;
+        padding: .3rem 0 .1rem .5rem;
+        background-color: #ffd1d1;
+    }
+
+    #category ul {
+        margin: 0 1.8rem;
+        padding: 0 0 2rem 0;
+    }
+
+        #category ul li {
+            padding-left: 1.5rem;
+            border-bottom: .1rem dotted #8c8484;
+            background: url("../images/icon1.gif")no-repeat .5rem .8rem;
+            line-height: 2.5rem;
+        }
+
+    #category a:link, #category a:visited {
+        color: #000000;
+    }
+
+    #category a:hover {
+        color: #ad9d9d;
+        text-decoration: underline;
+    }
+
+#main {
+    float: left;
+    margin: .1rem 0 0 .2rem;
+    width: 51.8rem;
+}
+
+    #main > div {
+        background-color: #fff;
+    }
+
+#latest {
+    padding: 3.5rem 0 0 0;
+    background: url("../images/latest.jpg")no-repeat;
+}
+
+#recommend {
+    margin-top: .4rem;
+    padding: 3.5rem 0 0 0;
+    background: url("../images/recommend.jpg")no-repeat;
+}
+
+#latest img {
+    padding-left: .1rem;
+}
+
+#new {
+    margin-top: .4rem;
+    padding: 3.5rem 0 0 0;
+    background: url("../images/new.jpg")no-repeat;
+}
+
+    #recommend li, #new li {
+        float:left;
+        width: 12.5rem;
+        text-align: center;
+    }
+
+    #recommend a:visited, #recommend a:link, #new a:visited, #new a:link {
+        color: #575252;
+    }
+
+#tips {
+    margin-top: .4rem;
+    padding: 3.5rem 0 0 0;
+    background: url("../images/tips.jpg")no-repeat;
+}
+
+    #tips ul {
+        padding: .5rem .5rem .5rem 3rem;
+    }
+
+    #tips li {
+        display: inline-block;
+        padding-left: 1.2rem;
+        background: url("../images/icon2.gif")no-repeat 0 .6rem;
+        width: 22rem;
+        line-height: 2rem;
+    }
+
+    #tips a:link, #tips a:visited {
+        color: #000;
+    }
+
+#main a:hover {
+    color: #d02d30;
+    text-decoration: underline;
+}
+
+#recommend br, #new br, #tips br {
+    display: block;
+    clear: both;
+    margin: 0px;
+    padding: 0px;
 }
