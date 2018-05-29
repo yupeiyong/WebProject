@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>圣杯布局</title>
+    <style type="text/css">
+        html {
+            font-size: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 700px;
+        }
+
+        .header {
+            height: 2rem;
+            background-color: #808080;
+        }
+
+        .footer {
+            clear: both;
+            height: 2rem;
+            background-color: #b2b4bf;
+        }
+
+        .container {
+            padding: 0 25rem 0 20rem;
+        }
+
+        .middle, .left, .right {
+            float: left;
+            position: relative;
+            min-height: 50rem;
+        }
+
+        .left {
+            margin-left: -100%;
+            left: -20rem;
+            width: 20rem;
+            background-color: #9a9d93;
+        }
+
+        .right {
+            margin-left: -25rem;
+            right: -25rem;
+            width: 25rem;
+            background-color: #9aa794;
+        }
+
+        .middle {
+            width: 100%;
+            background-color: #beb1b1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h4>header</h4>
+    </div>
+    <div class="container">
+        <div class="middle">
+            <h4>middle</h4>
+            <p>
+                HHHHHHHHHHHHHHHHHHHHHH
+                hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                HHHHHHHHHHHHHHHHHHHHHH
+                hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+            </p>
+        </div>
+        <div class="left">
+            <h4>left</h4>
+            <p>
+                oooooooooooooo
+                00000000000000000
+                ooooooooooooooo
+                ooooooooooooooo
+                000000000000000
+            </p>
+        </div>
+        <div class="right">
+            <h4>right</h4>
+            <p>
+                BBBBBBBBBBBBBB
+                BBBBBBBBBBBBBBBBBB
+                88888888888888888888
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <h4>footer</h4>
+    </div>
+</body>
+</html>
