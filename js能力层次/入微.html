@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var str = "http://www.xxx.com/?pn=0";   // 删除指定字符 pn=0
+        // 我将这个字符串里所可能想到的各种情况都列举出来
+        var a = [
+            "http://www.xxx.com/VMpn=?pn=0"// pn= 可能出现在 ? 前
+            , "http://www.xxx.com/VMpn=?pn="// URL里允许pn 值为空
+            , "http://www.xxx.com/VMpn=?pn=0&a=1"// URL 里可有多个字段
+            , "http://www.xxx.com/VMpn=?a=1&pn=0"// 可能排在最后
+            , "http://www.xxx.com/VMpn=?a=1&pn=0&pn=1"// 可能有多个 pn 字段
+            , "http://www.xxx.com/VMpn=?a=1&pn=0&b=2"// 可能在中间
+            , "http://www.xxx.com/VMpn=?a=1&pn=0&pn=1&b=1" // 可能在中间成组
+            , "http://www.xxx.com/VMpn=?a=1&pn=0&b=1&pn=1" // 可能零星分布
+        ];
+        /* 需求的不言之秘：
+        ? 若出现在字符串最尾则要去之
+        ? & 两个符号不可重叠
+        */
+        var reg =/(\?)(pn=[^&]*(?!pn=))/g;
+        reg = /(&pn=[^&]*)/g;
+        for (var i = 0; i < a.length; i++) {
+            alert(a[i] + "\n" + a[i].replace(reg, "$2"));
+        }
+    </script>
+</body>
+</html>

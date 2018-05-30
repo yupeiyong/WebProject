@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var str = "www.baidu.com/?page";
+        //str = str.replace('?page', "");
+        //alert(str);
+        //str = str.substring(0, str.lastIndexOf("/"));
+        //alert(str);
+
+        // 1、字符串剪裁
+        alert("字符串剪裁:" + str.substring(0, str.indexOf("?page")));
+        // 2、正则表达式
+        alert("正则表达式:" + str.replace(/\?page/, ""));
+        // 3、字符串分拆、合并
+        alert("字符串分拆、合并:" + str.split("?page").join(""));
+
+        var str1 = "今天是星期";
+        var week = new Date().getDay();
+        switch (week) {
+            case 0:
+                str1 += "日";
+                break;
+            case 1:
+                str1 += "一";
+                break;
+            case 2:
+                str1 += "二";
+                break;
+            case 3:
+                str1 += "三";
+                break;
+            case 4:
+                str1 += "四";
+                break;
+            case 5:
+                str1 += "五";
+                break;
+            case 6:
+                str1 += "六";
+                break;
+        }
+        alert(str1);
+
+        //使用数组方法
+        var str2 = "今天是星期" + "日一二三四五六".charAt(new Date().getDay());
+        alert(str2);
+    </script>
+</body>
+</html>
