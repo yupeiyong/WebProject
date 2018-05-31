@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="delQuery.js?ver=1"></script>
+</head>
+<body>
+    <script>
+
+
+        // 应用实例
+        /// include mz.url.delQuery;
+        var str = "http://www.xxx.com/?pn=0";   // 删除指定字符 pn=0
+        str=mz.url.delQuery(str, "pn");
+        alert(str);
+    </script>
+</body>
+</html>
