@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        /**
+         * 将浮点数转为二进制
+         * @param sign      符号
+         * @param exponent  阶码
+         * @param mantissa  尾数
+         */
+
+        function assembleFloat(sign, exponent, mantissa) {
+            return (sign << 31) | (exponent << 23) | (mantissa);
+        }
+
+        function floatToNumber(flt) {
+            if (isNaN(flt)) // Special case: NaN
+                return assembleFloat(0, 0xFF, 0x1337); // Mantissa is nonzero for NaN
+
+            var sign = (flt < 0) ? 1 : 0;
+            flt = Math.abs(flt);
+            if (flt == 0.0) // Special case: +-0
+                return assembleFloat(sign, 0, 0);
+
+            var exponent = Math.floor(Math.log(flt) / Math.LN2);
+            if (exponent > 127 || exponent < -126) // Special case: +-Infinity (and huge numbers)
+                return assembleFloat(sign, 0xFF, 0); // Mantissa is zero for +-Infinity
+
+            var mantissa = flt / Math.pow(2, exponent);
+            return assembleFloat(sign, exponent + 127, (mantissa * Math.pow(2, 23)) & 0x7FFFFF);
+        }
+
+        var x = -12.5;
+        alert(floatToNumber(x).toString(16));
+
+        /*
+         浮点数：
+         目的：解决定点数精度不够的问题，纯小数（小数点在最高位之前）和纯整数（小数点在最低位之后）不能表示所有数
+         表示方法：类似科学计数法，两部分，阶码，尾数，而阶码和尾数都有符号位，所以共有4部分（1、阶符、阶码、数符、尾数）
+         阶码用移码表示：便于浮点数比大小。如果阶码（指数）也用补码来表示，
+         就会使得一个浮点数中出现两个符号位：浮点数自身的和浮点数指数部分的。
+         这样的结果是，在比较两个浮点数大小时，无法像比较整数时一样使用简单的无逻辑的二进制比较。
+         故而浮点数的指数部分采用了移码（无符号整数）来表示
+
+         */
+
+        /*
+         IEEE标准
+         单精度浮点数
+         31      30－23         22-0
+         符号位  阶码（移码）   尾数（原码）
+         阶码＝阶码+127
+         为什么要加127，原因：
+         1、8位移码的取值范围为0~255（00000000~11111111），但在浮点数的阶码中，00000000与11111111被保留用作特殊情况，所以阶码可用范围只有1~254，总共有254个值。
+         2、8位有符号数取值范围为-128~+127（10000000~01111111），这里的二进制用补码表示，其中特别规定补码10000000没有原码，为-128的补码，总共有256个值。
+         3、如果采用偏置128，在表达+127时会产生上溢（移码11111111被保留），所以在阶码中偏置为（128-1），
+            与此同时，在表达-127时会产生下溢（移码00000000被保留），所以阶码中去掉-127与-128，取值范围为-126~127，总共254个值。
+        
+        单精度有效范围为7位：
+        因为尾数23位，2的23次方最大为8388608，最多为7位
+
+         */
+    </script>
+</body>
+</html>
