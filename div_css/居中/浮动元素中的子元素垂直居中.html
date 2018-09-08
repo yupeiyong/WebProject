@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        /*
+            浮动元素中的子元素垂直居中
+        */
+        /*最外层是浮动元素*/
+         .parent {
+             float: left;
+             border: 1px solid black;
+             /*line-height: 100px;*/
+             height: 100px;
+            
+         }
+
+        .parent>div {
+            /*包裹层必须要有高度，因为父级div浮动，高度塌陷*/
+            height: 100px;
+            /*垂直居中*/
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .t-div {
+            float: left;
+            display: inline-block;
+            margin-left: 15px;
+            width: 40px;
+            height: 40px;
+            background: #00bfff;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div>
+            <div class="t-div"></div>
+            <div class="t-div"></div>
+            <div class="t-div"></div>
+            <div class="t-div"></div>
+            <div class="t-div"></div>
+        </div>
+    </div>
+</body>
+</html>

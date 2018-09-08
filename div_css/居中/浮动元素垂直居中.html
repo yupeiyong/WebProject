@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        /*
+            一般元素的垂直居中
+        */
+        .parent1 {
+            border: 1px solid black;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+
+            .parent1 .t-div {
+                display: inline-block;
+                margin-left: 15px;
+                width: 40px;
+                height: 40px;
+                background: #00bfff;
+            }
+
+        /*
+            1、浮动元素垂直居中，使用flex
+        */
+        .parent2 {
+            border: 1px solid black;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+
+            .parent2 .t-div {
+                float: left;
+                display: inline-block;
+                margin-left: 15px;
+                width: 40px;
+                height: 40px;
+                background: #00bfff;
+            }
+        /*
+            2、浮动元素垂直居中，使用绝对定位
+        */
+
+        .parent3 {
+            border: 1px solid black;
+            height: 100px;
+            position: relative;
+        }
+
+
+            .parent3 .t-div {
+                float: left;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                display: inline-block;
+                margin-left: 15px;
+                width: 40px;
+                height: 40px;
+                background: #00bfff;
+            }
+        /*
+            3、浮动元素垂直居中，使用table-cell
+        */
+
+        .parent4 {
+            border: 1px solid black;
+            height: 100px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+
+            .parent4 .t-div {
+                float: left;
+                display: inline-block;
+                margin-left: 15px;
+                width: 40px;
+                height: 40px;
+                background: #00bfff;
+            }
+    </style>
+</head>
+<body>
+    <div class="parent1">
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+    </div>
+    <div class="parent2">
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+    </div>
+    <div class="parent3">
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+    </div>
+    <div class="parent4">
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+        <div class="t-div"></div>
+    </div>
+
+</body>
+</html>
