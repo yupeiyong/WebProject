@@ -46,12 +46,6 @@
         margin-bottom: 4px;
     }
 /*定义二级菜单样式*/
-.secondmenu a {
-    font-size: 10px;
-    color: #4A515B;
-    text-align: center;
-}
-
 .navbar-static-top {
     background-color: #212121;
     margin-bottom: 5px;
@@ -63,4 +57,25 @@
     vertical-align: middle;
     padding-left: 50px;
     color: #fff;
+}
+
+.secondmenu a {
+    font-size: 12px;
+    color: #4A515B;
+    text-align: center;
+}
+
+.secondmenu li.active {
+    background-color: #eee;
+    border-color: #428bca;
+}
+
+
+/*控制菜单箭头*/
+.nav-header.collapsed > span.glyphicon-chevron-toggle:before {
+    content: "\e114";
+}
+
+.nav-header > span.glyphicon-chevron-toggle:before {
+    content: "\e113";
 }
