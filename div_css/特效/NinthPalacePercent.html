@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>九宫格</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .main {
+            background-color: #fff;
+            width: 330px;
+            padding-bottom: 330px;
+            padding-left: 0.5%;
+            padding-top: 0.5%;
+        }
+
+            .main .box {
+                width: 31%;
+                padding-bottom: 31%;
+                border: 1% solid #fff;
+                background-color: mediumpurple;
+                border-radius: 3%;
+                float: left;
+                margin: 1%;
+                position: relative; /*父元素给相对定位*/
+            }
+
+                .main .box .content {
+                    position: absolute; /*子元素给绝对定位*/
+                    width: 100%;
+                    height: 100%;
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 100%;/*内容居中没有实现，因为line-height是相对于字体尺寸的，这里没有固定的高度，所以无效*/
+                    /*line-height: 1;*/
+                }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <div class="content">
+                格子1
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                格子2
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                格子3
+            </div>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

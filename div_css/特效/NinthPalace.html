@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>绝对定位实现的九宫格</title>
+    <style>
+        #absolute {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #00bfff;
+        }
+            /*right、left、top、bottom只有在相对定位和绝对定位时起作用*/
+            #absolute > div {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: #8b0000;
+            }
+
+                #absolute > div:nth-child(1) {
+                    top: 0;
+                    left: 0;
+                }
+
+                #absolute > div:nth-child(2) {
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                #absolute > div:nth-child(3) {
+                    top: 0;
+                    right: 0;
+                }
+
+                #absolute > div:nth-child(4) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                }
+
+                #absolute > div:nth-child(5) {
+                    position: relative;
+                    margin: 0 auto;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    /*transform: translateX(-50%);*/
+                }
+
+                #absolute > div:nth-child(6) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                }
+
+                #absolute > div:nth-child(7) {
+                    bottom: 0;
+                    left: 0;
+                }
+
+                #absolute > div:nth-child(8) {
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                #absolute > div:nth-child(9) {
+                    bottom: 0;
+                    right: 0;
+                }
+    </style>
+</head>
+<body>
+    <div title="使用绝对定位实现的九宫格" id="absolute">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
