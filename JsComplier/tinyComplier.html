@@ -36,6 +36,11 @@
             var numNode = function () {
                 return new node(consume(), nodeType.numType);
             }
+            var analysis = function () {
+                if (peek()) {
+                    return /\d/.test(peek()) ? numNode() : opeartorNode();
+                }
+            }
 
             //操作节点
             var opeartorNode = function () {
@@ -46,11 +51,6 @@
                 return curNode;
             }
 
-            var analysis = function () {
-                if (peek()) {
-                    return /\d/.test(peek()) ? numNode() : opeartorNode();
-                }
-            }
             return analysis();
         }
 
@@ -63,6 +63,10 @@
                 sub: '-',
                 div: '/'
             };
+            var translateOperator = function (ast) {
+                return ast.children.map(translate).join(' ' + operatorMap[ast.value] + ' ');
+            }
+
             var translateNum = function (ast) {
                 return ast.value;
             }
@@ -71,9 +75,6 @@
                 return ast.type == nodeType.numType ? translateNum(ast) : translateOperator(ast);
             }
 
-            var translateOperator = function (ast) {
-                return ast.children.map(translate).join(' ' + operatorMap[ast.value] + ' ');
-            }
             return translateFunc(ast);
         }
 
