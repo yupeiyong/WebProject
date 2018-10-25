@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var arr = [1, 2, 3, 4];
+        //引用数组地址
+        var arr2 = arr;
+        console.log(arr2);
+        arr2[1] = 95;
+        console.log(arr);
+        console.log(arr2);
+
+        var arr3 = [];
+        //复制数组元素
+        for (var i = 0, len = arr.length; i < len; i++) {
+            arr3[i] = arr[i];
+        }
+
+        arr3[1] = 66;
+        console.log("复制数组元素后");
+        console.log(arr);
+        console.log(arr3);
+
+        var clone = function (arr) {
+            var arr2 = [];
+            var queue = [];
+
+        }
+
+        var recursion = function (arr, arr1) {
+            for (var i = 0, len = arr.length; i < len; i++) {
+                arr1[i] = arr[i];
+            }
+        }
+
+        function deepCopy(data) {
+            var newObj;
+            if (data instanceof Array) {
+                newObj = [];
+            }else if (data instanceof Object) {
+                newObj = {};
+            } else {
+                return data;
+            }
+
+            if (data instanceof Array) {
+                for (var i = 0, l = data.length; i < l; i++) {
+                    newObj.push(deepCopy(data[i]));
+                }
+                
+            } else if (data instanceof Object) {
+                for (var key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        newObj[key] = deepCopy(data[key]);
+                    }
+                }
+            }
+            return newObj;
+        }
+
+
+        var obj = {
+            name: "123456",
+            arrs: [
+            {
+                qq: "22"
+            }, {
+                qq: "44"
+            }]
+        };
+
+        var obj2 = deepCopy(obj);
+        obj.arrs[0].qq = "9999999";
+
+        console.log(obj);
+        console.log(obj2);
+
+
+        var arr_x = [1, 2, 3, 4, 5, 6];
+        var arr_y = deepCopy(arr_x);
+        arr_x[1] = 5555555555;
+        console.log(arr_x);
+        console.log(arr_y);
+    </script>
+</body>
+</html>

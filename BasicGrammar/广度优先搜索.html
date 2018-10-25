@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <script>
+
+        /*
+        大写字母A 到Z 的值是从65 到90
+
+        小写a到z 是从91 到 122
+
+        字符转ascii码：用String.charCodeAt();
+        ascii码砖字符：用String.fromCharCode();
+        */
+
+        var Node = function (data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+
+
+        //广度优先创建树
+        var createTree = function () {
+            var startChar = 'A'.charCodeAt();
+            var root = new Node();
+            root.data = String.fromCharCode(startChar++);
+            var count = 0;
+            var queue = new Array();
+            queue.push(root);
+            while (true) {
+
+                var curNode = queue.shift();
+                count++;
+                if (count >= 9) {
+                    break;
+                }
+                curNode.left = new Node();
+                curNode.left.data = String.fromCharCode(startChar++);
+                queue.push(curNode.left);
+                count++;
+                if (count >= 9) {
+                    break;
+                }
+                curNode.right = new Node();
+                curNode.right.data = String.fromCharCode(startChar++);
+                queue.push(curNode.right);
+            }
+            return root;
+        }
+
+
+        //广度优先遍历
+        var traversals = function (node) {
+            var queue = new Array();
+            queue.push(node);
+            while (queue.length > 0) {
+                var curNode = queue.shift();
+                console.log(curNode.data);
+                if (curNode.left) {
+                    queue.push(curNode.left);
+                }
+                if (curNode.right) {
+                    queue.push(curNode.right);
+                }
+            }
+        }
+        var root = createTree();
+        traversals(root);
+    </script>
+</body>
+
+</html>

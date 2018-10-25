@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        /*.column {float: left;}*/
+        .column div {
+            width: 178px;
+            height: 56px;
+            margin-bottom: 2px;
+        }
+
+        .box1 {
+            background-color: black;
+        }
+
+        .box2 {
+            background-color: bisque;
+        }
+
+        .box3 {
+            background-color: gray;
+        }
+
+        .box4 {
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="column" draggable="true">
+        <div class="box1">
+        </div>
+    </div>
+    <div class="column" draggable="true">
+        <div class="box2">
+        </div>
+    </div>
+    <div class="column" draggable="true">
+        <div class="box3">
+        </div>
+    </div>
+    <div class="column" draggable="true">
+        <div class="box4">
+        </div>
+    </div>
+    <script>
+        function handleDragStart(e) {
+            this.style.opacity = '1';
+            dragSrcEl = this;
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/html', this.innerHTML);
+        }
+        function handleDragEnter(e) {
+            this.classList.add('over');
+        }
+        function handleDragLeave(e) {
+            this.classList.remove('over');
+        }
+        function handleDragOver(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            return false;
+        }
+        //拖拽完成后，作用在拖拽元素上
+        function handleDrop(e) {
+            if (dragSrcEl != this) {
+                dragSrcEl.innerHTML = this.innerHTML;
+                this.innerHTML = e.dataTransfer.getData('text/html');
+            }
+            return false;
+        }
+        //拖拽完成后，作用在被拖拽元素上
+        function handleDragEnd(e) {
+            this.style.opacity = '1';
+            [].forEach.call(divs, function (d) {
+                d.classList.remove('over');
+            });
+        }
+        var divs = document.querySelectorAll('.column');
+        [].forEach.call(divs, function (d) {
+            d.addEventListener('dragstart', handleDragStart, false);
+            d.addEventListener('dragenter', handleDragEnter, false);
+            d.addEventListener('dragover', handleDragOver, false);
+            d.addEventListener('dragleave', handleDragLeave, false);
+            d.addEventListener('drop', handleDrop, false);
+            d.addEventListener('dragend', handleDragEnd, false);
+        });
+    </script>
+</body>
+</html>
