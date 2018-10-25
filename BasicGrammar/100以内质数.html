@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+<script>
+    function getArray(len) {
+        var arr = [];
+        for (var i = 2; i < len; i++) {
+            var flag = true;
+            for (var j = 0; j < arr.length; j++) {
+                if (i % arr[j] == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                arr.push(i);
+            }
+        }
+        return arr;
+    }
+
+    var arr = getArray(100);
+    console.log(arr);
+</script>
+</body>
+</html>
