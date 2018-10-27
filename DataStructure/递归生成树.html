@@ -43,7 +43,7 @@
 
         var keys = ['province', 'city', 'name'];
 
-        //递归创建树
+        //递归创建树，效率太低在实际中不应采用
         var createTree = function (data, keys) {
             var arr = [];
             var hashtable = {};
