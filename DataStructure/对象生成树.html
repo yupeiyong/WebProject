@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var input = {
+            h3: {
+                parent: 'h2',
+                name: '副总经理(市场)'
+            },
+            h1: {
+                parent: 'h0',
+                name: '公司机构'
+            },
+            h7: {
+                parent: 'h6',
+                name: '副总经理(总务)'
+            },
+            h4: {
+                parent: 'h3',
+                name: '销售经理'
+            },
+            h2: {
+                parent: 'h1',
+                name: '总经理'
+            },
+            h8: {
+                parent: 'h0',
+                name: '财务总监'
+            },
+            h6: {
+                parent: 'h4',
+                name: '仓管总监'
+            },
+            h5: {
+                parent: 'h4',
+                name: '销售代表'
+            },
+            h0: {
+                parent: '',
+                name: 'root'
+            }
+        };
+
+        var input2 = [
+            {
+                key: 'h3',
+                parent: 'h2',
+                name: '副总经理(市场)'
+            },
+            {
+                key: 'h1',
+                parent: 'h0',
+                name: '公司机构'
+            },
+            {
+                key: ' h7',
+                parent: 'h6',
+                name: '副总经理(总务)'
+            },
+            {
+                key: 'h4',
+                parent: 'h3',
+                name: '销售经理'
+            },
+            {
+                key: 'h2',
+                parent: 'h1',
+                name: '总经理'
+            },
+            {
+                key: 'h8',
+                parent: 'h0',
+                name: '财务总监'
+            },
+            {
+                key: 'h6',
+                parent: 'h4',
+                name: '仓管总监'
+            },
+            {
+                key: 'h5',
+                parent: 'h4',
+                name: '销售代表'
+            },
+            {
+                key: 'h0',
+                parent: '',
+                name: 'root'
+            }
+        ];
+        /***********************************************************************************************************/
+        //使用递归方式（数组转树结构）
+        var toTree = function (data) {
+            var roots = [];
+            var i;
+            for (i = 0; i < data.length; i++) {
+                var item = data[i];
+                if (item.parent === '') {
+                    roots.push(item);
+                }
+            }
+            for (i = 0; i < roots.length; i++) {
+                createChildTree(data, roots[i]);
+            }
+            return roots;
+        }
+
+        //生成子树
+        var createChildTree = function (data, parent) {
+            var children = [];
+            var i;
+            for (i = 0; i < data.length; i++) {
+                if (data[i].parent === parent.key) {
+                    children.push(data[i]);
+                }
+            }
+            parent.children = children;
+            for (i = 0; i < children.length; i++) {
+                //递归生成子树
+                createChildTree(data, children[i]);
+            }
+        }
+        var tree = toTree(input2);
+        console.log(tree);
+        /***********************************************************************************************************/
+
+
+        /***********************************************************************************************************/
+        //使用对象构造方法
+        /*
+        data:一个对象
+        返回一个树结构对象
+        */
+        var objectToTree=function(data) {
+            var tree = {};
+            for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    //当前属性的父级关键字
+                    var parentKey = data[key].parent;
+                    //如果为根节点，则为树结构的根节点,否则附加到父级节点
+                    if (parentKey === '') {
+                        tree = data[key];
+                    } else {
+                        data[parentKey][key] = data[key];
+                    }
+                }
+            }
+            return tree;
+        }
+        var tree2 = objectToTree(input);
+        console.log(tree2);
+        /***********************************************************************************************************/
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿<!-- <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <script async defer>
+        var data = [
+            {
+                "province": "浙江",
+                "city": "杭州",
+                "name": "西湖"
+            }, {
+                "province": "四川",
+                "city": "成都",
+                "name": "锦里"
+            }, {
+                "province": "四川",
+                "city": "成都",
+                "name": "方所"
+            }, {
+                "province": "四川",
+                "city": "阿坝",
+                "name": "九寨沟"
+            }
+        ];
+
+        var keys = ['province', 'city', 'name'];
+
+        var createTree = function (data, keys) {
+            var arr = [];
+            var hashtable = {};
+            for (var i = 0; i < data.length; i++) {
+                var key = data[i][keys[0]];
+                if (!hashtable[key]) {
+                    var node = {
+                        value: data[i][keys[0]],
+                        children: []
+                    };
+                    arr.push(node);
+                    hashtable[key] = data[i][keys[0]];
+                    node.children = createNode(data, keys[0], node.value, keys[1]);
+                    for (var c = 0; c < node.children.length; c++) {
+                        node.children[c].children = createNode(data, keys[1], node.children[c].value, keys[2]);
+                    }
+                }
+            }
+            return arr;
+        }
+
+        var createNode = function (data, parentKey, parent, key) {
+            var arr = [];
+            var hashtable = {};
+            for (var i = 0; i < data.length; i++) {
+                if (data[i][parentKey] === parent) {
+                    if (!hashtable[data[i][key]]) {
+                        hashtable[data[i][key]]=data[i][key];
+                        var child={value:data[i][key],children:[]};
+                        arr.push(child);
+                    }
+
+                }
+            }
+            return arr;
+        }
+        var arr = createTree(data, keys);
+        console.log(arr);
+    </script>
+</body>
+
+</html> -->
