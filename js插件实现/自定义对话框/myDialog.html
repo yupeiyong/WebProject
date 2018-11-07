@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="mydialog.css" rel="stylesheet" />
+</head>
+<body>
+    <script type="text/template" id="dialogTpl">
+        <div class="mydialog">
+            <span class="close">×</span>
+            <div class="mydialog-cont">
+                <div class="cont"><% this.content %></div>
+            </div>
+            <div class="footer">
+                <% if(this.cancel){ %>
+                <span class="btn btn-ok"><% this.ok_txt %></span>
+                <span class="btn btn-cancel"><% this.cancel_txt %></span>
+                <% } else{ %>
+                <span class="btn btn-ok" style="width: 100%"><% this.ok_txt %></span>
+                <% } %>
+            </div>
+        </div>
+    </script>
+    <script src="mydialog.js"></script>
+    <script>
+    var mydialog = new MyDialog({
+        tmpId: 'dialogTpl',
+        cancel: true,
+        content: 'hello world!'
+    });
+    mydialog.show();
+    </script>
+</body>
+</html>
