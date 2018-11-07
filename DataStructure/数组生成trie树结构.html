@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        /*
+        将级联数据转为树结构
+        使用trie树结构
+        trie树：根结点为空，从根节点到叶节点构成一个完整的字符串
+        如：
+        root
+        /  \
+       a    b
+      / \  / \
+    f   d v   w
+
+    共有af、ad、bv、bw4个字符串
+    af、ad有共同的父节点a
+    这是trie树的特点
+        */
+        var transObjectToTrieTree = function (tableData, keys) {
+            var hashTable = {},
+                tree = [];
+            for (var i = 0; i < tableData.length; i++) {
+                var curHashTable = hashTable,
+                 arr = tree;
+                //遍历关键字，从顶层一直到叶子节点，arr循环到下一层时，先引用tree当前这一层的子数组，在arr.push(node)时，tree当前这一层的子数组元素也就增加了
+                for (var k = 0; k < keys.length; k++) {
+                    var key = keys[k],
+                        field = tableData[i][key];
+                    if (!curHashTable[field]) {
+                        var node = {
+                            value: field
+                        };
+
+                        curHashTable[field] = { index: arr.push(node) - 1 };
+                        
+                        //不是最后关键字，需要处理子节点数组
+                        if (k < keys.length - 1) {
+                            //子节点数组
+                            var childArray = [];
+                            node.children = childArray;
+                            curHashTable = curHashTable[field];
+                            //数组引用子节点数组，
+                            arr = childArray;
+                        }
+                    } else {
+                        //因为关键字在字典中存在，所以直接取字典元素
+                        //又因为arr和hashTable在元素索引位置上是对应的所以arr取当前字典元素的index，就可以取元素的子节点数组
+                        curHashTable = curHashTable[field];
+                        arr = arr[curHashTable.index].children;
+                    }
+                }
+            }
+            return tree;
+        }
+        //三级联动城市数据
+        var data = [{
+            "province": "浙江",
+            "city": "杭州",
+            "name": "西湖"
+        }, {
+            "province": "四川",
+            "city": "成都",
+            "name": "锦里"
+        }, {
+            "province": "四川",
+            "city": "成都",
+            "name": "方所"
+        }, {
+            "province": "四川",
+            "city": "阿坝",
+            "name": "九寨沟"
+        }];
+
+        var keys = ['province', 'city', 'name'];
+
+        console.log(transObjectToTrieTree(data, keys));
+    </script>
+</body>
+</html>

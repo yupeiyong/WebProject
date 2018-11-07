@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+        #dragEle {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #8b0000;
+        }
+
+        #container {
+            margin-top: 20px;
+            width: 306px;
+            height: 306px;
+            border: 1px solid #8b0000;
+        }
+
+            #container div {
+                float: left;
+            }
+    </style>
+    <script src="../../Lib/JQuery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#dragEle")[0].ondragstart = function (event) {
+                console.log("dragStart");
+                event.dataTransfer.setData("Text", event.target.id);
+            };
+            $("#container")[0].ondrop = function (event) {
+                console.log("onDrop");
+                var id = event.dataTransfer.getData("Text");
+                $(this).append($("#" + id).clone().text($(this).find("div").length));
+                event.preventDefault();
+            }
+
+            $("#container")[0].ondragover = function (event) {
+                console.log("onDrop over");
+                event.preventDefault();
+            }
+
+            $("#container")[0].ondragenter = function (event) {
+                console.log("onDrop enter");
+            }
+
+            $("#container")[0].ondragleave = function (event) {
+                console.log("onDrop leave");
+            }
+
+            $("#container")[0].ondragend = function (event) {
+                console.log("onDrop end");
+            }
+        });
+
+    </script>
+
+</head>
+<body>
+    <div draggable="true" id="dragEle"></div>
+    <div id="container"></div>
+</body>
+</html>

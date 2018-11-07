@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #parent1 {
+            width: 200px;
+            height: 100px;
+            background-color: #008080;
+        }
+
+            #parent1 > #son1 {
+                width: 50%;
+                height: 50%;
+                background-color: #0000ff;
+            }
+
+        #parent2 {
+            width: 200px;
+            height: 100px;
+            background-color: #00bfff;
+        }
+
+            #parent2 #son2 {
+                width: 50%;
+                height: 20px;
+                background-color: #0000ff;
+            }
+
+        #parent3 {
+            width: 200px;
+            height: 100px;
+            background-color: #808000;
+        }
+
+            #parent3 > #son3 {
+                position: absolute;
+                width: 50%;
+                height: 20px;
+                background-color: #0000ff;
+            }
+
+        #parent4 {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: #9400d3; 
+        }
+
+            #parent4 > #son4 {
+                position: absolute;
+                width: 50%;
+                height: 20px;
+                background-color: #0000ff;
+            }
+    </style>
+</head>
+<body>
+    <div id="parent1">
+        <div id="son1"></div>
+    </div>
+    <br />
+    <div id="parent2">
+        <!--没有显示，因为：父元素浮动，然后宽度为0，所以son2的宽度也为0-->
+        <div style="float: left;">
+            <div id="son2"></div>
+        </div>
+    </div>
+    <br />
+
+    <div id="parent3">
+        <!--占浏览器窗口宽度一半，因为：绝对定位，宽度是视口宽度-->
+        <div id="son3"></div>
+    </div>
+    <br />
+
+    <div id="parent4">
+        <!--占父元素parent4宽度一半，因为：父元素相对，子元素绝对定位，宽度是父元素宽度的百分比-->
+        <div id="son4"></div>
+    </div>
+</body>
+</html>

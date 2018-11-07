@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        //词法分析
+        var lex = function (str) {
+            return str.split(' ').map(function (item) { return item.trim() });
+        }
+        var nodeType = {
+            num: 0,
+            operator: 1
+        };
+
+        var Node = function (value, type) {
+            this.value = value;
+            this.type = type;
+            this.children = [];
+        }
+        //语法分析
+        var parse = function (tokens) {
+            if (tokens.length === 0) return null;
+
+            var i = 0;
+            var peek = function () {
+                return tokens[i];
+            }
+            var resume = function () {
+                return tokens[i++];
+            }
+            var parseFunc=null;
+            var createNum = function (value) {
+                return new Node(value, nodeType.num);
+            }
+            var createOperator = function (value) {
+                var node = new Node(value, nodeType.operator);
+                while (peek()) {
+                    node.children.push(parseFunc());
+                }
+                return node;
+            }
+
+            parseFunc = function () {
+                return /\d/.test(peek()) ? createNum(resume()) : createOperator(resume());
+            }
+            return parseFunc();
+        }
+        //语义分析
+        var analysis = function (ast) {
+            //操作映射
+            var operatorMap = {
+                sum: '+',
+                mul: '*',
+                sub: '-',
+                div: '/'
+            };
+
+            var translate = null;
+            //n:语法树节点
+            var translateNum = function(n) {
+                return n.value;
+            };
+            //n:语法树节点
+            var translateOper=function(n) {
+                return n.children.map(translate).join(' ' + operatorMap[n.value] + ' ');
+            }
+
+            //n:语法树节点
+            translate=function(n) {
+                return n.type === nodeType.num ? translateNum(n) : translateOper(n);
+            }
+            return translate(ast);
+        }
+
+        var source = 'mul 3 sub 2 sum 1 3 4';
+        console.log(lex(source));
+
+        console.log(parse(lex(source)));
+
+        console.log(analysis(parse(lex(source))));
+    </script>
+</body>
+</html>

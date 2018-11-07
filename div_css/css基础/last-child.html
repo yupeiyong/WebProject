@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        .parent {
+            width: 200px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+            .parent > * {
+                border: none;
+                border-bottom: 1px solid #0000ff;
+            }
+
+            .parent > p:last-child {
+                border-bottom: 1px solid #800000;
+            }
+    </style>
+</head>
+<body>
+    <!--.parent >p:last-child 的匹配规则是：
+        第一步，在.parent >p的父级即.parent中查找和 .parent >p 选择器同级的元素（siblings）；
+        第二步，在同级元素中查找最后一个元素（此时找到div id="last-div"）；
+        第三步，检验最后一个元素是否与选择器 .parent >p 匹配。
+
+        .parent >p:last-child 匹配到了 div id="last-div"，但 div id="last-div" 不匹配 p，故选择器不生效。-->
+    <div class="parent">
+        <p>第1行</p>
+        <p>第2行</p>
+        <p>第3行</p>
+        <p>第4行</p>
+        <p>第5行</p>
+        <!--.parent >p:last-child,这个样式不起作用，因为：匹配不一致-->
+        <p>第6行</p>
+        <div id="last-div">我是一个div</div>
+    </div>
+</body>
+</html>

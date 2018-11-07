@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>相对定位+浮动实现的九宫格</title>
+    <style>
+        .wrap {
+            margin: 0;
+            padding: 0;
+            width: 330px;
+            height: 330px;
+            background-color: #87cefa;
+        }
+
+            .wrap > a {
+                float: left;
+                margin: -10px 0 0 -10px;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                text-align: center;
+                border: 10px solid #0000ff;
+                background-color: #48d1cc;
+            }
+
+            .wrap a:hover {
+                position: relative;
+                border: 10px solid red;
+                background: yellow;
+            }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+    </div>
+</body>
+</html>

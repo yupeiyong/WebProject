@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../JQuery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+    $(function () {
+        var url = 'http://localhost:35510/home/JsonpReturn';
+        $.ajax({
+            type: 'get',
+            url: url,
+            data: null,
+            async: true,
+            dataType: "jsonp",
+            jsonp: 'callback',
+            jsonpCallback: "JsonCallback",
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(data) {
+                alert(data.Message);
+            },
+            error: function(thr, err) {
+                alert(err);
+            },
+            complete: function (XMLHttpRequest, status) {
+                // if (status == 'timeout') { //超时,status还有success,error等值的情况
+
+                // }
+            }
+        });
+    });
+    </script>
+</body>
+</html>
