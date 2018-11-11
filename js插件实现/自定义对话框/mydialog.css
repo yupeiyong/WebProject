@@ -65,11 +65,5 @@
     }
 
         .footer .btn:last-child {
-            display: table-cell;
-            width: 50%;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            cursor: pointer;
             border-left: 1px solid #dcdcdc;
         }

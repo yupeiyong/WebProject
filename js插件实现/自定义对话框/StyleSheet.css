@@ -1,0 +1,51 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+.dialog {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 600px;
+    height: 500px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+.dialog-close {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.dialog-footer{
+    
+}
+.btn-group {
+    position:absolute;
+    width:100%;
+    bottom:0;
+    border-top: 1px solid #808080;
+    display: table;
+}
+.btn-group >.btn{
+    padding: 0;
+    margin: 0;
+    display: table-cell;
+    width:50%;
+    height:50px;
+    text-align:center;
+    vertical-align:middle;
+    line-height:50px;
+    cursor:pointer;
+}
+.btn-group >.btn:last-child{
+    border-left: 1px solid #808080;
+}
