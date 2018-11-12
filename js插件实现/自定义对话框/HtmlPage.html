@@ -7,31 +7,43 @@
     <link href="StyleSheet.css?ver=2222" rel="stylesheet" />
 </head>
 <body>
-    <div class="dialog">
-        <span class="dialog-close">X</span>
-        <div class="dialog-content"></div>
-        <div class="dialog-footer">
-            <div class="btn-group">
-                <span class="btn">确定</span>
-                <span class="btn">关闭</span>
+
+    <script type="text/template" id="dialogTpl">
+        <div class="dialog">
+            <span class="dialog-close">X</span>
+            <div class="dialog-content"><% this.content %></div>
+            <div class="dialog-footer">
+                <div class="btn-group">
+                    <% if(this.cancel){ %>
+                    <span class="btn  btn-ok"><% this.ok_txt %></span>
+                    <span class="btn  btn-cancel"><% this.cancel_txt %></span>
+                    <% } else{ %>
+                    <span class="btn  btn-ok"><% this.ok_txt %></span>
+                    <% } %>
+                </div>
             </div>
         </div>
-    </div>
+    </script>
+
     <script src="JavaScript.js"></script>
     <script>
-        var dialog = new dialog();
+        var dialog = new dialog({
+            templateId: 'dialogTpl',
+            cancel: true,
+            content: 'hello world!'
+        });
         dialog.show();
 
-        var a = function () { this.test(); };
-        a.prototype = {
-            test: function () {
-                alert('test function');
-            }
-        };
-        var obj = {};
-        obj.__proto__ = a.prototype;
-        a.call(obj);
-        obj.test();
+        //var a = function () { this.test(); };
+        //a.prototype = {
+        //    test: function () {
+        //        alert('test function');
+        //    }
+        //};
+        //var obj = {};
+        //obj.__proto__ = a.prototype;
+        //a.call(obj);
+        //obj.test();
     </script>
 </body>
 </html>
