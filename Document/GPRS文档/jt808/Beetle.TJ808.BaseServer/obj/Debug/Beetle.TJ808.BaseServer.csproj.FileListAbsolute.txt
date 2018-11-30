@@ -1,0 +1,9 @@
+E:\Projects\jt808\Beetle.TJ808.BaseServer\bin\Debug\Beetle.TJ808.BaseServer.exe.config
+E:\Projects\jt808\Beetle.TJ808.BaseServer\bin\Debug\Beetle.TJ808.BaseServer.exe
+E:\Projects\jt808\Beetle.TJ808.BaseServer\bin\Debug\Beetle.TJ808.BaseServer.pdb
+E:\Projects\jt808\Beetle.TJ808.BaseServer\bin\Debug\Beetle.Express.dll
+E:\Projects\jt808\Beetle.TJ808.BaseServer\bin\Debug\Beetle.JT808.dll
+E:\Projects\jt808\Beetle.TJ808.BaseServer\bin\Debug\Beetle.JT808.pdb
+E:\Projects\jt808\Beetle.TJ808.BaseServer\obj\Debug\Beetle.TJ808.BaseServer.exe
+E:\Projects\jt808\Beetle.TJ808.BaseServer\obj\Debug\Beetle.TJ808.BaseServer.pdb
+E:\Projects\jt808\Beetle.TJ808.BaseServer\obj\Debug\Beetle.TJ808.BaseServer.csprojResolveAssemblyReference.cache

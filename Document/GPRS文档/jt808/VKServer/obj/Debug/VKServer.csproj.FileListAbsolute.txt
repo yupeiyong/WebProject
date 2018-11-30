@@ -1,0 +1,11 @@
+E:\Projects\jt808\VKServer\bin\Debug\VKServer.exe.config
+E:\Projects\jt808\VKServer\bin\Debug\VKServer.exe
+E:\Projects\jt808\VKServer\bin\Debug\VKServer.pdb
+E:\Projects\jt808\VKServer\bin\Debug\Beetle.Express.dll
+E:\Projects\jt808\VKServer\bin\Debug\Beetle.JT808.dll
+E:\Projects\jt808\VKServer\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\jt808\VKServer\bin\Debug\Beetle.JT808.pdb
+E:\Projects\jt808\VKServer\bin\Debug\Newtonsoft.Json.xml
+E:\Projects\jt808\VKServer\obj\Debug\VKServer.csprojResolveAssemblyReference.cache
+E:\Projects\jt808\VKServer\obj\Debug\VKServer.exe
+E:\Projects\jt808\VKServer\obj\Debug\VKServer.pdb

@@ -1,0 +1,8 @@
+E:\Projects\jt808\Beetle.JT808.UnitTestProject1\bin\Debug\Beetle.JT808.UnitTestProject1.dll
+E:\Projects\jt808\Beetle.JT808.UnitTestProject1\bin\Debug\Beetle.JT808.UnitTestProject1.pdb
+E:\Projects\jt808\Beetle.JT808.UnitTestProject1\bin\Debug\Beetle.Express.dll
+E:\Projects\jt808\Beetle.JT808.UnitTestProject1\bin\Debug\Beetle.JT808.dll
+E:\Projects\jt808\Beetle.JT808.UnitTestProject1\bin\Debug\Beetle.JT808.pdb
+E:\Projects\jt808\Beetle.JT808.UnitTestProject1\obj\Debug\Beetle.JT808.UnitTestProject1.csprojResolveAssemblyReference.cache
+E:\Projects\jt808\Beetle.JT808.UnitTestProject1\obj\Debug\Beetle.JT808.UnitTestProject1.dll
+E:\Projects\jt808\Beetle.JT808.UnitTestProject1\obj\Debug\Beetle.JT808.UnitTestProject1.pdb

@@ -1,0 +1,6 @@
+E:\Projects\jt808\TcpClienter\bin\Debug\TcpClienter.exe.config
+E:\Projects\jt808\TcpClienter\bin\Debug\TcpClienter.exe
+E:\Projects\jt808\TcpClienter\bin\Debug\TcpClienter.pdb
+E:\Projects\jt808\TcpClienter\obj\Debug\TcpClienter.csprojResolveAssemblyReference.cache
+E:\Projects\jt808\TcpClienter\obj\Debug\TcpClienter.exe
+E:\Projects\jt808\TcpClienter\obj\Debug\TcpClienter.pdb

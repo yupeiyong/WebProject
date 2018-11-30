@@ -1,0 +1,4 @@
+E:\Projects\jt808\Beetle.JT808\bin\Debug\Beetle.JT808.dll
+E:\Projects\jt808\Beetle.JT808\bin\Debug\Beetle.JT808.pdb
+E:\Projects\jt808\Beetle.JT808\obj\Debug\Beetle.JT808.dll
+E:\Projects\jt808\Beetle.JT808\obj\Debug\Beetle.JT808.pdb

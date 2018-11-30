@@ -1,0 +1,6 @@
+E:\Projects\jt808\TcpServer\bin\Debug\TcpServer.exe.config
+E:\Projects\jt808\TcpServer\bin\Debug\TcpServer.exe
+E:\Projects\jt808\TcpServer\bin\Debug\TcpServer.pdb
+E:\Projects\jt808\TcpServer\obj\Debug\TcpServer.csprojResolveAssemblyReference.cache
+E:\Projects\jt808\TcpServer\obj\Debug\TcpServer.exe
+E:\Projects\jt808\TcpServer\obj\Debug\TcpServer.pdb

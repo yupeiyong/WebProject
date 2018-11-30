@@ -1,0 +1,317 @@
+﻿using System;
+using System.Net.Sockets;
+using Beetle.JT808.Messages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Beetle.JT808.UnitTestProject1
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestMethod1()
+        {
+
+            Express.Clients.SyncTcpClient client = new Express.Clients.SyncTcpClient("218.89.49.246", 86);
+            var recieve=client.Recieve();
+            //Express.Clients.SyncTcpClient client = new Express.Clients.SyncTcpClient("127.0.0.1", 86);
+            DateTime dt = new DateTime(2018, 06, 26, 11, 33, 50);
+            IProtocolBuffer buffer = MessageFactory.MessateToBuffer<ClientPostion>(BUSINESS_NO, SIM, (m, b) =>
+            {
+                b.Direction = 4;
+                b.Height = 5;
+                b.Latitude = 56;
+                b.Longitude = 100;
+                b.Speed = 100;
+                b.Status.ACC = true;
+                b.Time = dt;
+                b.WarningMark.DisplayTheFault = true;
+            });
+            client.Send(buffer.Array, 0, buffer.Length);
+            Console.WriteLine("OK");
+        }
+
+        private const UInt16 BUSINESS_NO = 1;
+
+        private const string SIM = "18121937050";
+
+        [TestMethod]
+        public void TestClientResponse()
+        {
+            IProtocolBuffer buffer = MessageFactory.MessateToBuffer<Messages.ClientResponse>(BUSINESS_NO, SIM, (m, b) =>
+            {
+                b.BussinessNO = 12;
+                b.ResultID = 5;
+                b.Result = Messages.ResultType.Success;
+            });
+            buffer.Postion = 0;
+            IMessage msg = MessageFactory.MessageFromBuffer(buffer);
+            Messages.ClientResponse response = msg.GetBody<Messages.ClientResponse>();
+            Assert.AreEqual(msg.ID, MessageFactory.GetMessageID<Messages.ClientResponse>());
+            Assert.AreEqual(msg.SIM, SIM);
+            Assert.AreEqual(msg.BussinessNO, BUSINESS_NO);
+            Assert.AreEqual(response.BussinessNO, 12);
+            Assert.AreEqual(response.Result, Messages.ResultType.Success);
+            Assert.AreEqual(response.ResultID, 5);
+        }
+
+        [TestMethod]
+        public void TestClientPing()
+        {
+            IProtocolBuffer buffer = MessageFactory.MessateToBuffer<Messages.ClientPing>(BUSINESS_NO, SIM, (m, b) =>
+            {
+
+            });
+            buffer.Postion = 0;
+            IMessage msg = MessageFactory.MessageFromBuffer(buffer);
+            Messages.ClientPing response = msg.GetBody<Messages.ClientPing>();
+            Assert.AreEqual(msg.ID, MessageFactory.GetMessageID<Messages.ClientPing>());
+            Assert.AreEqual(msg.SIM, SIM);
+            Assert.AreEqual(msg.BussinessNO, BUSINESS_NO);
+        }
+
+        [TestMethod]
+        public void TestCenterResponse()
+        {
+            IProtocolBuffer buffer = MessageFactory.MessateToBuffer<Messages.CenterResponse>(BUSINESS_NO, SIM, (m, b) =>
+            {
+                b.BussinessNO = 12;
+                b.ResultID = 5;
+                b.Result = Messages.ResultType.Success;
+            });
+            buffer.Postion = 0;
+            IMessage msg = MessageFactory.MessageFromBuffer(buffer);
+            Messages.CenterResponse response = msg.GetBody<Messages.CenterResponse>();
+            Assert.AreEqual(msg.ID, MessageFactory.GetMessageID<Messages.CenterResponse>());
+            Assert.AreEqual(msg.SIM, SIM);
+            Assert.AreEqual(msg.BussinessNO, BUSINESS_NO);
+            Assert.AreEqual(response.BussinessNO, 12);
+            Assert.AreEqual(response.Result, Messages.ResultType.Success);
+            Assert.AreEqual(response.ResultID, 5);
+        }
+
+        [TestMethod]
+        public void TestClientRegister()
+        {
+            IProtocolBuffer buffer = MessageFactory.MessateToBuffer<Messages.ClientRegister>(BUSINESS_NO, SIM, (m, b) =>
+            {
+                b.City = 5;
+                b.Color = 4;
+                b.DeviceID = "abc";
+                b.DeviceNumber = "1002";
+                b.PlateNumber = "粤A4XB38";
+                b.Provider = "gdgz";
+                b.Province = 10;
+            });
+            buffer.Postion = 0;
+            IMessage msg = MessageFactory.MessageFromBuffer(buffer);
+            Messages.ClientRegister register = msg.GetBody<Messages.ClientRegister>();
+            Assert.AreEqual(msg.ID, MessageFactory.GetMessageID<Messages.ClientRegister>());
+            Assert.AreEqual(msg.SIM, SIM);
+            Assert.AreEqual(msg.BussinessNO, BUSINESS_NO);
+            Assert.AreEqual(register.City, 5);
+            Assert.AreEqual(register.Color, 4);
+            Assert.AreEqual(register.DeviceID, "abc");
+            Assert.AreEqual(register.DeviceNumber, "1002");
+            Assert.AreEqual(register.PlateNumber, "粤A4XB38");
+            Assert.AreEqual(register.Provider, "gdgz");
+            Assert.AreEqual(register.Province, 10);
+        }
+
+        [TestMethod]
+        public void TestClientRegisterResponse()
+        {
+            IProtocolBuffer buffer = MessageFactory.MessateToBuffer<Messages.ClientRegisterResponse>(BUSINESS_NO, SIM, (m, b) =>
+            {
+                b.BusinessNO = 6;
+                b.Result = 10;
+                b.Signature = "bbqabc";
+            });
+            buffer.Postion = 0;
+            IMessage msg = MessageFactory.MessageFromBuffer(buffer);
+            Messages.ClientRegisterResponse response = msg.GetBody<Messages.ClientRegisterResponse>();
+            Assert.AreEqual(msg.ID, MessageFactory.GetMessageID<Messages.ClientRegisterResponse>());
+            Assert.AreEqual(msg.SIM, SIM);
+            Assert.AreEqual(msg.BussinessNO, BUSINESS_NO);
+            Assert.AreEqual(response.BusinessNO, 6);
+            Assert.AreEqual(response.Result, 10);
+            Assert.AreEqual(response.Signature, "bbqabc");
+        }
+
+        [TestMethod]
+        public void TestClientRegisterCancel()
+        {
+            IProtocolBuffer buffer = MessageFactory.MessateToBuffer<Messages.ClientRegisterCancel>(BUSINESS_NO, SIM, (m, b) =>
+            {
+
+            });
+            buffer.Postion = 0;
+            IMessage msg = MessageFactory.MessageFromBuffer(buffer);
+            Messages.ClientRegisterCancel response = msg.GetBody<Messages.ClientRegisterCancel>();
+            Assert.AreEqual(msg.ID, MessageFactory.GetMessageID<Messages.ClientRegisterCancel>());
+            Assert.AreEqual(msg.SIM, SIM);
+            Assert.AreEqual(msg.BussinessNO, BUSINESS_NO);
+        }
+
+        [TestMethod]
+        public void TestClientSignature()
+        {
+        }
+
+        [TestMethod]
+        public void TestClientPostion()
+        {
+
+            DateTime dt = new DateTime(2016, 12, 23, 13, 50, 50);
+            IProtocolBuffer buffer = MessageFactory.MessateToBuffer<Messages.ClientPostion>(BUSINESS_NO, SIM, (m, b) =>
+            {
+                b.Direction = 4;
+                b.Height = 5;
+                b.Latitude = 56;
+                b.Longitude = 100;
+                b.Speed = 100;
+                b.Status.ACC = true;
+                b.Time = dt;
+                b.WarningMark.DisplayTheFault = true;
+            });
+            buffer.Postion = 0;
+            Console.WriteLine(buffer.ToString());
+            IMessage msg = MessageFactory.MessageFromBuffer(buffer);
+            Messages.ClientPostion postion = msg.GetBody<Messages.ClientPostion>();
+            Assert.AreEqual(msg.ID, MessageFactory.GetMessageID<Messages.ClientPostion>());
+            Assert.AreEqual(msg.SIM, SIM);
+            Assert.AreEqual(msg.BussinessNO, BUSINESS_NO);
+            Assert.AreEqual(postion.Direction, 4);
+            Assert.AreEqual(postion.Height, 5);
+            Assert.AreEqual(postion.Latitude, (uint)56);
+            Assert.AreEqual(postion.Longitude, (uint)100);
+            Assert.AreEqual(postion.Speed, 100);
+            Assert.AreEqual(postion.Status.ACC, true);
+            Assert.AreEqual(postion.Time, dt);
+            Assert.AreEqual(postion.WarningMark.DisplayTheFault, true);
+        }
+
+        [TestMethod]
+        public void GetBytes()
+        {
+            var str ="7E020000610580288209700045000000000004000201D665FC065316B0000000F00E0C18112414524153090101CC0080693CFB0956020707300100310100401332303138313131313131313100000000000000410F343630303230353832383835353638570800000000000000008F7E";
+            var startPos = 1;
+            var result = "";
+            while (true)
+            {
+                if (startPos > str.Length)
+                    break;
+                result += "0x" + str.Substring(startPos - 1, 2) + ",";
+                startPos += 2;
+            }
+            Console.Write(result);
+        }
+
+        [TestMethod]
+        public void TestClientReg()
+        {
+            Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            clientSocket.Connect("218.244.146.69", 6573);
+            var bt = new byte[] { 0x7e, 0x01, 0x00, 0x00, 0x2d, 0x05, 0x80, 0x26, 0x07, 0x06, 0x85, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x54, 0x42, 0x49, 0x54, 0x00, 0x4e, 0x53, 0x5f, 0x54, 0x42, 0x49, 0x54, 0x5f, 0x31, 0x38, 0x38, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x37, 0x30, 0x30, 0x30, 0x30, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x10, 0x7e };
+            clientSocket.Send(bt);
+            Console.WriteLine("发送完成");
+            clientSocket.ReceiveTimeout = 3000;
+            byte[] buffer = new byte[1024];
+            clientSocket.Receive(buffer);
+            var protocolbuffer = ProtocolBufferPool.Default.Pop();
+            protocolbuffer.Import(buffer, 0, buffer.Length);
+            Console.WriteLine(protocolbuffer);
+            IMessage msg = MessageFactory.MessageFromBuffer(protocolbuffer);
+            Messages.ClientRegisterResponse response = msg.GetBody<Messages.ClientRegisterResponse>();
+            Console.WriteLine("ID ： " + msg.ID);
+            Console.WriteLine("SIM ： " + msg.SIM);
+            Console.WriteLine("BussinessNO ： " + msg.BussinessNO);
+            Console.WriteLine("BusinessNO ： " + response.BusinessNO);
+            Console.WriteLine("Result ： " + response.Result);
+            Console.WriteLine("Signature ： " + response.Signature);
+        }
+
+        [TestMethod]
+        public void TestVK_ClientReg()
+        {
+            Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            clientSocket.Connect("125.66.97.11", 86);
+            var bt = new byte[] { 0x7e, 0x01, 0x00, 0x00, 0x2d, 0x06, 0x80, 0x26, 0x07, 0x06, 0x85, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x54, 0x42, 0x49, 0x54, 0x00, 0x4e, 0x53, 0x5f, 0x54, 0x42, 0x49, 0x54, 0x5f, 0x31, 0x38, 0x38, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x37, 0x30, 0x30, 0x30, 0x30, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x10, 0x7e };
+            clientSocket.Send(bt);
+            Console.WriteLine("发送完成");
+            clientSocket.ReceiveTimeout = 3000;
+            byte[] buffer = new byte[1024];
+            clientSocket.Receive(buffer);
+            var protocolbuffer = ProtocolBufferPool.Default.Pop();
+            protocolbuffer.Import(buffer, 0, buffer.Length);
+            Console.WriteLine(protocolbuffer);
+            IMessage msg = MessageFactory.MessageFromBuffer(protocolbuffer);
+            Messages.ClientRegisterResponse response = msg.GetBody<Messages.ClientRegisterResponse>();
+            Console.WriteLine("ID ： " + msg.ID);
+            Console.WriteLine("SIM ： " + msg.SIM);
+            Console.WriteLine("BussinessNO ： " + msg.BussinessNO);
+            Console.WriteLine("BusinessNO ： " + response.BusinessNO);
+            Console.WriteLine("Result ： " + response.Result);
+            Console.WriteLine("Signature ： " + response.Result);
+        }
+
+        [TestMethod]
+        public void TestRegMsg()
+        {
+            var bt = new byte[] { 0x7e, 0x01, 0x00, 0x00, 0x2d, 0x05, 0x80, 0x26, 0x07, 0x06, 0x85, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x54, 0x42, 0x49, 0x54, 0x00, 0x4e, 0x53, 0x5f, 0x54, 0x42, 0x49, 0x54, 0x5f, 0x31, 0x38, 0x38, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x37, 0x30, 0x30, 0x30, 0x30, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x10, 0x7e };
+            var protocolbuffer = ProtocolBufferPool.Default.Pop();
+            protocolbuffer.Import(bt, 0, bt.Length);
+            protocolbuffer.Postion = 0;
+            IMessage msg = MessageFactory.MessageFromBuffer(protocolbuffer);
+            Messages.ClientRegister register = msg.GetBody<Messages.ClientRegister>();
+            Console.WriteLine("ID ： " + msg.ID);
+            Console.WriteLine("SIM ： " + msg.SIM);
+            Console.WriteLine("BussinessNO ： " + msg.BussinessNO);
+            Console.WriteLine("City ： " + register.City);
+            Console.WriteLine("Color ： " + register.Color);
+            Console.WriteLine("DeviceID ： " + register.DeviceID);
+            Console.WriteLine("DeviceNumber ： " + register.DeviceNumber);
+            Console.WriteLine("PlateNumber ： " + register.PlateNumber);
+            Console.WriteLine("Provider ： " + register.Provider);
+            Console.WriteLine("Province ： " + register.Province);
+        }
+
+        [TestMethod]
+        public void TestRegBackMsg()
+        {
+            var bt = new byte[] { 0x7E, 0x81, 0x00, 0x00, 0x0F, 0x05, 0x80, 0x26, 0x07, 0x06, 0x85, 0x00, 0x00, 0x00, 0x00, 0x00, 0x32, 0x30, 0x31, 0x38, 0x31, 0x31, 0x31, 0x31, 0x31, 0x31, 0x31, 0x31, 0xA2, 0x7E };
+            var protocolbuffer = ProtocolBufferPool.Default.Pop();
+            protocolbuffer.Import(bt, 0, bt.Length);
+            protocolbuffer.Postion = 0;
+            IMessage msg = MessageFactory.MessageFromBuffer(protocolbuffer);
+            Messages.ClientRegisterResponse register = msg.GetBody<Messages.ClientRegisterResponse>();
+            Console.WriteLine("ID ： " + msg.ID);
+            Console.WriteLine("SIM ： " + msg.SIM);
+            Console.WriteLine("BussinessNO ： " + msg.BussinessNO);
+            Console.WriteLine("Signature ： " + register.Signature);
+            Console.WriteLine("Result ： " + register.Result);
+            Console.WriteLine("BusinessNO ： " + register.BusinessNO);
+        }
+
+        [TestMethod]
+        public void TestPosMsg()
+        {
+            var bt = new byte[] { 0x7E, 0x02, 0x00, 0x00, 0x61, 0x05, 0x80, 0x28, 0x82, 0x09, 0x70, 0x00, 0x45, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x02, 0x01, 0xD6, 0x65, 0xFC, 0x06, 0x53, 0x16, 0xB0, 0x00, 0x00, 0x00, 0xF0, 0x0E, 0x0C, 0x18, 0x11, 0x24, 0x14, 0x52, 0x41, 0x53, 0x09, 0x01, 0x01, 0xCC, 0x00, 0x80, 0x69, 0x3C, 0xFB, 0x09, 0x56, 0x02, 0x07, 0x07, 0x30, 0x01, 0x00, 0x31, 0x01, 0x00, 0x40, 0x13, 0x32, 0x30, 0x31, 0x38, 0x31, 0x31, 0x31, 0x31, 0x31, 0x31, 0x31, 0x31, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x41, 0x0F, 0x34, 0x36, 0x30, 0x30, 0x32, 0x30, 0x35, 0x38, 0x32, 0x38, 0x38, 0x35, 0x35, 0x36, 0x38, 0x57, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x8F, 0x7E };
+            var protocolbuffer = ProtocolBufferPool.Default.Pop();
+            protocolbuffer.Import(bt, 0, bt.Length);
+            protocolbuffer.Postion = 0;
+            IMessage msg = MessageFactory.MessageFromBuffer(protocolbuffer);
+            ClientPostion postion = msg.GetBody<ClientPostion>();
+            Console.WriteLine("ID ： " + msg.ID);
+            Console.WriteLine("SIM ： " + msg.SIM);
+            Console.WriteLine("BussinessNO ： " + msg.BussinessNO);
+            Console.WriteLine("Latitude : " + postion.Latitude);
+            Console.WriteLine("Longitude : " + postion.Longitude);
+            Console.WriteLine("Direction : " + postion.Direction);
+            Console.WriteLine("Height : " + postion.Height);
+            Console.WriteLine("speed : " + postion.Speed);
+            Console.WriteLine("Time : " + postion.Time.ToString("yyyy-MM-dd HH:mm:ss"));
+            Console.WriteLine("Status : " + (postion.Status.ACC ? "启动" : "关闭"));
+        }
+    }
+}
