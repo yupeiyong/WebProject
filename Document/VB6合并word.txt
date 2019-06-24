@@ -1,0 +1,2 @@
+Set Range_Doc = Doc.Range(Doc.Range.End - 1, Doc.Range.End - 1)'先在文档中确定一个位置，这里，设置成了文档的最后
+Range_Doc.InsertFile "doc文件的路径"'就这么一句代码
