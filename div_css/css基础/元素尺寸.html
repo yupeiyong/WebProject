@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div style="margin-left: 100px;">
+        <div id="left" style="width: 500px; height: 500px; background-color: #87cefa; margin-left: 100px;">
+            <div style="width: 100px; height: 100px; background-color: #00bfff;"></div>
+            <div style="width: 200px; height: 200px; background-color: #6495ed;">
+                <div id="div1" style="width: 100px; height: 100px; border: 50px solid red; margin-left: 50px; background-color: #6495ed; overflow-x: auto;">
+                    <input type="button" id="btnCalculate" value="计算尺寸" />
+                    <div style="width: 150px; height: 50px;"></div>
+                </div>
+            </div>
+            <div id="msg"></div>
+        </div>
+        <div id="right">
+
+        </div>
+    </div>
+    <script>
+        var btn1 = document.getElementById("btnCalculate");
+        btn1.onclick = function () {
+            var el = document.getElementById("div1");
+            var message = "";
+            message += "offsetWidth:" + el.offsetWidth + "\r\n";
+            message += "offsetHeight:" + el.offsetHeight + "\r\n";
+            message += "offsetLeft:" + el.offsetLeft + "\r\n";
+            message += "offsetTop:" + el.offsetTop + "\r\n";
+            message += "\r\n";
+
+            message += "clientWidth:" + el.clientWidth + "\r\n";
+            message += "clientHeight:" + el.clientHeight + "\r\n";
+            message += "clientLeft:" + el.clientLeft + "\r\n";
+            message += "clientTop:" + el.clientTop + "\r\n";
+            message += "\r\n";
+
+            message += "scrollWidth:" + el.scrollWidth + "\r\n";
+            message += "scrollHeight:" + el.scrollHeight + "\r\n";
+            message += "scrollLeft:" + el.scrollLeft + "\r\n";
+            message += "scrollTop:" + el.scrollTop + "\r\n";
+            message += "\r\n";
+
+            var msgDiv = document.getElementById("msg");
+            msgDiv.innerText = message;
+
+            //一、clientWidth和clientHeigh 、 clientTop和clientLeft
+
+            //1，clientWidth的实际宽度
+
+            //clientWidth = width+左右padding
+
+            //2，clientHeigh的实际高度
+
+            //clientHeigh = height + 上下padding 
+
+            //3，clientTop的实际宽度
+
+            //clientTop = boder.top(上边框的宽度)
+
+            //4，clientLeft的实际宽度
+
+            //clientLeft = boder.left(左边框的宽度)
+            //二、offsetWidth和offsetHight 、 offsetTop和offsetLeft
+
+            //1,offsetWidth的实际宽度
+
+            //offsetWidth = width + 左右padding + 左右boder
+
+            //2,offsetHeith的实际高度
+
+            //offsetHeith = height + 上下padding + 上下boder
+
+            //3，offsetTop实际宽度
+
+            //offsetTop：当前元素 上边框 外边缘 到 最近的已定位父级（offsetParent） 上边框 内边缘的 距离。如果父
+
+            //级都没有定位，则分别是到body 顶部 和左边的距离
+
+            //4，offsetLeft实际宽度
+
+            //offsetLeft：当前元素 左边框 外边缘 到 最近的已定位父级（offsetParent） 左边框 内边缘的            距离。如果父级都没有定位，则分别是到body 顶部 和左边的距离
+            //三、scrollWidth和scrollHeight 、 scrollTop和scrollLeft
+
+            //1，scrollWidth实际宽度
+
+            //scrollWidth：获取指定标签内容层的真实宽度（可视区域宽度+被隐藏区域宽度）。
+
+ 
+
+            //2，scrollHeight的实际高度
+
+ 
+
+            //scrollHeight：获取指定标签内容层的真实高度（可视区域高度+被隐藏区域高度）
+
+            //3，scrollTop
+
+            //scrollTop :内容层顶部 到 可视区域顶部的距离。相当于是顶部隐藏高度
+
+            //实例：var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+            //持续获取高度的方式：
+
+          
+
+            //window.addEventListener('scroll', ()=>{
+
+            //    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+            //});
+
+            //4，scrollLeft
+
+            //scrollLeft:内容层左端 到 可视区域左端的距离.相当于是左部隐藏宽度
+        }
+    </script>
+</body>
+</html>
